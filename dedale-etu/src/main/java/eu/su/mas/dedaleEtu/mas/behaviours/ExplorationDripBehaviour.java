@@ -79,7 +79,7 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
         // 3) Vérifier si tous les noeuds ont été explorés
         if (!myAgent.getMyMap().hasOpenNode()) {
             System.out.println(myAgent.getLocalName() + " - Exploration successfully done, behaviour removed.");
-            exitValue = EXPLORATION_COMPLETE;
+            exitValue = WUMPUS_DETECTED; // améliorer à la fin de la chasse
             return;
         }
 

@@ -143,9 +143,9 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
         Map<String, String> neighbors = new HashMap<>();
         for (Couple<eu.su.mas.dedale.env.Location, List<Couple<Observation, String>>> obs : lobs) {
             String locationId = obs.getLeft().getLocationId();
-            for (Couple<Observation, String> attribute : obs.getRight()) {
-                if (attribute.getLeft() == Observation.AGENTNAME) {
-                    neighbors.put(locationId, attribute.getRight());
+            for (Couple<Observation, String> detail : obs.getRight()) {
+                if (detail.getLeft() == Observation.AGENTNAME && !"Wumpus".equals(detail.getRight())) {
+                    neighbors.put(locationId, detail.getRight());
                 }
             }
         }

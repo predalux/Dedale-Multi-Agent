@@ -82,7 +82,7 @@ public class HuntDripBehaviour extends OneShotBehaviour {
                         myAgent.setGolemPosition(node);
                         
                         // Diffuser aux autres agents
-                        broadcastWumpusPosition(node);
+                        myAgent.getCommService().broadcastWumpusPosition(node);
                         
                         exitValue = 0;
                         return;
@@ -143,6 +143,14 @@ public class HuntDripBehaviour extends OneShotBehaviour {
         //  Si on a rien detecter alors on fait de la marche aléatoire
         randomMove(lobs);
     }
+    
+    // rajouter le cas où le golem à bouger (pos = golem pos) on repart en explo.
+    // explo doit pouvoir explorer meme quand graphe totalement finito
+    // tester la chasse avec un golem qui bouge bruh
+    // implementer la propagation de l'annonce
+    // coalition
+    // determiner comment bien encercler
+    // voir pour communiquer lors du deadlock
 
 
 
@@ -179,12 +187,6 @@ public class HuntDripBehaviour extends OneShotBehaviour {
         }
     }
     
-    private void broadcastWumpusPosition(String node) {
-        ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
-        msg.setProtocol("WUMPUS-LOCATION");
-        msg.setContent(node);
-        myAgent.sendMessage(msg);
-    }
     
     // Pour continuer ou terminer la chasse
     @Override
