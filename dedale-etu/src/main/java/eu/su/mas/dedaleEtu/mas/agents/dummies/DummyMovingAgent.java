@@ -18,6 +18,7 @@ import jade.core.behaviours.Behaviour;
  * <li> move randomly and test the API methods {@link RandomWalkBehaviour}.
  * <li> send a meaningless message to two other agents {@link SayHelloBehaviour} 
  * </ol>
+ *
  * @author hc
  *
  */

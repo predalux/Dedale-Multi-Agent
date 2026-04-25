@@ -168,8 +168,11 @@ public final class ConfigurationFile {
 	//public static String INSTANCE_CONFIGURATION_ENTITIES="resources/agent-1tanker-1collect.json";
 	//public static String INSTANCE_CONFIGURATION_ENTITIES="resources/agent-1wumpus-1collect.json";
 	//public static String INSTANCE_CONFIGURATION_ENTITIES="resources/agent-2collect.json";
-	public static String INSTANCE_CONFIGURATION_ENTITIES="resources/agent-2explo-1human.json";
-	
+	//public static String INSTANCE_CONFIGURATION_ENTITIES="resources/agent-2explo-1human.json";
+	//public static String INSTANCE_CONFIGURATION_ENTITIES="resources/agent-2explo.json";
+
+	public static String INSTANCE_CONFIGURATION_ENTITIES="resources/2dripped-1wumpus.json";
+
 
 
 }

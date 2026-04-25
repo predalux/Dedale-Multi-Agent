@@ -63,7 +63,7 @@ public class MapRepresentation implements Serializable {
 	private String nodeStyle_agent = "node.agent {"+"fill-color: blue;"+"}";
 	private String nodeStyle=defaultNodeStyle+nodeStyle_agent+nodeStyle_open;
 
-	private Graph g; //data structure non serializable
+	protected Graph g; //data structure non serializable
 	private Viewer viewer; //ref to the display,  non serializable
 	private Integer nbEdges;//used to generate the edges ids
 	private String agentName;//name of the agent the map belongs to

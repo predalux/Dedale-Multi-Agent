@@ -52,7 +52,9 @@ public class RandomWalkBehaviour extends TickerBehaviour{
 			//list of observations associated to the currentPosition
 			List<Couple<Observation,String>> lObservations= lobs.get(0).getRight();
 
+			
 			//example related to the use of the backpack for the treasure hunt
+			/*
 			Boolean b=false;
 			for(Couple<Observation,String> o:lObservations){
 				switch (o.getLeft()) {
@@ -68,13 +70,13 @@ public class RandomWalkBehaviour extends TickerBehaviour{
 					break;
 				}
 			}
-
+			
 			//If the agent picked (part of) the treasure
 			if (b){
 				List<Couple<Location,List<Couple<Observation,String>>>> lobs2=((AbstractDedaleAgent)this.myAgent).observe();//myPosition
 				System.out.println(this.myAgent.getLocalName()+" - State of the observations after trying to pick something "+lobs2);
 			}
-
+			*/
 			//Random move from the current position
 			Random r= new Random();
 			int moveId=1+r.nextInt(lobs.size()-1);//removing the current position from the list of target, not necessary as to stay is an action but allow quicker random move

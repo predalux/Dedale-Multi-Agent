@@ -1,0 +1,30 @@
+[
+{ 
+  "agentType":"agentExplo",
+  "agentName": "Drip1",
+  "agentClass":"dummies.DrippedAgent",
+  "agentInitialContainer":"container1",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": -1,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 1,
+  "lockPickingExpertise":1,
+  "userParameters": ["param1"]
+  },
+{ 
+  "agentType":"agentExplo",
+  "agentName": "Drip2",
+  "agentClass":"dummies.DrippedAgent",
+  "agentInitialContainer":"container1",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": -1,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 1,
+  "lockPickingExpertise":1,
+  "userParameters": ["param2","param3"]
+  }
+]
