@@ -1,9 +1,11 @@
 package eu.su.mas.dedaleEtu.mas.behaviours;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.Random;
 
 import dataStructures.serializableGraph.SerializableSimpleGraph;
 import dataStructures.tuple.Couple;
@@ -50,6 +52,13 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
     	exitValue = 0;
     	myAgent.setGolemPosition(null);
         //myAgent.setStench(false);
+        myAgent.doWait(1000);
+        
+        // Initialiser la carte si nécessaire
+        if (myAgent.getMyMap() == null) {
+            myAgent.initMapRepresentation();
+        }
+
         
         Location myPosition = myAgent.getCurrentPosition();
         
@@ -61,8 +70,15 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
         // 2) Observer et mettre à jour la carte
         List<Couple<Location, List<Couple<Observation, String>>>> lobs = myAgent.observe();
         
-        String nextNodeId = myAgent.updateMap(lobs,myPosition);
+        // update map definie la destination
+        myAgent.updateMap(lobs,myPosition);
 
+        String nextNodeId = null;
+        
+        if (myAgent.getChemin() != null && !myAgent.getChemin().isEmpty()) {
+        	 nextNodeId = myAgent.getChemin().get(0);
+        }
+        		
         java.util.Map<String,String> nearbyAgents = myAgent.getAgentsNearby(lobs);
         
         java.util.Map<String,String> nearbyGolems = myAgent.getGolemsNearby(lobs);
@@ -77,34 +93,69 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
         }
         
         // 3) Vérifier si tous les noeuds ont été explorés
-        if (!myAgent.getMyMap().hasOpenNode()) {
-            System.out.println(myAgent.getLocalName() + " - Exploration successfully done, behaviour removed.");
-            exitValue = WUMPUS_DETECTED; // améliorer à la fin de la chasse
-            return;
+        if (!myAgent.getMyMap().hasOpenNode() && !myAgent.isExploFinished()) {
+            System.out.println(myAgent.getLocalName() + " - Exploration successfully done, now patrols.");
+            myAgent.setExploFinished(true);
+            //exitValue = WUMPUS_DETECTED; // améliorer à la fin de la chasse
         }
 
-        // 4) Déterminer le prochain noeud à atteindre
-        if (nextNodeId == null) {
-            // aucun noeud ouvert directement adjacent prendre le plus proche 
-            List<String> path = myAgent.getMyMap().getShortestPathToClosestOpenNode(myPosition.getLocationId());
-            if (path != null && !path.isEmpty()) {
-                nextNodeId = path.get(0);
-            } else {
-                return;
+        /// 4) Déterminer le prochain noeud à atteindre
+        if (nextNodeId == null || myAgent.getDestination() == null || myAgent.getDestination().equals(myPosition.getLocationId())) {
+
+            if (!myAgent.isExploFinished()) {
+                // Mode exploration : aller vers le nœud ouvert le plus proche
+                List<String> path = myAgent.getMyMap().getShortestPathToClosestOpenNode(myPosition.getLocationId());
+                if (path != null && !path.isEmpty()) {
+                    myAgent.setChemin(path);
+                    myAgent.setDestination(path.get(path.size() - 1));
+                    nextNodeId = path.get(0);
+                } else {
+                    // Plus de nœuds ouverts, exploration finie
+                    myAgent.setExploFinished(true);
+                }
+            }
+            
+            if (myAgent.isExploFinished()) {
+                // Mode patrouille : aller vers le noeud le plus vieux
+                String stalest = myAgent.getMyMap().getStalestNode(myPosition.getLocationId());
+                if (stalest != null) {
+                    List<String> path = myAgent.getMyMap().getShortestPath(myPosition.getLocationId(), stalest);
+                    if (path != null && !path.isEmpty()) {
+                        myAgent.setChemin(path);
+                        myAgent.setDestination(stalest);
+                        nextNodeId = path.get(0);
+                    }
+                }
             }
         }
         
         if (nearbyAgents.containsKey(nextNodeId)) { 
         	System.out.println(myAgent.getLocalName() + " - Recalcul d'un chemin.");
+    	    System.out.println(myAgent.getLocalName() + " next Node : "+ nextNodeId);
         	String string_pos = myPosition.getLocationId();
-        	List<String> path = myAgent.getMyMap().getShortestPathToClosestOpenNode(string_pos);
-        	if (path != null && path.size() > 1) {
+        	List<String> reserves = new ArrayList<>();
+        	reserves.add(nextNodeId);
+        	List<String> path = myAgent.getMyMap().getShortestPathWithBlockedNodes(string_pos,myAgent.getDestination(),reserves);
+        	if (path != null && path.size() >= 1) {
+        	    myAgent.setChemin(path);
         		nextNodeId = path.get(0);
         	} else { 
-        		while (nextNodeId.equals(myPosition))
-        			nextNodeId = (this.myAgent).getMyMap().getRandomNode();
-        		
-        	}
+        		List<String> openNodes = myAgent.getMyMap().getOpenNodes();
+        		if (!openNodes.isEmpty()) {
+        		    nextNodeId = openNodes.get(new Random().nextInt(openNodes.size()));
+        		}
+        	} 
+        	
+        	// v2 avec modif chemin
+        	/*
+        	
+        	List<String> chemin = myAgent.getMyMap().getShortestPathWithBlockedNodes(myPosition.getLocationId(), myAgent.getDestination(), reserves);
+        	if (chemin != null && !chemin.isEmpty()) {
+        	    myAgent.setChemin(chemin);
+        	    nextNodeId = chemin.get(0);
+        	} else {
+        	    System.out.println("Pas de chemin trouvé !");   
+        	} */
         }
         
         if (!nearbyGolems.isEmpty() || stenchDetected) {
@@ -118,24 +169,19 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
         }
         		
         		
-        myAgent.setLastPosition(myPosition);
-        myAgent.doWait(1000);
+        myAgent.setLastPosition(myPosition.getLocationId());
 
         // 5) Se déplacer vers le noeud sélectionné
-        myAgent.moveTo(new GsLocation(nextNodeId)); // rend un bool
+        if (myAgent.moveTo(new GsLocation(nextNodeId))) {
+            myAgent.getMyMap().markVisited(nextNodeId);
+            List<String> chemin = myAgent.getChemin();
+            if (chemin != null && !chemin.isEmpty()) {
+                chemin.remove(0);
+                myAgent.setChemin(chemin);
+            }
+        }    
     }
     
-    /**
-     * Vérifie si l'agent a bougé depuis le dernier cycle
-     */
-    private void checkIfMoved(String currentPositionId) {
-        boolean hasMoved = !currentPositionId.equals(myAgent.getLastPosition());
-        myAgent.setMoved(hasMoved);
-        
-        if (!hasMoved) {
-            System.out.println(myAgent.getLocalName() + " - STUCK : Did not move from " + currentPositionId);
-        }
-    }
     
     @Override
     public int onEnd() {

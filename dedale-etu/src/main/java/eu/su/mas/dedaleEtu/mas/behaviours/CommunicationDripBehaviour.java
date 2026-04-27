@@ -2,14 +2,17 @@ package eu.su.mas.dedaleEtu.mas.behaviours;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import dataStructures.serializableGraph.SerializableSimpleGraph;
 import eu.su.mas.dedaleEtu.mas.agents.dummies.AbstractAgent;
 import eu.su.mas.dedaleEtu.mas.knowledge.MapRepresentation.MapAttribute;
 import jade.core.AID;
 import jade.core.behaviours.OneShotBehaviour;
+import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.UnreadableException;
 
@@ -19,7 +22,7 @@ import jade.lang.acl.UnreadableException;
  * Gère : découverte initiale, partage de cartes, coordination Wumpus.
  * L'envoie des messages est défini dans MessageUtils
  */
-public class CommunicationDripBehaviour extends OneShotBehaviour {
+public class CommunicationDripBehaviour extends SimpleBehaviour {
     
     // ========== CONFIGURATION ==========
     private static final int PING_INTERVAL_MS = 5000;           // Ping toutes les 5 secondes
@@ -28,7 +31,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
     
     // ========== ATTRIBUTS ==========
     private AbstractAgent myAgent;
-    private List<String> list_agents;  // les receveurs pour les messages (depuis le sendMessage est en broadcast donc pas forcement utile)
+    private Set<AID> pendingMapFrom = new HashSet<>(); 
     
     // État statique pour persister entre les cycles FSM
     private static Map<String, AgentCommState> commStates = new HashMap<>();
@@ -66,12 +69,11 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
     
     // ========== CONSTRUCTEUR ==========
     
-    public CommunicationDripBehaviour(AbstractAgent agent, List<String> list_agents) {
+    public CommunicationDripBehaviour(AbstractAgent agent) {
         super(agent);
         this.myAgent = agent;
-        this.list_agents = list_agents;
         
-        // Initialiser l'état pour cet agent s'il n'existe pas
+        // Initialiser l'état pour cet agent 
         if (!commStates.containsKey(agent.getLocalName())) {
             commStates.put(agent.getLocalName(), new AgentCommState());
         }
@@ -82,11 +84,6 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
     @Override
     public void action() {
         AgentCommState state = getState();
-        
-        // 1. Initialiser la carte si nécessaire
-        if (myAgent.getMyMap() == null) {
-            myAgent.initMapRepresentation();
-        }
         
         // 2. Envoyer le PING initial (une seule fois au démarrage)
         if (!state.initialPingSent) {
@@ -105,7 +102,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
     /**
      * Traite tous les messages en attente dans la file
      */
-    private void processAllMessages(AgentCommState state) {
+    private boolean processAllMessages(AgentCommState state) {
         ACLMessage msg;
         int processedCount = 0;
         
@@ -119,6 +116,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         if (processedCount > 0) {
             System.out.println(myAgent.getLocalName() + " - Processed " + processedCount + " messages");
         }
+        return processedCount > 0;
     }
     
     /**
@@ -245,6 +243,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         if (shouldShareMapWith(sender, state)) {
         	myAgent.getCommService().sendMap(sender);
         	state.lastMapSentTime.put(sender, System.currentTimeMillis());
+            this.pendingMapFrom.add(sender); // on attend sa carte en retour
         }
     }
     
@@ -267,6 +266,8 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
             System.err.println(myAgent.getLocalName() + " - Error merging map from " + 
                              sender.getLocalName() + ": " + e.getMessage());
         }
+        this.pendingMapFrom.remove(sender);
+
     }
     
     
@@ -348,6 +349,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         
         if (now - state.lastPingTime >= PING_INTERVAL_MS) {
         	myAgent.getCommService().sendPing();
+            System.out.println("pinged");
             state.lastPingTime = now;
         }
     }
@@ -399,7 +401,6 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         System.out.println("Messages received: " + state.messagesReceived);
         System.out.println("Maps merged: " + state.mapsMerged);
         System.out.println("Wumpus alerts received: " + state.wumpusAlertsReceived);
-        System.out.println("Known agents: " + state.knownAgents.size() + "/" + (list_agents.size() - 1));
         System.out.println("================================================");
     }
     
@@ -417,4 +418,16 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         
         return 0;
     }
+
+	@Override
+	public boolean done() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	public void reset() {
+	    this.done = false;
+	    this.startTime = 0;
+	    this.exitCode = 0;
+	}
 }

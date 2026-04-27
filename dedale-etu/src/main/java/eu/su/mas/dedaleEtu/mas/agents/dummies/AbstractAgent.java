@@ -16,29 +16,28 @@ import eu.su.mas.dedaleEtu.mas.knowledge.ExtendedMapRepresentation;
 public abstract class AbstractAgent extends AbstractDedaleAgent {
 	
     private static final long serialVersionUID = 1L;
-
-	protected ExtendedMapRepresentation myMap;
-    
-	private boolean chasse = false; // false : Exploration sinon en chasse
 	
-	// variables pour connaitre le trajet de l'agent et pourquoi
+	// variables pour connaitre le trajet de l'agent
     protected String destination;
-    protected String myPosition;
-    protected boolean DestExplo;
-    protected boolean DestRandom;
-    protected boolean DestChasse;
+ 	protected List<String> chemin; 
+	protected String lastPosition = null;
+	
+	protected boolean exploFinished = false;
+    
+	// pour la chasse
+	private boolean chasse = false; // false : Exploration sinon en chasse
     protected String golemPosition = null;                   
-
-    // pour la connaissance et la communication
-    protected CommService commService;
-	protected int timer;
-    protected List<String> agentList = new ArrayList<>();
-    protected List<String> coalition = new ArrayList<>();
+    protected boolean stench;
     protected List<String> ListPosLibre = new ArrayList<>();                                                                                                                                   
     
-    // pour interblocage, savoir si l'on a bouger
-    protected boolean moved = true;
-	protected Location lastPosition = null;
+    // pour la connaissance et la communication
+	protected ExtendedMapRepresentation myMap;
+    protected CommService commService;
+	//protected int timer;
+    protected List<String> agentList = new ArrayList<>();
+    protected List<String> coalition = new ArrayList<>();
+    
+    
 	
 	
 	
@@ -66,23 +65,38 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
 	    this.commService = new CommService(this);
 	}
 	
+	public String getDestination() {
+		return destination;
+	}
+	
+	// le chemin devient directement le plus cours vers la destination
+	public void setDestination(String node) {
+		this.destination = node;
+		if (this.destination != null)
+			this.setChemin(myMap.getShortestPath(this.getCurrentPosition().getLocationId(),node));
+	}
+	
+	public List<String> getChemin() {
+		return chemin;
+	}
+
+
+	public void setChemin(List<String> chemin) {
+		this.chemin = chemin;
+	}
+	
+	public boolean isExploFinished() {
+		return exploFinished;
+	}
+
+
+	public void setExploFinished(boolean exploFinished) {
+		this.exploFinished = exploFinished;
+	}
+
+
 	public CommService getCommService() {
 		return this.commService;
-	}
-	
-	
-	public int getTimer() {
-		return timer;
-	}
-	
-	
-	public void decreaseWait() {
-		this.timer = this.timer - 1;
-	}
-
-
-	public void setTimer(int timer) {
-		this.timer = timer;
 	}
 	
 	public List<String> getAgentList() {
@@ -98,23 +112,13 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
 	}
 	
 	
-	public boolean hasMoved() {
-		return moved;
-	}
-	
-	
-	public void setMoved(boolean moved) {
-		this.moved = moved;
-	}
-	
-	
-	public Location getLastPosition() {
+	public String getLastPosition() {
 		return lastPosition;
 	}
 	
 	
-	public void setLastPosition(Location lastPosition) {
-		this.lastPosition = lastPosition;
+	public void setLastPosition(String avantPos) {
+		this.lastPosition = avantPos;
 	}
 	
 	public void setGolemPosition(String pos) {
@@ -123,8 +127,18 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
 	                                           
 	public String getGolemPosition() {       
 	 	return this.golemPosition;           
-	}                                        
+	}            
 	
+	public boolean isStench() {
+		return stench;
+	}
+
+
+	public void setStench(boolean stench) {
+		this.stench = stench;
+	}
+
+
 	public Map<String,String> getGolemsNearby (List<Couple<Location, List<Couple<Observation, String>>>> lobs) {
         Map<String, String> golems = new HashMap<>();
 		for (Couple<Location, List<Couple<Observation, String>>> obs : lobs) {
@@ -152,7 +166,8 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
         return neighbors;
     }
 	
-    public String updateMap(List<Couple<Location, List<Couple<Observation, String>>>> lobs, Location myPosition){
+	// regarde les environs, update et choisis un nouveau noeud comme destination
+    public void updateMap(List<Couple<Location, List<Couple<Observation, String>>>> lobs, Location myPosition){
     	String nextNodeId = null;
         for (Couple<Location, List<Couple<Observation, String>>> c : lobs) {
         	
@@ -165,7 +180,8 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
                 }
             }
         }
-		return nextNodeId;
+        if (nextNodeId != null)
+        	this.setDestination(nextNodeId);
     }
     
     //@Override
@@ -189,4 +205,5 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
 	                                                           
 	public void clearListPosLibre() {                          
 	    this.ListPosLibre.clear();                             
-	} }                                                         
+	} 
+}                                                         

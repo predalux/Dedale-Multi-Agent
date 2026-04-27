@@ -34,6 +34,9 @@ import eu.su.mas.dedale.env.Observation;
 import java.util.*;
 
 public class ExtendedMapRepresentation extends MapRepresentation {
+	
+	private final Map<String, Long> lastVisitTime = new HashMap<>();
+
 
     public ExtendedMapRepresentation(String agentName) {
         super(agentName);
@@ -43,10 +46,28 @@ public class ExtendedMapRepresentation extends MapRepresentation {
 	    return this.g;
 	}
     
+    public void markVisited(String nodeId) {
+        lastVisitTime.put(nodeId, System.currentTimeMillis());
+    }
+    
     
     public Node getNode(String idTo) {
 	    return this.g.getNode(idTo);
 	}
+    
+    public String getStalestNode(String currentNodeId) {
+        return this.g.nodes()
+            .map(Node::getId)
+            .filter(id -> !id.equals(currentNodeId))
+            .min(Comparator.comparingLong(id -> lastVisitTime.getOrDefault(id, 0L)))
+            .orElse(null);
+    }
+    
+    public Set<String> getAllNodeIds() {
+        return this.g.nodes()
+            .map(Node::getId)
+            .collect(Collectors.toSet());
+    }
     
     
     public String getRandomNode() {
@@ -87,12 +108,12 @@ public class ExtendedMapRepresentation extends MapRepresentation {
  	    Graph tempGraph = new SingleGraph("temp");
  	    // Copier les noeuds
  	    g.nodes().forEach(n -> {
- 	        if (!blockedNodes.contains(n.getId())) {
- 	            Node nn = tempGraph.addNode(n.getId());
+ 	    	if (!blockedNodes.contains(n.getId()) || n.getId().equals(idTo)) {
+ 	    		Node nn = tempGraph.addNode(n.getId());
  	            nn.setAttribute("ui.class", n.getAttribute("ui.class"));
  	        }
  	    });
- 	    // Copier les aretes entre noeuds autorisÃ©s
+ 	    // Copier les aretes entre noeuds autorisés
  	    g.edges().forEach(e -> {
  	        Node src = e.getSourceNode();
  	        Node tgt = e.getTargetNode();

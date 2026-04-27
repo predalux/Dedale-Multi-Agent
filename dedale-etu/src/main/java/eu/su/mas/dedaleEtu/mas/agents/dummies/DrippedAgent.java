@@ -20,6 +20,17 @@ public class DrippedAgent extends AbstractAgent {
 	private static final String COMM = "COMM";
 	private static final String HUNT = "HUNT";
 	private FSMBehaviour fsm;
+	
+	
+	// rajouter le cas où le golem à bouger (pos = golem pos) on repart en explo.
+    // explo doit pouvoir explorer meme quand graphe totalement finito
+    // tester la chasse avec un golem qui bouge bruh
+    // implementer la propagation de l'annonce
+    // coalition
+    // determiner comment bien encercler
+    // voir pour communiquer lors du deadlock
+	
+	
 
 	
 	/**
@@ -39,8 +50,8 @@ public class DrippedAgent extends AbstractAgent {
 		
 	    // liste des destinataires
 		List<String> receivers = new ArrayList<String>();
-		receivers.add("Drip1");
-		receivers.add("Drip2");
+		this.addAgentList("Drip1");
+		this.addAgentList("Drip2");
 		//receivers.add("Drip3");
 		//receivers.add("Drip4");
 		//receivers.add("Drip5");
@@ -54,8 +65,8 @@ public class DrippedAgent extends AbstractAgent {
 		 * 
 		 ************************************************/
 		
-		fsm.registerFirstState(new CommunicationDripBehaviour(this,receivers), EXPLO);
-		fsm.registerState(new ExplorationDripBehaviour(this), COMM);
+		fsm.registerFirstState(new ExplorationDripBehaviour(this), EXPLO);
+		fsm.registerState(new CommunicationDripBehaviour(this), COMM);
 		//fsm.registerState(new MovementDripBehaviour(this), C);
 		fsm.registerState(new HuntDripBehaviour(this), HUNT);
 
@@ -79,6 +90,8 @@ public class DrippedAgent extends AbstractAgent {
 	    lb.add(fsm);
 	    
         // Ajout du behaviour de dÃ©marrage.
+	    
+	    this.doWait(2000);
 		addBehaviour(new StartMyBehaviours(this,lb));
 		
 		System.out.println("the agent"+this.getLocalName()+ " is started");
@@ -101,6 +114,7 @@ public class DrippedAgent extends AbstractAgent {
 		super.afterMove();
 		//System.out.println("I migrated");
 	}
+
 	
 	
 }
