@@ -868,3 +868,82 @@
  	 detection radius: 0
  	 Expertise: [<Strength, 1>, <LockPicking, 1>]
  	 UserParameters: [param1]
+01:42:19.040 [GK] INFO  - Loading configuration for environment MultiTypesV2
+01:42:19.042 [GK] INFO  - Generator type:MANUAL
+01:42:21.048 [Drip2] INFO  - Entity Drip2 deployed in 1
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:42:21.050 [Drip1] INFO  - Entity Drip1 deployed in 27
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:42:56.313 [GK] INFO  - Loading configuration for environment MultiTypesV2
+01:42:56.314 [GK] INFO  - Generator type:MANUAL
+01:42:58.389 [Drip2] INFO  - Entity Drip2 deployed in 25
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:42:58.390 [Drip1] INFO  - Entity Drip1 deployed in 31
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:44:29.124 [GK] INFO  - Loading configuration for environment MultiTypesV2
+01:44:29.125 [GK] INFO  - Generator type:MANUAL
+01:44:31.121 [Drip2] INFO  - Entity Drip2 deployed in 6
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:44:31.122 [Drip1] INFO  - Entity Drip1 deployed in 22
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:44:54.414 [Drip1] ERROR - Drip1 - moveTo : target [39] is not reachable from current position [35]

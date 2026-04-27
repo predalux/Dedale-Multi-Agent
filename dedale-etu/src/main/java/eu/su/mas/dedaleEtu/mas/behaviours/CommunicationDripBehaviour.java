@@ -2,17 +2,14 @@ package eu.su.mas.dedaleEtu.mas.behaviours;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import dataStructures.serializableGraph.SerializableSimpleGraph;
 import eu.su.mas.dedaleEtu.mas.agents.dummies.AbstractAgent;
 import eu.su.mas.dedaleEtu.mas.knowledge.MapRepresentation.MapAttribute;
 import jade.core.AID;
 import jade.core.behaviours.OneShotBehaviour;
-import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.UnreadableException;
 
@@ -22,7 +19,7 @@ import jade.lang.acl.UnreadableException;
  * Gère : découverte initiale, partage de cartes, coordination Wumpus.
  * L'envoie des messages est défini dans MessageUtils
  */
-public class CommunicationDripBehaviour extends SimpleBehaviour {
+public class CommunicationDripBehaviour extends OneShotBehaviour {
     
     // ========== CONFIGURATION ==========
     private static final int PING_INTERVAL_MS = 5000;           // Ping toutes les 5 secondes
@@ -31,7 +28,6 @@ public class CommunicationDripBehaviour extends SimpleBehaviour {
     
     // ========== ATTRIBUTS ==========
     private AbstractAgent myAgent;
-    private Set<AID> pendingMapFrom = new HashSet<>(); 
     
     // État statique pour persister entre les cycles FSM
     private static Map<String, AgentCommState> commStates = new HashMap<>();
@@ -243,7 +239,6 @@ public class CommunicationDripBehaviour extends SimpleBehaviour {
         if (shouldShareMapWith(sender, state)) {
         	myAgent.getCommService().sendMap(sender);
         	state.lastMapSentTime.put(sender, System.currentTimeMillis());
-            this.pendingMapFrom.add(sender); // on attend sa carte en retour
         }
     }
     
@@ -266,8 +261,6 @@ public class CommunicationDripBehaviour extends SimpleBehaviour {
             System.err.println(myAgent.getLocalName() + " - Error merging map from " + 
                              sender.getLocalName() + ": " + e.getMessage());
         }
-        this.pendingMapFrom.remove(sender);
-
     }
     
     
@@ -418,16 +411,4 @@ public class CommunicationDripBehaviour extends SimpleBehaviour {
         
         return 0;
     }
-
-	@Override
-	public boolean done() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
-	public void reset() {
-	    this.done = false;
-	    this.startTime = 0;
-	    this.exitCode = 0;
-	}
 }
