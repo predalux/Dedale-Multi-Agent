@@ -30,21 +30,20 @@ import jade.lang.acl.UnreadableException;
 import jade.util.leap.Map;
 
 public class ExplorationDripBehaviour extends OneShotBehaviour {
-    private ExtendedMapRepresentation myMap;
-    private AbstractAgent myAgent;
-
     
-    // Codes de retour pour le FSM
-    public static final int CONTINUE_EXPLORATION = 0;
-    public static final int WUMPUS_DETECTED = 1;
-    public static final int EXPLORATION_COMPLETE = 2;
+	private AbstractAgent myAgent;
+    
+    // codes de retour pour le FSM
+    public static final int CONTINUE_EXPLORATION = 0; // explore
+    public static final int WUMPUS_DETECTED = 1;	  // chasse
+    
+    //public static final int EXPLORATION_COMPLETE = 2; // directement intégrer dans l'exploration
     
     private int exitValue = CONTINUE_EXPLORATION;
 
     public ExplorationDripBehaviour(AbstractAgent agent) {
         super(agent);
         this.myAgent = agent;
-        this.myMap = myAgent.getMyMap();
     }
 
     @Override
@@ -96,7 +95,6 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
         if (!myAgent.getMyMap().hasOpenNode() && !myAgent.isExploFinished()) {
             System.out.println(myAgent.getLocalName() + " - Exploration successfully done, now patrols.");
             myAgent.setExploFinished(true);
-            //exitValue = WUMPUS_DETECTED; // améliorer à la fin de la chasse
         }
 
         /// 4) Déterminer le prochain noeud à atteindre
@@ -129,6 +127,7 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
             }
         }
         
+        // eviter de se bloquer avec un autre agent
         if (nearbyAgents.containsKey(nextNodeId)) { 
         	System.out.println(myAgent.getLocalName() + " - Recalcul d'un chemin.");
     	    System.out.println(myAgent.getLocalName() + " next Node : "+ nextNodeId);
@@ -158,12 +157,13 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
         	} */
         }
         
+        // si on trouve un golem ou de la stench
         if (!nearbyGolems.isEmpty() || stenchDetected) {
             // Broadcaster si golem visible
             if (!nearbyGolems.isEmpty()) {
                 myAgent.getCommService().broadcastWumpusPosition(nearbyGolems.keySet().iterator().next());
+    		    System.out.println(myAgent.getLocalName() + " a trouvé le GOLEM ");
             }
-		    System.out.println(myAgent.getLocalName() + " a trouvé le GOLEM ");
             exitValue = WUMPUS_DETECTED; // transition vers chasse
             return;
         }
@@ -186,6 +186,7 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
     @Override
     public int onEnd() {
         // Retourne le code de transition pour le FSM
+        myAgent.setEtat(exitValue);
         return exitValue;
     }
 }

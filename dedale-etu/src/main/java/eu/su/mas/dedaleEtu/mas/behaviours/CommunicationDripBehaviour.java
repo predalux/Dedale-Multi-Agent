@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import dataStructures.serializableGraph.SerializableSimpleGraph;
+import eu.su.mas.dedale.env.Location;
 import eu.su.mas.dedaleEtu.mas.agents.dummies.AbstractAgent;
 import eu.su.mas.dedaleEtu.mas.knowledge.MapRepresentation.MapAttribute;
 import jade.core.AID;
@@ -23,8 +24,10 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
     
     // ========== CONFIGURATION ==========
     private static final int PING_INTERVAL_MS = 5000;           // Ping toutes les 5 secondes
+    private static final int PONG_WAIT_MS = 5000;           // Attente en ayant recu un pong
     private static final int MAP_SHARE_COOLDOWN_MS = 3000;      // Cooldown entre partages
     private static final int MAX_MESSAGES_PER_CYCLE = 10;       // Évite le blocage
+    
     
     // ========== ATTRIBUTS ==========
     private AbstractAgent myAgent;
@@ -41,7 +44,6 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         long lastPingTime;
         Map<AID, Long> lastMapSentTime;
         Map<AID, Long> lastMapReceivedTime;
-        Map<AID, Boolean> knownAgents;  // Agents découverts via PING/PONG
         boolean initialPingSent;
         
         // Statistiques
@@ -54,7 +56,6 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
             this.lastPingTime = 0;
             this.lastMapSentTime = new HashMap<>();
             this.lastMapReceivedTime = new HashMap<>();
-            this.knownAgents = new HashMap<>();
             this.initialPingSent = false;
             this.messagesSent = 0;
             this.messagesReceived = 0;
@@ -79,6 +80,10 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
     
     @Override
     public void action() {
+    	
+    	Location myPosition = (Location) myAgent.getCurrentPosition();
+        if (myPosition == null) return;
+
         AgentCommState state = getState();
         
         // 2. Envoyer le PING initial (une seule fois au démarrage)
@@ -122,8 +127,6 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         AID sender = msg.getSender();
         String protocol = msg.getProtocol();
         
-        // Enregistrer l'agent comme connu
-        state.knownAgents.put(sender, true);
         
         // Router selon le performatif et protocole
         switch (msg.getPerformative()) {
@@ -240,6 +243,8 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         	myAgent.getCommService().sendMap(sender);
         	state.lastMapSentTime.put(sender, System.currentTimeMillis());
         }
+        
+        myAgent.doWait(PONG_WAIT_MS);
     }
     
     /**
@@ -249,7 +254,8 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         try {
             SerializableSimpleGraph<String, MapAttribute> receivedGraph =
                 (SerializableSimpleGraph<String, MapAttribute>) msg.getContentObject();
-            
+            System.out.println(myAgent.getLocalName() + " - MERGED MAP from " + sender.getLocalName());
+
             myAgent.getMyMap().mergeMap(receivedGraph);
             
             state.lastMapReceivedTime.put(sender, System.currentTimeMillis());
@@ -342,14 +348,11 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         
         if (now - state.lastPingTime >= PING_INTERVAL_MS) {
         	myAgent.getCommService().sendPing();
-            System.out.println("pinged");
+            //System.out.println("pinged");
             state.lastPingTime = now;
         }
     }
-    
-    
-    // ========== MÉTHODES UTILITAIRES ==========
-    
+        
     /**
      * Détermine si on doit partager notre carte avec un agent
      */
@@ -369,18 +372,6 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
      */
     private AgentCommState getState() {
         return commStates.get(myAgent.getLocalName());
-    }
-    
-    /**
-     * Demande coordonnée de blocage d'un nœud
-     */
-   
-    
-    /**
-     * Obtient le nombre d'agents découverts
-     */
-    public int getKnownAgentsCount() {
-        return getState().knownAgents.size();
     }
     
     /**
@@ -406,9 +397,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
     
     @Override
     public int onEnd() {
-        // Passer en chasse si golem connu ou stench détectée
-        if (myAgent.getGolemPosition() != null ) return 1; // || myAgent.getStench())
-        
-        return 0;
+        // Passer en chasse si golem connu ou stench détectée        
+        return myAgent.getEtat();
     }
 }

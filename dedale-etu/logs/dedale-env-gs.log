@@ -947,3 +947,553 @@
  	 Expertise: [<Strength, 1>, <LockPicking, 1>]
  	 UserParameters: [param1]
 01:44:54.414 [Drip1] ERROR - Drip1 - moveTo : target [39] is not reachable from current position [35]
+19:13:54.368 [GK] ERROR - Loading the graph - File not found, check the path: resources/interlocking/mapInterlocking2-topology
+19:14:27.707 [GK] ERROR - Loading the graph - File not found, check the path: resources/interlocking/mapInterlocking2-topology
+19:14:50.766 [GK] INFO  - Loading configuration for environment MultiTypesV2
+19:14:50.767 [GK] INFO  - Generator type:MANUAL
+19:14:53.981 [Golem] INFO  - Entity Golem deployed in 41
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+19:14:54.001 [Drip1] INFO  - Entity Drip1 deployed in 21
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+19:14:54.002 [Drip2] INFO  - Entity Drip2 deployed in 18
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+19:15:18.771 [GK] INFO  - Loading configuration for environment MultiTypesV2
+19:15:18.776 [GK] INFO  - Generator type:MANUAL
+19:15:20.733 [Golem] INFO  - Entity Golem deployed in h6
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+19:15:20.741 [Drip1] INFO  - Entity Drip1 deployed in 99
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+19:15:20.749 [Drip2] INFO  - Entity Drip2 deployed in M18
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+19:15:42.151 [Drip2] ERROR - Drip2 - moveTo : target [M13] is not reachable from current position [4]
+19:15:42.206 [Drip1] ERROR - Drip1 - moveTo : target [71] is not reachable from current position [3]
+19:15:42.284 [Drip2] ERROR - Drip2 - moveTo : target [M13] is not reachable from current position [4]
+19:15:43.281 [Drip1] ERROR - Drip1 - moveTo : target [71] is not reachable from current position [3]
+19:15:43.337 [Drip2] ERROR - Drip2 - moveTo : target [54] is not reachable from current position [4]
+19:15:44.286 [Drip1] ERROR - Drip1 - moveTo : target [73] is not reachable from current position [3]
+19:15:44.339 [Drip2] ERROR - Drip2 - moveTo : target [M1] is not reachable from current position [4]
+19:15:45.298 [Drip1] ERROR - Drip1 - moveTo : target [51] is not reachable from current position [3]
+19:15:45.349 [Drip2] ERROR - Drip2 - moveTo : target [70] is not reachable from current position [4]
+19:15:46.308 [Drip1] ERROR - Drip1 - moveTo : target [66] is not reachable from current position [3]
+19:15:46.355 [Drip2] ERROR - Drip2 - moveTo : target [M35] is not reachable from current position [4]
+19:15:47.316 [Drip1] ERROR - Drip1 - moveTo : target [54] is not reachable from current position [3]
+19:15:47.321 [Drip2] ERROR - Drip2 - moveTo : target [M35] is not reachable from current position [4]
+19:15:47.332 [Drip1] ERROR - Drip1 - moveTo : target [12] is not reachable from current position [3]
+19:15:47.378 [Drip2] ERROR - Drip2 - moveTo : target [M35] is not reachable from current position [4]
+19:16:12.539 [Drip1] ERROR - Drip1 - moveTo : target [19] is not reachable from current position [M9]
+19:16:13.566 [Drip1] ERROR - Drip1 - moveTo : target [M19] is not reachable from current position [M9]
+19:16:13.567 [Drip2] ERROR - Drip2 - moveTo : target [35] is not reachable from current position [M30]
+19:16:14.570 [Drip1] ERROR - Drip1 - moveTo : target [h40] is not reachable from current position [M9]
+19:16:14.571 [Drip2] ERROR - Drip2 - moveTo : target [M15] is not reachable from current position [M30]
+19:16:14.579 [Drip1] ERROR - Drip1 - moveTo : target [74] is not reachable from current position [M9]
+19:16:45.899 [Drip2] ERROR - Drip2 - moveTo : target [h6] is not reachable from current position [h22]
+19:16:46.909 [Drip2] ERROR - Drip2 - moveTo : target [h6] is not reachable from current position [h22]
+19:16:47.909 [Drip2] ERROR - Drip2 - moveTo : target [h6] is not reachable from current position [h22]
+19:16:48.911 [Drip2] ERROR - Drip2 - moveTo : target [h6] is not reachable from current position [h22]
+19:16:49.917 [Drip2] ERROR - Drip2 - moveTo : target [h6] is not reachable from current position [h22]
+19:16:50.923 [Drip2] ERROR - Drip2 - moveTo : target [h6] is not reachable from current position [h22]
+19:16:51.961 [Drip2] ERROR - Drip2 - moveTo : target [h6] is not reachable from current position [h22]
+19:16:52.962 [Drip2] ERROR - Drip2 - moveTo : target [h6] is not reachable from current position [h22]
+19:16:53.966 [Drip2] ERROR - Drip2 - moveTo : target [h6] is not reachable from current position [h22]
+19:16:54.975 [Drip2] ERROR - Drip2 - moveTo : target [h6] is not reachable from current position [h22]
+19:16:55.979 [Drip2] ERROR - Drip2 - moveTo : target [h6] is not reachable from current position [h22]
+19:16:56.982 [Drip2] ERROR - Drip2 - moveTo : target [h6] is not reachable from current position [h22]
+19:17:01.996 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:02.999 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:04.002 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:05.004 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:06.005 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:07.007 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:08.010 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:09.013 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:10.017 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:11.018 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:12.020 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:13.027 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:14.030 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:15.033 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:16.034 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:17.036 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:18.040 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:19.043 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:20.044 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:21.047 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:22.048 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:23.051 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:24.054 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:25.055 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:26.057 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:27.059 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:28.063 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:29.065 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:30.067 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:31.074 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:32.082 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:33.096 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:34.099 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:35.100 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:36.102 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:37.105 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:38.115 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:39.116 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:40.117 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:41.118 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:42.124 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:43.126 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:44.127 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:45.127 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:46.129 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:47.130 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:48.133 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:49.133 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:50.135 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:51.137 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:52.139 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:53.142 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:54.143 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:55.145 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:56.146 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:57.147 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:58.153 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:59.154 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:17:59.246 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h21]
+19:18:01.264 [Drip2] ERROR - Drip2 - moveTo : target [h8] is not reachable from current position [h21]
+19:18:02.268 [Drip2] ERROR - Drip2 - moveTo : target [h8] is not reachable from current position [h21]
+19:18:03.279 [Drip2] ERROR - Drip2 - moveTo : target [h8] is not reachable from current position [h21]
+19:18:03.296 [Drip1] ERROR - Drip1 - moveTo : target [h1] is not reachable from current position [h20]
+19:18:03.300 [Drip2] ERROR - Drip2 - moveTo : target [h8] is not reachable from current position [h21]
+19:18:03.311 [Drip1] ERROR - Drip1 - moveTo : target [h25] is not reachable from current position [h20]
+19:18:04.310 [Drip2] ERROR - Drip2 - moveTo : target [h8] is not reachable from current position [h21]
+19:18:04.323 [Drip1] ERROR - Drip1 - moveTo : target [h1] is not reachable from current position [h20]
+19:18:04.325 [Drip2] ERROR - Drip2 - moveTo : target [h8] is not reachable from current position [h21]
+19:18:04.327 [Drip1] ERROR - Drip1 - moveTo : target [h8] is not reachable from current position [h20]
+19:18:08.338 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h20]
+19:18:09.340 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h20]
+19:18:09.347 [Drip2] ERROR - Drip2 - moveTo : target [h1] is not reachable from current position [h20]
+19:18:10.352 [Drip1] ERROR - Drip1 - moveTo : target [h2] is not reachable from current position [h26]
+19:18:11.358 [Drip1] ERROR - Drip1 - moveTo : target [h2] is not reachable from current position [h26]
+19:18:12.359 [Drip1] ERROR - Drip1 - moveTo : target [h2] is not reachable from current position [h26]
+19:18:13.374 [Drip1] ERROR - Drip1 - moveTo : target [h2] is not reachable from current position [h26]
+19:18:14.377 [Drip1] ERROR - Drip1 - moveTo : target [h2] is not reachable from current position [h26]
+19:18:15.393 [Drip1] ERROR - Drip1 - moveTo : target [h2] is not reachable from current position [h26]
+19:18:16.398 [Drip1] ERROR - Drip1 - moveTo : target [h2] is not reachable from current position [h26]
+19:18:17.400 [Drip1] ERROR - Drip1 - moveTo : target [h2] is not reachable from current position [h26]
+19:18:18.401 [Drip1] ERROR - Drip1 - moveTo : target [h2] is not reachable from current position [h26]
+19:18:19.403 [Drip1] ERROR - Drip1 - moveTo : target [h2] is not reachable from current position [h26]
+19:18:20.406 [Drip1] ERROR - Drip1 - moveTo : target [h2] is not reachable from current position [h26]
+19:18:21.408 [Drip1] ERROR - Drip1 - moveTo : target [h2] is not reachable from current position [h26]
+19:21:58.842 [GK] INFO  - Loading configuration for environment MultiTypesV2
+19:21:58.842 [GK] INFO  - Generator type:MANUAL
+19:22:00.192 [Golem] INFO  - Entity Golem deployed in 43
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+19:22:47.667 [GK] INFO  - Loading configuration for environment MultiTypesV2
+19:22:47.668 [GK] INFO  - Generator type:MANUAL
+19:22:49.519 [Golem] INFO  - Entity Golem deployed in h15
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+19:29:43.603 [GK] INFO  - Loading configuration for environment MultiTypesV2
+19:29:43.604 [GK] INFO  - Generator type:MANUAL
+19:29:45.708 [Golem] INFO  - Entity Golem deployed in h1
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+19:29:57.188 [GK] INFO  - Loading configuration for environment MultiTypesV2
+19:29:57.191 [GK] INFO  - Generator type:MANUAL
+19:29:58.928 [Golem] INFO  - Entity Golem deployed in M18
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+19:32:50.911 [GK] INFO  - Loading configuration for environment MultiTypesV2
+19:32:50.912 [GK] INFO  - Generator type:MANUAL
+19:32:52.839 [Golem] INFO  - Entity Golem deployed in 33
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+19:32:52.843 [Drip2] INFO  - Entity Drip2 deployed in 15
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+19:32:52.856 [Drip1] INFO  - Entity Drip1 deployed in 59
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+19:59:20.719 [GK] INFO  - Loading configuration for environment MultiTypesV2
+19:59:20.720 [GK] INFO  - Generator type:MANUAL
+19:59:22.384 [Golem] INFO  - Entity Golem deployed in M35
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+19:59:22.737 [Drip2] INFO  - Entity Drip2 deployed in h25
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+19:59:22.742 [Drip1] INFO  - Entity Drip1 deployed in 78
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:28:55.444 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:28:55.445 [GK] INFO  - Generator type:MANUAL
+21:28:57.669 [Golem] INFO  - Entity Golem deployed in 90
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+21:28:57.678 [Drip2] INFO  - Entity Drip2 deployed in 45
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:28:57.680 [Drip1] INFO  - Entity Drip1 deployed in 96
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:30:55.980 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:30:55.982 [GK] INFO  - Generator type:MANUAL
+21:30:57.284 [Golem] INFO  - Entity Golem deployed in 18
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+21:30:57.934 [Drip1] INFO  - Entity Drip1 deployed in M1
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:30:58.018 [Drip2] INFO  - Entity Drip2 deployed in 61
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:51:22.762 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:51:22.763 [GK] INFO  - Generator type:MANUAL
+21:51:24.692 [Golem] INFO  - Entity Golem deployed in 4
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+21:51:24.799 [Drip2] INFO  - Entity Drip2 deployed in M4
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:51:24.809 [Drip1] INFO  - Entity Drip1 deployed in 18
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:51:56.473 [Drip1] ERROR - Drip1 - moveTo : target [11] is not reachable from current position [7]
+21:51:57.512 [Drip1] ERROR - Drip1 - moveTo : target [M12] is not reachable from current position [7]
+21:51:58.525 [Drip1] ERROR - Drip1 - moveTo : target [4] is not reachable from current position [7]
+21:51:59.526 [Drip1] ERROR - Drip1 - moveTo : target [70] is not reachable from current position [7]
+21:52:00.536 [Drip1] ERROR - Drip1 - moveTo : target [M26] is not reachable from current position [7]
+21:52:01.487 [Drip1] ERROR - Drip1 - moveTo : target [62] is not reachable from current position [7]
+21:53:15.265 [Drip2] ERROR - Drip2 - moveTo : target [70] is not reachable from current position [M1]
+21:58:47.993 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:58:47.995 [GK] INFO  - Generator type:MANUAL
+21:58:49.747 [Golem] INFO  - Entity Golem deployed in 52
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+21:58:49.937 [Drip2] INFO  - Entity Drip2 deployed in 96
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:58:49.938 [Drip1] INFO  - Entity Drip1 deployed in M11
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:58:55.118 [Drip2] ERROR - Drip2 - moveTo : target [11] is not reachable from current position [50]
+21:58:56.067 [Drip1] ERROR - Drip1 - moveTo : target [M10] is not reachable from current position [42]
+21:58:56.078 [Drip1] ERROR - Drip1 - moveTo : target [M16] is not reachable from current position [42]
+21:58:57.214 [Drip2] ERROR - Drip2 - moveTo : target [M2] is not reachable from current position [50]
+21:58:58.220 [Drip2] ERROR - Drip2 - moveTo : target [M10] is not reachable from current position [50]
+21:58:59.229 [Drip2] ERROR - Drip2 - moveTo : target [M12] is not reachable from current position [50]
+21:59:00.236 [Drip2] ERROR - Drip2 - moveTo : target [M10] is not reachable from current position [50]
+21:59:01.191 [Drip2] ERROR - Drip2 - moveTo : target [M10] is not reachable from current position [50]
+21:59:01.200 [Drip1] ERROR - Drip1 - moveTo : target [M16] is not reachable from current position [42]
+21:59:02.221 [Drip1] ERROR - Drip1 - moveTo : target [M16] is not reachable from current position [42]
+21:59:03.227 [Drip1] ERROR - Drip1 - moveTo : target [11] is not reachable from current position [42]
+21:59:04.233 [Drip1] ERROR - Drip1 - moveTo : target [M2] is not reachable from current position [42]
+21:59:05.255 [Drip1] ERROR - Drip1 - moveTo : target [M16] is not reachable from current position [42]
+21:59:06.216 [Drip1] ERROR - Drip1 - moveTo : target [M2] is not reachable from current position [42]
+21:59:27.347 [Drip2] ERROR - Drip2 - moveTo : target [M30] is not reachable from current position [14]
+21:59:27.354 [Drip1] ERROR - Drip1 - moveTo : target [M30] is not reachable from current position [15]
+21:59:28.369 [Drip1] ERROR - Drip1 - moveTo : target [M20] is not reachable from current position [15]
+21:59:29.371 [Drip1] ERROR - Drip1 - moveTo : target [28] is not reachable from current position [15]
+21:59:30.376 [Drip1] ERROR - Drip1 - moveTo : target [M12] is not reachable from current position [15]
+21:59:31.380 [Drip1] ERROR - Drip1 - moveTo : target [M21] is not reachable from current position [15]
+21:59:31.383 [Drip1] ERROR - Drip1 - moveTo : target [M30] is not reachable from current position [15]
+21:59:31.391 [Drip2] ERROR - Drip2 - moveTo : target [80] is not reachable from current position [14]
+21:59:32.402 [Drip2] ERROR - Drip2 - moveTo : target [M34] is not reachable from current position [14]
+21:59:32.409 [Drip2] ERROR - Drip2 - moveTo : target [M20] is not reachable from current position [14]
+21:59:42.490 [Drip2] ERROR - Drip2 - moveTo : target [M3] is not reachable from current position [81]
+22:00:07.750 [Drip2] ERROR - Drip2 - moveTo : target [M16] is not reachable from current position [M9]
+22:09:39.950 [GK] INFO  - Loading configuration for environment MultiTypesV2
+22:09:39.951 [GK] INFO  - Generator type:MANUAL
+22:09:41.367 [Golem] INFO  - Entity Golem deployed in M11
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+22:09:41.926 [Drip1] INFO  - Entity Drip1 deployed in 49
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+22:09:41.929 [Drip2] INFO  - Entity Drip2 deployed in 32
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]

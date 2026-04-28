@@ -49,8 +49,6 @@ public class CommService {
         myAgent.setDestination(null); // àfin de l'arreter
     }
 
-    // ========== CARTE ==========
-
     public void sendMap(AID receiver) {
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
         msg.setProtocol("SHARE-TOPO");
@@ -74,9 +72,11 @@ public class CommService {
     public void broadcastWumpusPosition(String location) {
     	long now = System.currentTimeMillis();
         
-        if (now - this.lastBroadcast >= 5000) {
-            this.lastBroadcast = now;
+        if (now - this.lastBroadcast <= 4000) {
+        	return;
         }
+        this.lastBroadcast = now;
+        
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
         msg.setProtocol("WUMPUS-LOCATION");
         msg.setSender(myAgent.getAID());
@@ -90,7 +90,7 @@ public class CommService {
     }
 
     /**
-     * Envoie la position du Wumpus à un seul agent (ex: lors d'un PONG)
+     * Envoie la position du Wumpus à un seul agent
      */
     public void sendWumpusLocation(String location, AID receiver) {
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
