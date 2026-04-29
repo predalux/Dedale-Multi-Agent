@@ -54,7 +54,6 @@ public class HuntDripBehaviour extends OneShotBehaviour {
         if (myPosition == null) return;
 
         String currentNodeId = myPosition.getLocationId();
-        myAgent.getMyMap().markVisited(currentNodeId);
         List<Couple<Location, List<Couple<Observation, String>>>> lobs = myAgent.observe();
 
         boolean stenchDetected = false;
@@ -87,26 +86,24 @@ public class HuntDripBehaviour extends OneShotBehaviour {
                 }
             }
 
-            if (!node.equals(currentNodeId)) {
-                myAgent.getMyMap().addEdge(currentNodeId, node);
-            }
-
             if (!hasAgent) {
                 voisinsLibres.add(node);
                 if (hasStench) voisinsStench.add(node);
             }
         }
         
+        myAgent.updateMap(lobs,myPosition);;
+        
         String golemPos = myAgent.getGolemPosition();
 
 
-        // 1) Golem visible et adjacent → devenir mur
+        // 1) Golem visible et adjacent, devenir mur
         if (golemVisible && golemPos != null) {
              exitValue = WUMPUS_DETECTED;
              return;
         }
 
-        // 2) WallTarget assigné par message → s'y rendre
+        // 2) WallTarget assigné par message
         String wallTarget = myAgent.getWallTargetNode();
         if (wallTarget != null) {
             if (wallTarget.equals(currentNodeId)) {
@@ -114,28 +111,51 @@ public class HuntDripBehaviour extends OneShotBehaviour {
                 exitValue = WUMPUS_DETECTED;
                 return;
             }
-            // Recalculer le chemin en évitant le golem
+            // Recalculer le chemin en évitant le golem et les autres agents
             List<String> blocked = new ArrayList<>();
             if (golemPos != null) blocked.add(golemPos);
+            myAgent.getAgentsNearby(lobs).keySet().stream()
+	            .filter(pos -> !pos.equals(currentNodeId))
+	            .forEach(blocked::add);
+            
             List<String> path = myAgent.getMyMap()
-                .getShortestPathWithBlockedNodes(currentNodeId, wallTarget, blocked);
-            if (path != null && !path.isEmpty()) {
-                myAgent.setChemin(path);
-                moveTo(path.get(0));
-                return;
-            }
-            // Chemin introuvable → annuler
+            	    .getShortestPathWithBlockedNodes(currentNodeId, wallTarget, blocked);
+
+            	if (path != null && !path.isEmpty()) {
+
+            	    String next = path.get(0);
+
+            	    // Si quelqu’un bloque la prochaine case
+            	    if (myAgent.getAgentsNearby(lobs).containsKey(next)) {
+
+            	        String blockingAgent = myAgent.getAgentsNearby(lobs).get(next);
+
+            	        myAgent.getCommService().requestMoveAside(
+            	        	    blockingAgent, 
+            	        	    currentNodeId + "|" + wallTarget   
+            	        	);
+            	        System.out.println(myAgent.getLocalName() + 
+            	            " bloqué par " + blockingAgent + ", demande de décalage");
+
+            	        return;
+            	    }
+
+            	    myAgent.setChemin(path);
+            	    moveTo(next);
+            	    return;
+            	}
+            // Chemin introuvable
             myAgent.setWallTargetNode(null);
         }
 
-        // 3) Plus aucune trace → retour exploration
+        // 3) Plus aucune trace, retour exploration
         if (!stenchDetected && golemPos == null) {
             myAgent.setGolemPosition(null);
             exitValue = WUMPUS_LOST;
             return;
         }
 
-        // 4) Position golem connue → recalculer et se rapprocher
+        // 4) Position golem connue
         if (golemPos != null) {
             if (myAgent.getMyMap().getNode(golemPos) == null) {
                 System.out.println(myAgent.getLocalName() + " - Nœud golem inconnu : " + golemPos);
@@ -151,7 +171,6 @@ public class HuntDripBehaviour extends OneShotBehaviour {
             boolean golemCaseVisible = lobs.stream()
                 .anyMatch(obs -> obs.getLeft().getLocationId().equals(golemPosSnapshot));
             if (golemCaseVisible && !golemVisible && !stenchDetected) {
-                // Case visible, pas de golem, pas de stench → golem parti
                 System.out.println(myAgent.getLocalName() + " - Golem a bougé depuis " + golemPos);
                 myAgent.setGolemPosition(null);
                 exitValue = WUMPUS_LOST;
@@ -161,8 +180,11 @@ public class HuntDripBehaviour extends OneShotBehaviour {
             // Recalculer le chemin vers le golem à chaque tick
             List<String> path = myAgent.getMyMap().getShortestPath(currentNodeId, golemPos);
 
+            // s'il est innacessible on va explorer
             if (path == null || path.isEmpty()) {
                 System.out.println(myAgent.getLocalName() + " - Pas de chemin vers golem");
+                exitValue = WUMPUS_LOST;
+                myAgent.randomMove(voisinsLibres);
                 return;
             }
 
@@ -171,7 +193,7 @@ public class HuntDripBehaviour extends OneShotBehaviour {
             return;
         }
 
-        // 5) Stench sans position connue → se diriger vers le stench
+        // 5) Stench sans position connue, se diriger vers le stench
         if (!voisinsStench.isEmpty()) {
             // Préférer un nœud stench non visité récemment
             String target = voisinsStench.stream()
@@ -199,22 +221,6 @@ public class HuntDripBehaviour extends OneShotBehaviour {
         return false;
     }
 
-
-
-    private boolean randomMove(List<String> lobs) {
-    	Collections.shuffle(lobs);    	
-        for (String candidate : lobs) {
-
-        	if (!candidate.equals(myAgent.getCurrentPosition().getLocationId())) {
-
-                if (myAgent.moveTo(new GsLocation(candidate))) {
-                    return true;
-                }
-            }
-        }
-        
-        return false;
-    }
     
     // Pour continuer ou terminer la chasse
     @Override

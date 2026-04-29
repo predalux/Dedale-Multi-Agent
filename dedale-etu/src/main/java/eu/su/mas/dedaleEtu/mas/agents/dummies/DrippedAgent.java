@@ -1,5 +1,6 @@
 package eu.su.mas.dedaleEtu.mas.agents.dummies;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,7 @@ import eu.su.mas.dedaleEtu.mas.behaviours.CommunicationDripBehaviour;
 import eu.su.mas.dedaleEtu.mas.behaviours.ExplorationDripBehaviour;
 import eu.su.mas.dedaleEtu.mas.behaviours.MovementDripBehaviour;
 import eu.su.mas.dedaleEtu.mas.behaviours.WallDripBehaviour;
+import eu.su.mas.dedaleEtu.princ.ConfigurationFile;
 import eu.su.mas.dedaleEtu.mas.behaviours.HuntDripBehaviour;
 import jade.core.behaviours.Behaviour;
 import jade.core.behaviours.FSMBehaviour;
@@ -43,18 +45,33 @@ public class DrippedAgent extends AbstractAgent {
 
 		super.setup();
 		
-		
+		// recup la config et établi les receveurs de l'agent
+		String pathJSON = ConfigurationFile.INSTANCE_CONFIGURATION_ENTITIES;
+		System.out.println(pathJSON);
 
-		this.fsm = new FSMBehaviour(this);	
-		
+
+		String jsonContent = null;
+		try {
+			jsonContent = new String(
+			    java.nio.file.Files.readAllBytes(
+			        java.nio.file.Paths.get(pathJSON)
+			    )
+			);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+				
 	    // liste des destinataires
-		List<String> receivers = new ArrayList<String>();
+		List<String> receivers = getExploAgents(jsonContent);
+		
+		/*
 		this.addAgentList("Drip1");
 		this.addAgentList("Drip2");
 		this.addAgentList("Drip3");
 		this.addAgentList("Drip4");
 		this.addAgentList("Drip5");
-
+		*/
+		
 		// gère envoie des messages
 		this.initCommService();
 		
@@ -69,6 +86,9 @@ public class DrippedAgent extends AbstractAgent {
 		 * Com n'est pas associé, chaque behavior cycle sur la comm puis lui meme
 		 ************************************************/
 		
+		this.fsm = new FSMBehaviour(this);	
+
+		
 		fsm.registerFirstState(new ExplorationDripBehaviour(this), EXPLO);
 		
 		fsm.registerState(new CommunicationDripBehaviour(this), COMM);
@@ -76,8 +96,8 @@ public class DrippedAgent extends AbstractAgent {
 		fsm.registerState(new WallDripBehaviour(this),WALL);
 
 		// transition EXPLO
-		fsm.registerTransition(EXPLO, COMM, 0); // continue explo
-		fsm.registerTransition(EXPLO, HUNT, 1); // golem detecter
+		fsm.registerTransition(EXPLO, COMM, 0); 	// continue explo
+		fsm.registerTransition(EXPLO, HUNT, 1); 	// golem detecter
 
 		// transition COMM (en fonction de l'etat de l'agent
 		fsm.registerTransition(COMM,EXPLO, 0);
@@ -85,14 +105,15 @@ public class DrippedAgent extends AbstractAgent {
 		fsm.registerTransition(COMM, WALL, 2);
 
 		// transition HUNT
-		fsm.registerTransition(HUNT, EXPLO, 0);  // retourne explo
-		fsm.registerTransition(HUNT, COMM, 1);   // continuer chasse
-		fsm.registerTransition(HUNT, WALL, 2);   // On bloque
+		fsm.registerTransition(HUNT, EXPLO, 0);     // retourne explo
+		fsm.registerTransition(HUNT, COMM, 1);      // continuer chasse
+		fsm.registerTransition(HUNT, WALL, 2);      // On bloque
 		
 		// transition WALL
 		//fsm.registerTransition(WALL, EXPLO, 0);   // golem perdu
-		fsm.registerTransition(WALL, HUNT, 1);   // golem s'échappe
-		fsm.registerTransition(WALL, COMM, 2);   // On bloque
+		fsm.registerTransition(WALL, HUNT, 1);      // golem s'échappe
+		fsm.registerTransition(WALL, COMM, 2);      // On bloque
+		
 		
 		/***
 		 * MANDATORY TO ALLOW YOUR AGENT TO BE DEPLOYED CORRECTLY
@@ -126,6 +147,42 @@ public class DrippedAgent extends AbstractAgent {
 		//System.out.println("I migrated");
 	}
 
+	// afin d'extraire les noms des agents Explo depuis un json
+	public static List<String> getExploAgents(String json) {
+	    List<String> result = new ArrayList<>();
+
+	    // On enlève les crochets du tableau
+	    json = json.trim();
+	    if (json.startsWith("[")) json = json.substring(1);
+	    if (json.endsWith("]")) json = json.substring(0, json.length() - 1);
+
+	    // On split les objets
+	    String[] objects = json.split("\\},\\s*\\{");
+
+	    for (String obj : objects) {
+	        obj = obj.replace("{", "").replace("}", "");
+
+	        String agentType = extractValue(obj, "agentType");
+	        String agentName = extractValue(obj, "agentName");
+
+	        if ("agentExplo".equals(agentType) && agentName != null) {
+	            result.add(agentName);
+	        }
+	    }
+
+	    return result;
+	}
+	
+	private static String extractValue(String jsonObject, String key) {
+	    String pattern = "\"" + key + "\"\\s*:\\s*\"([^\"]*)\"";
+	    java.util.regex.Pattern r = java.util.regex.Pattern.compile(pattern);
+	    java.util.regex.Matcher m = r.matcher(jsonObject);
+
+	    if (m.find()) {
+	        return m.group(1);
+	    }
+	    return null;
+	}
 	
 	
 }

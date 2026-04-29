@@ -19,6 +19,8 @@ public class CommService {
     private List<String> agentList;
     
     private static final int BROADCAST_COOLDOWN_MS = 4000;      // cd entre broadcast du wumpus
+    private static final int PONG_WAIT_MS = 1000;           	// Attente en ayant enovyé un pong
+
     long lastBroadcast;
 
     // ========== CONSTRUCTEUR ==========
@@ -47,7 +49,8 @@ public class CommService {
         msg.setSender(myAgent.getAID());
         msg.addReceiver(receiver);
         myAgent.sendMessage(msg);
-        myAgent.setDestination(null); // àfin de l'arreter
+        if (myAgent.getEtat()==0)
+        	myAgent.doWait(PONG_WAIT_MS);
     }
 
     public void sendMap(AID receiver) {
@@ -157,48 +160,12 @@ public class CommService {
     /**
      * Annonce que l'agent est bloqué à une position
      */
-    public void announceBlocked(String location) {
-        ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
-        msg.setProtocol("AGENT-BLOCKED");
-        msg.setSender(myAgent.getAID());
-        msg.setContent(location);
-        for (String name : agentList) {
-            if (!name.equals(myAgent.getLocalName()))
-                msg.addReceiver(new AID(name, AID.ISLOCALNAME));
-        }
-        myAgent.sendMessage(msg);
-        System.out.println(myAgent.getLocalName() + " - Announcing BLOCKED at " + location);
-    }
-
-    /**
-     * Demande de l'aide pour encercler le Wumpus
-     */
-    public void requestWumpusHelp(String location) {
+    public void requestMoveAside(String agentName, String targetWall) {
         ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
-        msg.setProtocol("WUMPUS-HELP");
+        msg.setProtocol("MOVE-ASIDE");
         msg.setSender(myAgent.getAID());
-        msg.setContent(location);
-        for (String name : agentList) {
-            if (!name.equals(myAgent.getLocalName()))
-                msg.addReceiver(new AID(name, AID.ISLOCALNAME));
-        }
-        myAgent.sendMessage(msg);
-        System.out.println(myAgent.getLocalName() + " - Requesting help at " + location);
-    }
-    
-    
-    // à utiliser
-    public void requestCoordinatedBlock(String nodeToBlock, List<AID> targetAgents) {
-        
-        ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
-        msg.setProtocol("BLOCK-REQUEST");
-        msg.setContent(nodeToBlock);
-        msg.setSender(myAgent.getAID());
-        
-        for (AID agent : targetAgents) {
-            msg.addReceiver(agent);
-        }
-        
+        msg.setContent(targetWall);
+        msg.addReceiver(new AID(agentName, AID.ISLOCALNAME));
         myAgent.sendMessage(msg);
     }
 }

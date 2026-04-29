@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 import dataStructures.serializableGraph.SerializableSimpleGraph;
 import eu.su.mas.dedale.env.Location;
+import eu.su.mas.dedale.env.gs.GsLocation;
 import eu.su.mas.dedaleEtu.mas.agents.dummies.AbstractAgent;
 import eu.su.mas.dedaleEtu.mas.knowledge.MapRepresentation.MapAttribute;
 import jade.core.AID;
@@ -26,9 +27,10 @@ import jade.lang.acl.UnreadableException;
 public class CommunicationDripBehaviour extends OneShotBehaviour {
     
     private static final int PING_INTERVAL_MS = 5000;            // Ping toutes les 5 secondes
-    private static final int PONG_WAIT_MS = 2000;           	 // Attente en ayant recu un pong
     private static final int MAP_SHARE_COOLDOWN_MS = 15000;      // Cooldown partage de carte
     private static final int MAX_MESSAGES_PER_CYCLE = 10;        // Évite le blocage
+    private static final boolean AFFICHAGE = false;        		 // Affiche le traitement des messages par les agents (ca peut faire beaucoup)
+
     
     private AbstractAgent myAgent;
     
@@ -86,7 +88,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         // 3. Traiter TOUS les messages en attente
         processAllMessages(state);
         
-        // 4. Envoyer un PING périodique (pour maintenir la communication)
+        // 4. Envoyer un PING périodique
         sendPeriodicPing(state);
     }
     
@@ -153,14 +155,15 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
             	myAgent.getCommService().sendMap(sender);
                 break;
                 
-            case "WUMPUS-HELP":
-                handleWumpusHelpRequest(msg, sender);
-                break;
-                
             case "WALL-NEEDED":
                 handleWallNeeded(msg, sender);
                 break;
                 
+            case "MOVE-ASIDE":
+            	System.out.println("ok ok I move");
+            	handleMoveAside(msg);
+            	break;
+            	
             default:
                 System.out.println(myAgent.getLocalName() + " - Unknown REQUEST: " + protocol);
         }
@@ -179,16 +182,8 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
                 handleMapShare(msg, sender, state);
                 break;
                 
-            case "CHASSE-GOLEM":
-                handleChasseGolem(msg, sender);
-                break;
-                
             case "WUMPUS-LOCATION":
                 handleWumpusLocation(msg, sender);
-                break;
-                
-            case "AGENT-BLOCKED":
-                handleAgentBlocked(msg, sender);
                 break;
                 
             default:
@@ -205,7 +200,8 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
                 String loc = msg.getContent();
                 myAgent.setGolemPosition(loc);
                 myAgent.getMyMap().addNode(loc, MapAttribute.open);
-                System.out.println(myAgent.getLocalName() + " - WUMPUS ALERT at " + loc);
+                if (AFFICHAGE)
+                	System.out.println(myAgent.getLocalName() + " - WUMPUS ALERT at " + loc);
                 // Propager aux autres (sauf expéditeur)
                 myAgent.getCommService().propagateWumpusAlert(loc, sender);
                 break;      
@@ -224,7 +220,8 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
      * Traite un PING : répond avec PONG
      */
     private void handlePing(AID sender, AgentCommState state) {
-        System.out.println(myAgent.getLocalName() + " - PING from " + sender.getLocalName());
+        if (AFFICHAGE)
+        	System.out.println(myAgent.getLocalName() + " - PING from " + sender.getLocalName());
         myAgent.getCommService().sendPong(sender);
     }
     
@@ -232,14 +229,13 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
      * Traite un PONG : envoie la carte si cooldown respecté
      */
     private void handlePong(AID sender, AgentCommState state) {
-        System.out.println(myAgent.getLocalName() + " - PONG from " + sender.getLocalName());
+        if (AFFICHAGE)
+        	System.out.println(myAgent.getLocalName() + " - PONG from " + sender.getLocalName());
         
         if (shouldShareMapWith(sender, state)) {
         	myAgent.getCommService().sendMap(sender);
         	state.lastMapSentTime.put(sender, System.currentTimeMillis());
         }
-        if (myAgent.getEtat()==0)
-        	myAgent.doWait(PONG_WAIT_MS);
     }
     
     /**
@@ -249,7 +245,8 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         try {
             SerializableSimpleGraph<String, MapAttribute> receivedGraph =
                 (SerializableSimpleGraph<String, MapAttribute>) msg.getContentObject();
-            System.out.println(myAgent.getLocalName() + " - MERGED MAP from " + sender.getLocalName());
+            if (AFFICHAGE)
+            	System.out.println(myAgent.getLocalName() + " - MERGED MAP from " + sender.getLocalName());
 
             myAgent.getMyMap().mergeMap(receivedGraph);
             
@@ -265,15 +262,6 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
     }
     
     
-    private void handleChasseGolem(ACLMessage msg, AID sender) {
-        if (myAgent.getGolemPosition() == null) {
-            String pos = msg.getContent();
-            myAgent.setGolemPosition(pos);
-            myAgent.getMyMap().addNode(pos, MapAttribute.open);
-            System.out.println(myAgent.getLocalName() + " - Golem position received: " + pos);
-        }
-    }
-    
     /**
      * Traite une localisation Wumpus confirmée
      */
@@ -281,28 +269,15 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
     	String pos = msg.getContent();
         myAgent.setGolemPosition(pos);
         myAgent.getMyMap().addNode(pos, MapAttribute.open);
-        System.out.println(myAgent.getLocalName() + " - Wumpus confirmed at " + pos);
-    }
-    
-    /**
-     * Traite une demande d'aide pour bloquer un Wumpus
-     */
-    private void handleWumpusHelpRequest(ACLMessage msg, AID sender) {
-        String wumpusLocation = msg.getContent();
-        
-        System.out.println(myAgent.getLocalName() + 
-                         " - Help requested to block Wumpus at " + wumpusLocation);
-        
-        // Déclencher un changement d'état ou stocker l'info pour le FSM
-        // myAgent.setWumpusTarget(wumpusLocation);
+        if (AFFICHAGE)
+        	System.out.println(myAgent.getLocalName() + " - Wumpus confirmed at " + pos);
     }
     
     /**
      * Traite une demande de blocage coordonné
      */
     private void handleWallNeeded(ACLMessage msg, AID sender) {
-    	// si on est déjà en mur, on ignore
-    	if (myAgent.getEtat() == 2) return; 
+        if (myAgent.getEtat() == 2) return;
         String content = msg.getContent();
         String[] parts = content.split("\\|");
         if (parts.length < 3) return;
@@ -311,31 +286,48 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         List<String> freeNodes = new ArrayList<>(List.of(parts[1].split(",")));
         List<String> blockedNodes = new ArrayList<>(List.of(parts[2].split(",")));
 
-        myAgent.setGolemPosition(golemPos);
-
         String currentPos = myAgent.getCurrentPosition().getLocationId();
+        myAgent.getAgentsNearby(myAgent.observe()).keySet().stream()
+            .filter(pos -> !pos.equals(currentPos))
+            .filter(pos -> !blockedNodes.contains(pos))
+            .forEach(blockedNodes::add);
+        
+        // Trier tous les noeuds libres par distance, prendre le premier accessible
+        List<String> knownFreeNodes = freeNodes.stream()
+        	    .filter(n -> myAgent.getMyMap().getNode(n) != null)
+        	    .filter(n -> !myAgent.getAgentsNearby(myAgent.observe()).containsKey(n))
+        	    .collect(Collectors.toList());
+        
+        // pour chaque candidat on regarde s'il est accessible
+        for (String candidate : knownFreeNodes.stream()
+                .sorted(Comparator.comparingInt(n -> {
+                    List<String> p = myAgent.getMyMap()
+                        .getShortestPathWithBlockedNodes(currentPos, n, blockedNodes);
+                    return p == null ? Integer.MAX_VALUE : p.size();
+                }))
+                .collect(Collectors.toList())) {
 
-        // Choisir le noeud libre le plus proche en évitant le golem et les cases occupées
-        String bestTarget = freeNodes.stream()
-            .filter(n -> myAgent.getMyMap().getNode(n) != null)
-            .min(Comparator.comparingInt(n -> {
-                List<String> path = myAgent.getMyMap()
-                    .getShortestPathWithBlockedNodes(currentPos, n, blockedNodes);
-                return path == null ? Integer.MAX_VALUE : path.size();
-            }))
-            .orElse(null);
-
-        if (bestTarget != null) {
-            // Recalculer le chemin complet avec les noeuds bloqués pour le stocker
             List<String> path = myAgent.getMyMap()
-                .getShortestPathWithBlockedNodes(currentPos, bestTarget, blockedNodes);
-            if (path != null && !path.isEmpty()) {
-                myAgent.setWallTargetNode(bestTarget);
-                myAgent.setChemin(path); // chemin sans passer par le golem
-                //myAgent.setChasse(true);
-                System.out.println(myAgent.getLocalName() + " - Je vais bloquer : " + bestTarget 
-                    + " via " + path);
+                .getShortestPathWithBlockedNodes(currentPos, candidate, blockedNodes);
+
+            if (path == null || path.isEmpty()) continue; 
+
+            List<String> myPath = myAgent.getChemin();
+            boolean shouldUpdate = myPath == null || myPath.isEmpty() || path.size() < myPath.size();
+
+            if (shouldUpdate) {
+                myAgent.setGolemPosition(golemPos);
+                myAgent.setWallTargetNode(candidate);
+                myAgent.setChemin(path);
+                if (AFFICHAGE)
+                System.out.println(myAgent.getLocalName() + " - d'après " + sender.getLocalName() 
+                    + " je vais bloquer : " + candidate + " via " + path);
+            } else {
+                if (AFFICHAGE)
+                System.out.println(myAgent.getLocalName() + " - ignore proposition de " 
+                    + sender.getLocalName() + " vers " + candidate);
             }
+            return;
         }
     }
     
@@ -365,7 +357,8 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
                 .collect(Collectors.toList());
 
             if (!stillFree.isEmpty()) {
-                System.out.println(myAgent.getLocalName() + " - Mur relaye WALL-NEEDED pour : " + stillFree);
+                if (AFFICHAGE)
+                	System.out.println(myAgent.getLocalName() + " - Mur relaye WALL-NEEDED pour : " + stillFree);
                 myAgent.getCommService().broadcastFreeNeighbors(golemPos, stillFree, updatedBlocked);
             }
 
@@ -376,17 +369,80 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
     }
     
     /**
-     * Traite l'annonce qu'un agent est bloqué par un Wumpus
+     * Demande à un agent de se décaler sur une case libre autour du golem
      */
-    private void handleAgentBlocked(ACLMessage msg, AID sender) {
-        String blockLocation = msg.getContent();
-        
-        System.out.println(myAgent.getLocalName() + 
-                         " - " + sender.getLocalName() + 
-                         " is BLOCKED at " + blockLocation);
-        
-        // éviter cette zone
-        // myAgent.getMyMap().markOccuped(blockLocation) or something idk yet;
+    private void handleMoveAside(ACLMessage msg) {
+        if (myAgent.getEtat() != 2) return;
+
+        String content = msg.getContent();
+        String[] parts = content.split("\\|");
+        String requesterPos = parts.length >= 2 ? parts[0] : null;
+        String requestedTarget = parts.length >= 2 ? parts[1] : parts[0];
+
+        String myPos = myAgent.getCurrentPosition().getLocationId();
+        String golemPos = myAgent.getGolemPosition();
+        if (golemPos == null) return;
+
+        java.util.Map<String, String> nearbyAgents = myAgent.getAgentsNearby(myAgent.observe());
+
+        List<String> occupied = new ArrayList<>();
+        occupied.add(golemPos);
+        nearbyAgents.forEach((pos, name) -> occupied.add(pos));
+        if (requesterPos != null && !occupied.contains(requesterPos))
+            occupied.add(requesterPos);
+
+        List<String> neighbors = myAgent.getMyMap().getNeighbors(golemPos);
+
+        // 1) Case exacte demandée
+        if (neighbors.contains(requestedTarget) && !requestedTarget.equals(myPos)) {
+            List<String> blocked = new ArrayList<>(occupied);
+            blocked.remove(requestedTarget);
+            List<String> path = myAgent.getMyMap()
+                .getShortestPathWithBlockedNodes(myPos, requestedTarget, blocked);
+            if (path != null && !path.isEmpty()) {
+                myAgent.setWallTargetNode(requestedTarget);
+                myAgent.setChemin(path);
+                System.out.println(myAgent.getLocalName() + " se décale vers " + requestedTarget);
+                return;
+            }
+        }
+
+        // 2) Alternative libre autour du golem
+        for (String alt : neighbors) {
+            if (alt.equals(myPos) || occupied.contains(alt)) continue;
+            List<String> blocked = new ArrayList<>(occupied);
+            blocked.remove(alt);
+            List<String> path = myAgent.getMyMap()
+                .getShortestPathWithBlockedNodes(myPos, alt, blocked);
+            if (path != null && !path.isEmpty()) {
+                myAgent.setWallTargetNode(alt);
+                myAgent.setChemin(path);
+                System.out.println(myAgent.getLocalName() + " se décale vers alternative " + alt);
+                return;
+            }
+        }
+
+        // identifier le mur qui bloque et lui demander de bouger
+        // Chercher la case cible idéale (requestedTarget ou première alternative)
+        String cascadeTarget = neighbors.contains(requestedTarget) ? requestedTarget :
+            neighbors.stream().filter(n -> !n.equals(myPos)).findFirst().orElse(null);
+
+        if (cascadeTarget != null) {
+            String blockingAgentName = nearbyAgents.get(cascadeTarget);
+            if (blockingAgentName != null) {
+                System.out.println(myAgent.getLocalName() + 
+                    " cascade MOVE-ASIDE " + blockingAgentName + " pour libérer " + cascadeTarget);
+                // On se met en attente sur la case actuelle, on relaye la demande
+                myAgent.getCommService().requestMoveAside(
+                    blockingAgentName,
+                    myPos + "|" + cascadeTarget  
+                );
+                // On programme notre propre mouvement pour après
+                myAgent.setWallTargetNode(cascadeTarget);
+            }
+        }
+
+        System.out.println(myAgent.getLocalName() + " ne peut pas se décaler immédiatement, cascade envoyée");
     }
     
     // ========== ENVOI DE MESSAGES ==========

@@ -2,12 +2,15 @@ package eu.su.mas.dedaleEtu.mas.behaviours;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import dataStructures.tuple.Couple;
 import eu.su.mas.dedale.env.Location;
 import eu.su.mas.dedale.env.Observation;
+import eu.su.mas.dedale.env.gs.GsLocation;
 import eu.su.mas.dedaleEtu.mas.agents.dummies.AbstractAgent;
 import jade.core.behaviours.OneShotBehaviour;
 
@@ -18,10 +21,11 @@ public class WallDripBehaviour extends OneShotBehaviour {
     private int exitValue = 0;
 
     private long wallStartTime = 0;
-    private static final long WALL_TIMEOUT_MS = 15000; // temps pour que l'agent considère le golem bloquer
+
+    private static final long WALL_TIMEOUT_MS = 15000; 		// temps pour que l'agent considère le golem bloquer
     
-    public static final int STAY_WALL = 2;    // rester mur
-    public static final int GOLEM_GONE = 1;   // golem parti, retour chasse
+    public static final int STAY_WALL = 2;    				// rester mur
+    public static final int GOLEM_GONE = 1;   				// golem parti, retour chasse
 
     public WallDripBehaviour(AbstractAgent agent) {
         super(agent);
@@ -35,7 +39,48 @@ public class WallDripBehaviour extends OneShotBehaviour {
 
         Location myPosition = myAgent.getCurrentPosition();
         if (myPosition == null) return;
+        String currentNodeId = myPosition.getLocationId();
 
+        // permet de déplacer l'agent autour du golem pour laisser la place
+        String wallTarget = myAgent.getWallTargetNode();
+        if (wallTarget != null) {
+            //System.out.println(myAgent.getLocalName() + " wallTarget=" + wallTarget + " currentPos=" + currentNodeId);
+            
+            // arriver la ou on redevient mur
+            if (wallTarget.equals(currentNodeId)) {
+                myAgent.setWallTargetNode(null);
+                //System.out.println(myAgent.getLocalName() + " arrivé en position mur");
+                
+            } else {
+                // Pas encore arrivé, avancer
+                List<Couple<Location, List<Couple<Observation, String>>>> lobs = myAgent.observe();
+                List<String> blocked = new ArrayList<>();
+                String golemPos = myAgent.getGolemPosition();
+                if (golemPos != null) blocked.add(golemPos);
+                myAgent.getAgentsNearby(lobs).keySet().stream()
+                    .filter(p -> !p.equals(currentNodeId))
+                    .forEach(blocked::add);
+
+                //System.out.println(myAgent.getLocalName() + " blocked=" + blocked + " wallTarget=" + wallTarget);
+
+                List<String> path = myAgent.getMyMap()
+                    .getShortestPathWithBlockedNodes(currentNodeId, wallTarget, blocked);
+
+                //System.out.println(myAgent.getLocalName() + " path=" + path);
+
+                if (path != null && !path.isEmpty()) {
+                    myAgent.setChemin(path);
+                    myAgent.moveTo(new GsLocation(path.get(0)));
+                    return;
+                }
+                // Chemin impossible, abandon
+                //System.out.println(myAgent.getLocalName() + " chemin introuvable vers " + wallTarget + ", abandon");
+                myAgent.setWallTargetNode(null);
+            }
+            
+            // devoir demander aux autres murs a bouger egalement (chain block)
+        }
+            
         List<Couple<Location, List<Couple<Observation, String>>>> lobs = myAgent.observe();
 
         boolean golemVisible = false;
@@ -67,9 +112,12 @@ public class WallDripBehaviour extends OneShotBehaviour {
         }
         
         long elapsed = System.currentTimeMillis() - wallStartTime;
+        // determine si le golem a été coincé
         if (elapsed >= WALL_TIMEOUT_MS) {
-            System.out.println(myAgent.getLocalName() + " - Golem considéré bloqué après 15s");
+            //System.out.println(myAgent.getLocalName() + " - Golem considéré bloqué après 15s");
             //exitValue = GOLEM_CAUGHT;
+        	
+        	// faire un message disant que c'est bloqué -> permet de repasser les chasseurs perdus en explo
             return;
         }
 
@@ -95,10 +143,13 @@ public class WallDripBehaviour extends OneShotBehaviour {
         agentPositions.forEach(p -> {
             if (!p.equals(myPosition.getLocationId())) blocked.add(p);
         });
-
-        //myAgent.getCommService().propagateBroadcastFreeNeighbors(golemPos, freeNeighbors,blocked);
-        myAgent.getCommService().broadcastFreeNeighbors(golemPos, freeNeighbors,blocked);
         
+        if (!freeNeighbors.isEmpty()) {
+	
+	        //myAgent.getCommService().propagateBroadcastFreeNeighbors(golemPos, freeNeighbors,blocked);
+	        
+        	myAgent.getCommService().broadcastFreeNeighbors(golemPos, freeNeighbors,blocked);
+        }
         myAgent.getCommService().broadcastWumpusPosition(golemPos);
         
     }

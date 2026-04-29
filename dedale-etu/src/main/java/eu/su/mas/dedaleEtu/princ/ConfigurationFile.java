@@ -130,7 +130,7 @@ public final class ConfigurationFile {
 	/**
 	 * Wumpus proximity detection radius
 	 */
-	public static final Integer DEFAULT_DETECTION_RADIUS = 1;
+	public static final Integer DEFAULT_DETECTION_RADIUS = 5;
 
 
 	/**
@@ -173,8 +173,5 @@ public final class ConfigurationFile {
 	//public static String INSTANCE_CONFIGURATION_ENTITIES="resources/agent-2explo.json";
 	//public static String INSTANCE_CONFIGURATION_ENTITIES="resources/2dripped-1wumpus.json";
 	public static String INSTANCE_CONFIGURATION_ENTITIES="resources/5dripped-1wumpus.json";
-
-
-
 
 }

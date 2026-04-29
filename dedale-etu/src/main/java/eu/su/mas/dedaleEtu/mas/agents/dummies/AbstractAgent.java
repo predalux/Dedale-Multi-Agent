@@ -9,6 +9,7 @@ import java.util.Map;
 import dataStructures.tuple.Couple;
 import eu.su.mas.dedale.env.Location;
 import eu.su.mas.dedale.env.Observation;
+import eu.su.mas.dedale.env.gs.GsLocation;
 import eu.su.mas.dedale.mas.AbstractDedaleAgent;
 import eu.su.mas.dedaleEtu.mas.knowledge.CommService;
 import eu.su.mas.dedaleEtu.mas.knowledge.ExtendedMapRepresentation;
@@ -166,7 +167,7 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
     }
 	
 	// regarde les environs, update et choisis un nouveau noeud comme destination
-    public void updateMap(List<Couple<Location, List<Couple<Observation, String>>>> lobs, Location myPosition){
+    public String updateMap(List<Couple<Location, List<Couple<Observation, String>>>> lobs, Location myPosition){
     	this.getMyMap().markVisited(myPosition.getLocationId());
     	String nextNodeId = null;
         for (Couple<Location, List<Couple<Observation, String>>> c : lobs) {
@@ -180,8 +181,7 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
                 }
             }
         }
-        if (nextNodeId != null)
-        	this.setDestination(nextNodeId);
+        return nextNodeId;
     }
     
     public String getWallTargetNode() { 
@@ -214,4 +214,19 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
 	public void clearListPosLibre() {                          
 	    this.ListPosLibre.clear();                             
 	} 
+	
+	public boolean randomMove(List<String> voisinsLibres) {
+    	Collections.shuffle(voisinsLibres);    	
+        for (String candidate : voisinsLibres) {
+
+        	if (!candidate.equals(this.getCurrentPosition().getLocationId())) {
+
+                if (this.moveTo(new GsLocation(candidate))) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
 }                                                         
