@@ -51,10 +51,10 @@ public class DrippedAgent extends AbstractAgent {
 		List<String> receivers = new ArrayList<String>();
 		this.addAgentList("Drip1");
 		this.addAgentList("Drip2");
-		//receivers.add("Drip3");
-		//receivers.add("Drip4");
-		//receivers.add("Drip5");
-		
+		this.addAgentList("Drip3");
+		this.addAgentList("Drip4");
+		this.addAgentList("Drip5");
+
 		// gère envoie des messages
 		this.initCommService();
 		

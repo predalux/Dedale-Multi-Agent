@@ -25,10 +25,10 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
 	protected boolean exploFinished = false;
     
 	// pour la chasse
-	private boolean chasse = false; 						// false : Exploration sinon en chasse
     protected String golemPosition = null;                   
     protected boolean stench;
-    protected List<String> ListPosLibre = new ArrayList<>();                                                                                                                                   
+    protected List<String> ListPosLibre = new ArrayList<>();   
+    private String wallTargetNode = null;
     
     // pour la connaissance et la communication
 	protected ExtendedMapRepresentation myMap;
@@ -49,15 +49,7 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
 	public ExtendedMapRepresentation getMyMap() {
 		return this.myMap;
 	}
-	
-	public boolean isChasse() {
-		return chasse;
-	}
-	
-	
-	public void setChasse(boolean chasse) {
-		this.chasse = chasse;
-	}
+
 	
 	public void initCommService() {
 	    this.commService = new CommService(this);
@@ -191,7 +183,15 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
         	this.setDestination(nextNodeId);
     }
     
-    //@Override
+    public String getWallTargetNode() { 
+    	return wallTargetNode; 
+    }
+    
+    public void setWallTargetNode(String node) { 
+    	this.wallTargetNode = node; 
+    }
+    
+    //@Override 
     /*public boolean moveTo(Location nodeId) {
     	this.setLastPosition(getCurrentPosition());
     	this.setMoved(this.moveTo(nodeId));

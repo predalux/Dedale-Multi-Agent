@@ -49,6 +49,7 @@ public class HuntDripBehaviour extends OneShotBehaviour {
     public void action() {
         exitValue = CONTINUE_CHASSE;
         myAgent.doWait(500);
+        
 
         Location myPosition = myAgent.getCurrentPosition();
         if (myPosition == null) return;
@@ -97,6 +98,24 @@ public class HuntDripBehaviour extends OneShotBehaviour {
                 voisinsLibres.add(node);
                 if (hasStench) voisinsStench.add(node);
             }
+        }
+        
+        // Priorité : aller occuper un noeud libre autour du golem si assigné par message
+        String wallTarget = myAgent.getWallTargetNode();
+        if (wallTarget != null) {
+            if (wallTarget.equals(currentNodeId)) {
+                // on devient mur
+                myAgent.setWallTargetNode(null);
+                exitValue = 2;
+                return;
+            }
+            List<String> path = myAgent.getMyMap().getShortestPath(currentNodeId, wallTarget);
+            if (path != null && !path.isEmpty()) {
+                if (!moveTo(path.get(0))) randomMove(voisinsLibres);
+                return;
+            }
+            // Chemin introuvable → annuler l'assignation
+            myAgent.setWallTargetNode(null);
         }
 
         // Golem visible et adjacent : on reste sur place pour le bloquer

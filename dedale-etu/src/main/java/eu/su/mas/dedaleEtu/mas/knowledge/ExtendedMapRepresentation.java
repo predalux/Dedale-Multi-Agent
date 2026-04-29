@@ -95,6 +95,28 @@ public class ExtendedMapRepresentation extends MapRepresentation {
  	    return node.leavingEdges().map(e -> e.getOpposite(node).getId()).collect(Collectors.toList());
  	}
  	
+ 	public boolean isGolemSurrounded(String golemNodeId, List<String> agentPositions) {
+ 	    List<String> neighbors = getNeighbors(golemNodeId);
+ 	    if (neighbors.isEmpty()) return false;
+ 	    // Tous les voisins du golem doivent être occupés par un agent
+ 	    return agentPositions.containsAll(neighbors);
+ 	}
+
+ 	public List<String> getFreeNeighbors(String golemNodeId, List<String> agentPositions) {
+ 	    return getNeighbors(golemNodeId).stream()
+ 	        .filter(n -> !agentPositions.contains(n))
+ 	        .collect(Collectors.toList());
+ 	}
+
+    // Un noeud est "fully mapped" si tous ses voisins sont dans le graphe
+	// On ne peut pas le savoir directement, mais on peut vérifier
+	// qu'il a été marqué closed (donc visité, voisins découverts)
+ 	public boolean isFullyMapped(String nodeId) {
+ 	    Node n = g.getNode(nodeId);
+ 	    if (n == null) return false;
+ 	    return MapAttribute.closed.toString().equals(n.getAttribute("ui.class"));
+ 	}
+ 	
  	
  	
  	// Permet de calculer le plus court chemin entre deux noeuds sans passer par des noeuds bloqués
@@ -104,47 +126,49 @@ public class ExtendedMapRepresentation extends MapRepresentation {
 
  	    if (start == null || end == null) return null;
 
- 	    // CrÃ©er un graphe temporaire filtrÃ©
+ 	    // S'assurer que idFrom et idTo ne sont pas dans les noeuds bloqués
+ 	    List<String> effectiveBlocked = blockedNodes.stream()
+ 	        .filter(n -> !n.equals(idFrom) && !n.equals(idTo))
+ 	        .collect(Collectors.toList());
+
  	    Graph tempGraph = new SingleGraph("temp");
- 	    // Copier les noeuds
  	    g.nodes().forEach(n -> {
- 	    	if (!blockedNodes.contains(n.getId()) || n.getId().equals(idTo)) {
- 	    		Node nn = tempGraph.addNode(n.getId());
+ 	        if (!effectiveBlocked.contains(n.getId())) {
+ 	            Node nn = tempGraph.addNode(n.getId());
  	            nn.setAttribute("ui.class", n.getAttribute("ui.class"));
  	        }
  	    });
- 	    // Copier les aretes entre noeuds autorisés
  	    g.edges().forEach(e -> {
  	        Node src = e.getSourceNode();
  	        Node tgt = e.getTargetNode();
- 	        if (!blockedNodes.contains(src.getId()) && !blockedNodes.contains(tgt.getId())) {
- 	        	// Ignorer les doublons ou erreurs
+ 	        if (!effectiveBlocked.contains(src.getId()) && !effectiveBlocked.contains(tgt.getId())) {
  	            try {
  	                tempGraph.addEdge(e.getId(), src.getId(), tgt.getId());
- 	            } catch (Exception ex) {
- 	                
- 	            }
+ 	            } catch (Exception ex) {}
  	        }
  	    });
 
- 	    // Calcul du plus court chemin
+ 	    Node tempStart = tempGraph.getNode(idFrom);
+ 	    Node tempEnd = tempGraph.getNode(idTo);
+
+ 	    // Vérification explicite avant Dijkstra
+ 	    if (tempStart == null || tempEnd == null) return null;
+
  	    Dijkstra dijkstra = new Dijkstra();
  	    dijkstra.init(tempGraph);
- 	    dijkstra.setSource(tempGraph.getNode(idFrom));
+ 	    dijkstra.setSource(tempStart);
  	    dijkstra.compute();
- 	    List<Node> pathNodes = dijkstra.getPath(tempGraph.getNode(idTo)).getNodePath();
+
+ 	    List<Node> pathNodes = dijkstra.getPath(tempEnd).getNodePath();
  	    dijkstra.clear();
 
  	    if (pathNodes == null || pathNodes.isEmpty()) return null;
 
- 	    // Transformer en liste d'IDs et enlever le noeud de départ
  	    List<String> path = new ArrayList<>();
  	    for (Node n : pathNodes) path.add(n.getId());
  	    path.remove(0);
  	    return path;
  	}
-
-
 
     
 }

@@ -18,6 +18,7 @@ public class CommService {
     private AbstractAgent myAgent;
     private List<String> agentList;
     
+    private static final int BROADCAST_COOLDOWN_MS = 4000;      // cd entre broadcast du wumpus
     long lastBroadcast;
 
     // ========== CONSTRUCTEUR ==========
@@ -72,7 +73,7 @@ public class CommService {
     public void broadcastWumpusPosition(String location) {
     	long now = System.currentTimeMillis();
         
-        if (now - this.lastBroadcast <= 4000) {
+        if (now - this.lastBroadcast <= BROADCAST_COOLDOWN_MS) {
         	return;
         }
         this.lastBroadcast = now;
@@ -88,7 +89,25 @@ public class CommService {
         myAgent.sendMessage(msg);
         System.out.println(myAgent.getLocalName() + " - Wumpus position broadcast: " + location);
     }
-
+    
+    /**
+     * Envoie les noeuds "libres" autour d'un noeud
+     */
+    public void broadcastFreeNeighbors(String golemPos, List<String> freeNeighbors, List<String> blockedNodes) {
+        ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
+        msg.setProtocol("WALL-NEEDED");
+        msg.setSender(myAgent.getAID());
+        // Format : "golemPos|free1,free2|blocked1,blocked2"
+        String free = String.join(",", freeNeighbors);
+        String blocked = String.join(",", blockedNodes);
+        msg.setContent(golemPos + "|" + free + "|" + blocked);
+        for (String name : agentList) {
+            if (!name.equals(myAgent.getLocalName()))
+                msg.addReceiver(new AID(name, AID.ISLOCALNAME));
+        }
+        myAgent.sendMessage(msg);
+    }
+    
     /**
      * Envoie la position du Wumpus à un seul agent
      */

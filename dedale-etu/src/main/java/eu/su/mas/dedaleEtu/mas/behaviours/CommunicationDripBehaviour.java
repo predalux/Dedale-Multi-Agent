@@ -1,6 +1,8 @@
 package eu.su.mas.dedaleEtu.mas.behaviours;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,21 +24,16 @@ import jade.lang.acl.UnreadableException;
  */
 public class CommunicationDripBehaviour extends OneShotBehaviour {
     
-    // ========== CONFIGURATION ==========
     private static final int PING_INTERVAL_MS = 5000;           // Ping toutes les 5 secondes
     private static final int PONG_WAIT_MS = 5000;           // Attente en ayant recu un pong
     private static final int MAP_SHARE_COOLDOWN_MS = 3000;      // Cooldown entre partages
     private static final int MAX_MESSAGES_PER_CYCLE = 10;       // Évite le blocage
     
-    
-    // ========== ATTRIBUTS ==========
     private AbstractAgent myAgent;
     
     // État statique pour persister entre les cycles FSM
     private static Map<String, AgentCommState> commStates = new HashMap<>();
-    
-    // ========== CLASSE INTERNE POUR L'ÉTAT ==========
-    
+        
     /**
      * État de communication d'un agent (persist entre cycles FSM)
      */
@@ -63,9 +60,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
             this.wumpusAlertsReceived = 0;
         }
     }
-    
-    // ========== CONSTRUCTEUR ==========
-    
+      
     public CommunicationDripBehaviour(AbstractAgent agent) {
         super(agent);
         this.myAgent = agent;
@@ -75,9 +70,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
             commStates.put(agent.getLocalName(), new AgentCommState());
         }
     }
-    
-    // ========== ACTION PRINCIPALE ==========
-    
+        
     @Override
     public void action() {
     	
@@ -165,8 +158,8 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
                 handleWumpusHelpRequest(msg, sender);
                 break;
                 
-            case "BLOCK-REQUEST":
-                handleBlockRequest(msg, sender);
+            case "WALL-NEEDED":
+                handleWallNeeded(msg, sender);
                 break;
                 
             default:
@@ -305,16 +298,44 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
     /**
      * Traite une demande de blocage coordonné
      */
-    private void handleBlockRequest(ACLMessage msg, AID sender) {
-        String nodeToBlock = msg.getContent();
-        
-        System.out.println(myAgent.getLocalName() + 
-                         " - Block request at " + nodeToBlock + 
-                         " from " + sender.getLocalName());
-        
-        // Logique de coordination pour bloquer un nœud ensemble
+    private void handleWallNeeded(ACLMessage msg, AID sender) {
+    	// si on est déjà en mur, on ignore
+    	if (myAgent.getEtat() == 2) return; 
+        String content = msg.getContent();
+        String[] parts = content.split("\\|");
+        if (parts.length < 3) return;
+
+        String golemPos = parts[0];
+        List<String> freeNodes = new ArrayList<>(List.of(parts[1].split(",")));
+        List<String> blockedNodes = new ArrayList<>(List.of(parts[2].split(",")));
+
+        myAgent.setGolemPosition(golemPos);
+
+        String currentPos = myAgent.getCurrentPosition().getLocationId();
+
+        // Choisir le nœud libre le plus proche en évitant le golem et les cases occupées
+        String bestTarget = freeNodes.stream()
+            .filter(n -> myAgent.getMyMap().getNode(n) != null)
+            .min(Comparator.comparingInt(n -> {
+                List<String> path = myAgent.getMyMap()
+                    .getShortestPathWithBlockedNodes(currentPos, n, blockedNodes);
+                return path == null ? Integer.MAX_VALUE : path.size();
+            }))
+            .orElse(null);
+
+        if (bestTarget != null) {
+            // Recalculer le chemin complet avec les noeuds bloqués pour le stocker
+            List<String> path = myAgent.getMyMap()
+                .getShortestPathWithBlockedNodes(currentPos, bestTarget, blockedNodes);
+            if (path != null && !path.isEmpty()) {
+                myAgent.setWallTargetNode(bestTarget);
+                myAgent.setChemin(path); // chemin sans passer par le golem
+                //myAgent.setChasse(true);
+                System.out.println(myAgent.getLocalName() + " - Je vais bloquer : " + bestTarget 
+                    + " via " + path);
+            }
+        }
     }
-    
     /**
      * Traite l'annonce qu'un agent est bloqué par un Wumpus
      */

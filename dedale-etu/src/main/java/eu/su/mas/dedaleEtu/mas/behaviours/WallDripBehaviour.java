@@ -1,7 +1,10 @@
 package eu.su.mas.dedaleEtu.mas.behaviours;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import dataStructures.tuple.Couple;
 import eu.su.mas.dedale.env.Location;
 import eu.su.mas.dedale.env.Observation;
@@ -25,11 +28,10 @@ public class WallDripBehaviour extends OneShotBehaviour {
 
     @Override
     public void action() {
-    	//System.out.println("mode mur ");
         exitValue = STAY_WALL;
         myAgent.doWait(500);
 
-        Location myPosition = (Location) myAgent.getCurrentPosition(); // pourquoi on a besoin d'un cast ici mais pas dans explo rfdnjsghdi
+        Location myPosition = myAgent.getCurrentPosition();
         if (myPosition == null) return;
 
         List<Couple<Location, List<Couple<Observation, String>>>> lobs = myAgent.observe();
@@ -42,28 +44,56 @@ public class WallDripBehaviour extends OneShotBehaviour {
                 if (detail.getLeft() == Observation.STENCH) {
                     stenchDetected = true;
                 }
-                if (detail.getLeft() == Observation.AGENTNAME 
+                if (detail.getLeft() == Observation.AGENTNAME
                         && detail.getRight().equals("Wumpus")) {
                     golemVisible = true;
                     myAgent.setGolemPosition(obs.getLeft().getLocationId());
-                    myAgent.getCommService().broadcastWumpusPosition(
-                        obs.getLeft().getLocationId()
-                    );
                 }
             }
         }
 
-        // Broadcast périodique même si pas visible, pour coordonner les autres
-        if (myAgent.getGolemPosition() != null) {
-            myAgent.getCommService().broadcastWumpusPosition(myAgent.getGolemPosition());
-        }
-
-        // Golem disparu, retour en chasse
-        if (!stenchDetected && !golemVisible) {
+        String golemPos = myAgent.getGolemPosition();
+        if (golemPos == null) { exitValue = GOLEM_GONE; return; }
+        
+        // Golem disparu, retour chasse
+        if (!golemVisible) {
             System.out.println(myAgent.getLocalName() + " - Golem parti, retour en chasse");
             myAgent.setGolemPosition(null);
             exitValue = GOLEM_GONE;
+            return;
         }
+
+        // Voisins du golem connus via la carte
+        List<String> golemNeighbors = myAgent.getMyMap().getNeighbors(golemPos);
+
+        // Collecter les positions des agents visibles
+        List<String> agentPositions = new ArrayList<>();
+        agentPositions.add(myPosition.getLocationId());
+        myAgent.getAgentsNearby(lobs).forEach((pos, name) -> agentPositions.add(pos));
+
+        // Cases libres autour du golem selon la carte
+        List<String> freeNeighbors = golemNeighbors.stream()
+            .filter(n -> !agentPositions.contains(n))
+            .collect(Collectors.toList());
+
+        // Vérifier encerclement
+        if (freeNeighbors.isEmpty()) {
+            System.out.println(myAgent.getLocalName() + " - Golem encerclé !");
+            //exitValue = GOLEM_CAUGHT;
+            return;
+        }
+
+        // Broadcast avec noeuds bloqués pour éviter de passer par le golem
+        // Les agents receveurs devront utiliser getShortestPathWithBlockedNodes
+        List<String> blocked = new ArrayList<>();
+        blocked.add(golemPos); // ne pas passer par le golem
+        agentPositions.forEach(p -> {
+            if (!p.equals(myPosition.getLocationId())) blocked.add(p); // ni par les cases déjà occupées
+        });
+
+        myAgent.getCommService().broadcastFreeNeighbors(golemPos, freeNeighbors,blocked);
+        myAgent.getCommService().broadcastWumpusPosition(golemPos);
+        
     }
 
     @Override
