@@ -49,18 +49,17 @@ public class HuntDripBehaviour extends OneShotBehaviour {
     public void action() {
         exitValue = CONTINUE_CHASSE;
         myAgent.doWait(500);
-        
 
         Location myPosition = myAgent.getCurrentPosition();
         if (myPosition == null) return;
 
         String currentNodeId = myPosition.getLocationId();
+        myAgent.getMyMap().markVisited(currentNodeId);
         List<Couple<Location, List<Couple<Observation, String>>>> lobs = myAgent.observe();
 
         boolean stenchDetected = false;
         boolean golemVisible = false;
-        String golemPos = myAgent.getGolemPosition(); // la variable n'est pas détecté ici ?
-
+        String tmpgolemPos;
 
         List<String> voisinsLibres = new ArrayList<>();
         List<String> voisinsStench = new ArrayList<>();
@@ -80,16 +79,14 @@ public class HuntDripBehaviour extends OneShotBehaviour {
                 if (detail.getLeft() == Observation.AGENTNAME && detail.getRight().equals("Wumpus")) {
                     hasAgent = true;
                     golemVisible = true;
-                    golemPos = node;
+                    tmpgolemPos = node;
                     myAgent.setGolemPosition(node);
-                    myAgent.getCommService().broadcastWumpusPosition(golemPos);
+                    myAgent.getCommService().broadcastWumpusPosition(tmpgolemPos);
                 } else if (detail.getLeft() == Observation.AGENTNAME) {
                     hasAgent = true;
                 }
             }
 
-            // Mise à jour carte
-            boolean isNewNode = myAgent.getMyMap().addNewNode(node);
             if (!node.equals(currentNodeId)) {
                 myAgent.getMyMap().addEdge(currentNodeId, node);
             }
@@ -100,101 +97,89 @@ public class HuntDripBehaviour extends OneShotBehaviour {
             }
         }
         
-        // Priorité : aller occuper un noeud libre autour du golem si assigné par message
+        String golemPos = myAgent.getGolemPosition();
+
+
+        // 1) Golem visible et adjacent → devenir mur
+        if (golemVisible && golemPos != null) {
+             exitValue = WUMPUS_DETECTED;
+             return;
+        }
+
+        // 2) WallTarget assigné par message → s'y rendre
         String wallTarget = myAgent.getWallTargetNode();
         if (wallTarget != null) {
             if (wallTarget.equals(currentNodeId)) {
-                // on devient mur
                 myAgent.setWallTargetNode(null);
-                exitValue = 2;
+                exitValue = WUMPUS_DETECTED;
                 return;
             }
-            List<String> path = myAgent.getMyMap().getShortestPath(currentNodeId, wallTarget);
+            // Recalculer le chemin en évitant le golem
+            List<String> blocked = new ArrayList<>();
+            if (golemPos != null) blocked.add(golemPos);
+            List<String> path = myAgent.getMyMap()
+                .getShortestPathWithBlockedNodes(currentNodeId, wallTarget, blocked);
             if (path != null && !path.isEmpty()) {
-                if (!moveTo(path.get(0))) randomMove(voisinsLibres);
+                myAgent.setChemin(path);
+                moveTo(path.get(0));
                 return;
             }
-            // Chemin introuvable → annuler l'assignation
+            // Chemin introuvable → annuler
             myAgent.setWallTargetNode(null);
         }
 
-        // Golem visible et adjacent : on reste sur place pour le bloquer
-        if (golemVisible) {
-            List<String> path = myAgent.getMyMap().getShortestPath(currentNodeId, golemPos);
-            if (path != null && path.size() == 1) {
-                exitValue = 2; // on se met en mode wall
-                return;
-            }
-        }
-
-        // Golem n'est plus visible sur ce tick
-        if (!golemVisible && golemPos != null) {
-            // Vérifier si le golem était sur un nœud adjacent visible
-        	String golemPos1 = myAgent.getGolemPosition();
-            boolean golemNodeVisible = lobs.stream()
-                .anyMatch(obs -> obs.getLeft().getLocationId().equals(golemPos1));
-
-            if (golemNodeVisible) {
-                // On voit la case mais le golem n'y est plus, il a bougé
-                System.out.println(myAgent.getLocalName() + " - Golem a bougé depuis " + golemPos);
-                myAgent.setGolemPosition(null);
-                golemPos = null;
-            }
-            // Si la case n'est pas visible, on garde la dernière position connue
-        }
-
-        // Plus aucune trace → retour exploration
+        // 3) Plus aucune trace → retour exploration
         if (!stenchDetected && golemPos == null) {
-            if (myAgent.isExploFinished()) {
-                randomMove(voisinsLibres);
-                exitValue = WUMPUS_LOST;
-                return;
-            }
             myAgent.setGolemPosition(null);
-            exitValue = 0;
+            exitValue = WUMPUS_LOST;
             return;
         }
 
-        // Se rapprocher du golem si position connue
+        // 4) Position golem connue → recalculer et se rapprocher
         if (golemPos != null) {
             if (myAgent.getMyMap().getNode(golemPos) == null) {
                 System.out.println(myAgent.getLocalName() + " - Nœud golem inconnu : " + golemPos);
-                randomMove(voisinsStench.isEmpty() ? voisinsLibres : voisinsStench);
+                // Se diriger vers le stench le plus proche
+                if (!voisinsStench.isEmpty()) {
+                    moveTo(voisinsStench.get(0));
+                }
                 return;
             }
 
+            // Vérifier si le golem a bougé : case visible mais golem absent + stench
+            String golemPosSnapshot = golemPos;
+            boolean golemCaseVisible = lobs.stream()
+                .anyMatch(obs -> obs.getLeft().getLocationId().equals(golemPosSnapshot));
+            if (golemCaseVisible && !golemVisible && !stenchDetected) {
+                // Case visible, pas de golem, pas de stench → golem parti
+                System.out.println(myAgent.getLocalName() + " - Golem a bougé depuis " + golemPos);
+                myAgent.setGolemPosition(null);
+                exitValue = WUMPUS_LOST;
+                return;
+            }
+
+            // Recalculer le chemin vers le golem à chaque tick
             List<String> path = myAgent.getMyMap().getShortestPath(currentNodeId, golemPos);
 
             if (path == null || path.isEmpty()) {
-                randomMove(voisinsLibres);
+                System.out.println(myAgent.getLocalName() + " - Pas de chemin vers golem");
                 return;
             }
 
-            // Adjacent au golem : rester sur place et signaler
-            if (path.size() == 1 && !golemVisible) {
-                // Le golem devrait être là mais n'est plus visible → il a bougé
-                myAgent.setGolemPosition(null);
-                golemPos = null;
-                randomMove(voisinsStench.isEmpty() ? voisinsLibres : voisinsStench);
-                return;
-            }
-
-            String next = path.get(0);
-            if (!moveTo(next)) {
-                randomMove(voisinsLibres);
-            }
+            myAgent.setChemin(path);
+            moveTo(path.get(0));
             return;
         }
 
-        // Pas de position connue mais stench : se diriger vers les cases avec stench
+        // 5) Stench sans position connue → se diriger vers le stench
         if (!voisinsStench.isEmpty()) {
-            Collections.shuffle(voisinsStench);
-            for (String target : voisinsStench) {
-                if (!target.equals(myAgent.getLastPosition()) && moveTo(target)) return;
-            }
+            // Préférer un nœud stench non visité récemment
+            String target = voisinsStench.stream()
+                .filter(n -> !n.equals(myAgent.getLastPosition()))
+                .findFirst()
+                .orElse(voisinsStench.get(0));
+            moveTo(target);
         }
-
-        randomMove(voisinsLibres);
     }
 
 
@@ -217,15 +202,12 @@ public class HuntDripBehaviour extends OneShotBehaviour {
 
 
     private boolean randomMove(List<String> lobs) {
-    	Collections.shuffle(lobs);
-    	String AvantPos = myAgent.getCurrentPosition().getLocationId();
-    	
+    	Collections.shuffle(lobs);    	
         for (String candidate : lobs) {
 
         	if (!candidate.equals(myAgent.getCurrentPosition().getLocationId())) {
 
                 if (myAgent.moveTo(new GsLocation(candidate))) {
-                	myAgent.setLastPosition(AvantPos);
                     return true;
                 }
             }

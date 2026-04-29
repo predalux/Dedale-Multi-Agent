@@ -167,6 +167,7 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
 	
 	// regarde les environs, update et choisis un nouveau noeud comme destination
     public void updateMap(List<Couple<Location, List<Couple<Observation, String>>>> lobs, Location myPosition){
+    	this.getMyMap().markVisited(myPosition.getLocationId());
     	String nextNodeId = null;
         for (Couple<Location, List<Couple<Observation, String>>> c : lobs) {
         	

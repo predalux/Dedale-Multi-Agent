@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import dataStructures.serializableGraph.SerializableSimpleGraph;
 import eu.su.mas.dedale.env.Location;
@@ -24,10 +25,10 @@ import jade.lang.acl.UnreadableException;
  */
 public class CommunicationDripBehaviour extends OneShotBehaviour {
     
-    private static final int PING_INTERVAL_MS = 5000;           // Ping toutes les 5 secondes
-    private static final int PONG_WAIT_MS = 5000;           // Attente en ayant recu un pong
-    private static final int MAP_SHARE_COOLDOWN_MS = 3000;      // Cooldown entre partages
-    private static final int MAX_MESSAGES_PER_CYCLE = 10;       // Évite le blocage
+    private static final int PING_INTERVAL_MS = 5000;            // Ping toutes les 5 secondes
+    private static final int PONG_WAIT_MS = 2000;           	 // Attente en ayant recu un pong
+    private static final int MAP_SHARE_COOLDOWN_MS = 15000;      // Cooldown partage de carte
+    private static final int MAX_MESSAGES_PER_CYCLE = 10;        // Évite le blocage
     
     private AbstractAgent myAgent;
     
@@ -44,7 +45,6 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         boolean initialPingSent;
         
         // Statistiques
-        int messagesSent;
         int messagesReceived;
         int mapsMerged;
         int wumpusAlertsReceived;
@@ -54,7 +54,6 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
             this.lastMapSentTime = new HashMap<>();
             this.lastMapReceivedTime = new HashMap<>();
             this.initialPingSent = false;
-            this.messagesSent = 0;
             this.messagesReceived = 0;
             this.mapsMerged = 0;
             this.wumpusAlertsReceived = 0;
@@ -108,7 +107,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         }
         
         if (processedCount > 0) {
-            System.out.println(myAgent.getLocalName() + " - Processed " + processedCount + " messages");
+            //system.out.println(myAgent.getLocalName() + " - Processed " + processedCount + " messages");
         }
         return processedCount > 0;
     }
@@ -209,7 +208,10 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
                 System.out.println(myAgent.getLocalName() + " - WUMPUS ALERT at " + loc);
                 // Propager aux autres (sauf expéditeur)
                 myAgent.getCommService().propagateWumpusAlert(loc, sender);
-                break;               
+                break;      
+            case "WALL-NEEDED":
+            	handleWallNeededPropagate(msg, sender);
+                break;
                 
             default:
                 System.out.println(myAgent.getLocalName() + " - Unknown PROPAGATE: " + protocol);
@@ -236,8 +238,8 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         	myAgent.getCommService().sendMap(sender);
         	state.lastMapSentTime.put(sender, System.currentTimeMillis());
         }
-        
-        myAgent.doWait(PONG_WAIT_MS);
+        if (myAgent.getEtat()==0)
+        	myAgent.doWait(PONG_WAIT_MS);
     }
     
     /**
@@ -313,7 +315,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
 
         String currentPos = myAgent.getCurrentPosition().getLocationId();
 
-        // Choisir le nœud libre le plus proche en évitant le golem et les cases occupées
+        // Choisir le noeud libre le plus proche en évitant le golem et les cases occupées
         String bestTarget = freeNodes.stream()
             .filter(n -> myAgent.getMyMap().getNode(n) != null)
             .min(Comparator.comparingInt(n -> {
@@ -336,6 +338,43 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
             }
         }
     }
+    
+    /**
+     * Les murs relaient les messages de demandent de bloque avec leur infos en plus
+     */
+    private void handleWallNeededPropagate(ACLMessage msg, AID sender) {
+        if (myAgent.getEtat()==2) {
+
+	        String content = msg.getContent();
+	        String[] parts = content.split("\\|");
+	        if (parts.length < 3) return;
+	
+	        String golemPos = parts[0];
+	        List<String> freeNodes = new ArrayList<>(List.of(parts[1].split(",")));
+	        List<String> blockedNodes = new ArrayList<>(List.of(parts[2].split(",")));
+	
+	        myAgent.setGolemPosition(golemPos);
+
+            // On filtre les cases déjà connues comme occupées
+            String currentPos = myAgent.getCurrentPosition().getLocationId();
+            List<String> updatedBlocked = new ArrayList<>(blockedNodes);
+            if (!updatedBlocked.contains(currentPos)) updatedBlocked.add(currentPos);
+
+            List<String> stillFree = freeNodes.stream()
+                .filter(n -> !updatedBlocked.contains(n))
+                .collect(Collectors.toList());
+
+            if (!stillFree.isEmpty()) {
+                System.out.println(myAgent.getLocalName() + " - Mur relaye WALL-NEEDED pour : " + stillFree);
+                myAgent.getCommService().broadcastFreeNeighbors(golemPos, stillFree, updatedBlocked);
+            }
+
+        } else {
+            // Pas mur, on cherche à aller bloquer
+            handleWallNeeded(msg, sender);
+        }
+    }
+    
     /**
      * Traite l'annonce qu'un agent est bloqué par un Wumpus
      */
@@ -402,7 +441,6 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         AgentCommState state = getState();
         
         System.out.println("=== " + myAgent.getLocalName() + " - Communication Stats ===");
-        System.out.println("Messages sent: " + state.messagesSent);
         System.out.println("Messages received: " + state.messagesReceived);
         System.out.println("Maps merged: " + state.mapsMerged);
         System.out.println("Wumpus alerts received: " + state.wumpusAlertsReceived);
@@ -410,7 +448,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
     }
     
     /**
-     * Nettoie l'état statique (utile pour les tests)
+     * Nettoie l'état statique
      */
     public static void resetAllStates() {
         commStates.clear();
@@ -418,7 +456,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
     
     @Override
     public int onEnd() {
-        // Passer en chasse si golem connu ou stench détectée        
+        // on repasse dans le behavior précédant     
         return myAgent.getEtat();
     }
 }

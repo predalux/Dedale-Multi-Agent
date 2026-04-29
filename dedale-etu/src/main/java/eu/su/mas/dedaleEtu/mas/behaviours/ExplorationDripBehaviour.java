@@ -173,7 +173,6 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
 
         // 5) Se déplacer vers le noeud sélectionné
         if (myAgent.moveTo(new GsLocation(nextNodeId))) {
-            myAgent.getMyMap().markVisited(nextNodeId);
             List<String> chemin = myAgent.getChemin();
             if (chemin != null && !chemin.isEmpty()) {
                 chemin.remove(0);

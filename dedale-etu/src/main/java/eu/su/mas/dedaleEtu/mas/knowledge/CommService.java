@@ -109,6 +109,24 @@ public class CommService {
     }
     
     /**
+     * Envoie les noeuds "libres" autour d'un noeud
+     */
+    public void propagateBroadcastFreeNeighbors(String golemPos, List<String> freeNeighbors, List<String> blockedNodes) {
+        ACLMessage msg = new ACLMessage(ACLMessage.PROPAGATE);
+        msg.setProtocol("WALL-NEEDED");
+        msg.setSender(myAgent.getAID());
+        // Format : "golemPos|free1,free2|blocked1,blocked2"
+        String free = String.join(",", freeNeighbors);
+        String blocked = String.join(",", blockedNodes);
+        msg.setContent(golemPos + "|" + free + "|" + blocked);
+        for (String name : agentList) {
+            if (!name.equals(myAgent.getLocalName()))
+                msg.addReceiver(new AID(name, AID.ISLOCALNAME));
+        }
+        myAgent.sendMessage(msg);
+    }
+    
+    /**
      * Envoie la position du Wumpus à un seul agent
      */
     public void sendWumpusLocation(String location, AID receiver) {
