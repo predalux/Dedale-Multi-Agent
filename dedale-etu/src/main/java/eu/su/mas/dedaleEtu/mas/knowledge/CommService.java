@@ -20,6 +20,8 @@ public class CommService {
     
     private static final int BROADCAST_COOLDOWN_MS = 4000;      // cd entre broadcast du wumpus
     private static final int PONG_WAIT_MS = 1000;           	// Attente en ayant enovyé un pong
+    private static final boolean AFFICHAGE = false;        		// Affiche le traitement des messages par les agents (ca peut faire beaucoup)
+
 
     long lastBroadcast;
 
@@ -90,7 +92,8 @@ public class CommService {
                 msg.addReceiver(new AID(name, AID.ISLOCALNAME));
         }
         myAgent.sendMessage(msg);
-        System.out.println(myAgent.getLocalName() + " - Wumpus position broadcast: " + location);
+        if (AFFICHAGE)
+        	System.out.println(myAgent.getLocalName() + " - Wumpus position broadcast: " + location);
     }
     
     /**

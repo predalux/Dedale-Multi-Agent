@@ -109,7 +109,8 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         }
         
         if (processedCount > 0) {
-            //system.out.println(myAgent.getLocalName() + " - Processed " + processedCount + " messages");
+        	if (AFFICHAGE)
+        		System.out.println(myAgent.getLocalName() + " - Processed " + processedCount + " messages");
         }
         return processedCount > 0;
     }
@@ -160,7 +161,6 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
                 break;
                 
             case "MOVE-ASIDE":
-            	System.out.println("ok ok I move");
             	handleMoveAside(msg);
             	break;
             	
@@ -320,12 +320,12 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
                 myAgent.setWallTargetNode(candidate);
                 myAgent.setChemin(path);
                 if (AFFICHAGE)
-                System.out.println(myAgent.getLocalName() + " - d'après " + sender.getLocalName() 
-                    + " je vais bloquer : " + candidate + " via " + path);
+                	System.out.println(myAgent.getLocalName() + " - d'après " + sender.getLocalName() 
+                    	+ " je vais bloquer : " + candidate + " via " + path);
             } else {
                 if (AFFICHAGE)
-                System.out.println(myAgent.getLocalName() + " - ignore proposition de " 
-                    + sender.getLocalName() + " vers " + candidate);
+                	System.out.println(myAgent.getLocalName() + " - ignore proposition de " 
+                			+ sender.getLocalName() + " vers " + candidate);
             }
             return;
         }
@@ -402,7 +402,8 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
             if (path != null && !path.isEmpty()) {
                 myAgent.setWallTargetNode(requestedTarget);
                 myAgent.setChemin(path);
-                System.out.println(myAgent.getLocalName() + " se décale vers " + requestedTarget);
+                if (AFFICHAGE)
+                	System.out.println(myAgent.getLocalName() + " se décale vers " + requestedTarget);
                 return;
             }
         }
@@ -417,7 +418,8 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
             if (path != null && !path.isEmpty()) {
                 myAgent.setWallTargetNode(alt);
                 myAgent.setChemin(path);
-                System.out.println(myAgent.getLocalName() + " se décale vers alternative " + alt);
+                if (AFFICHAGE)
+                	System.out.println(myAgent.getLocalName() + " se décale vers alternative " + alt);
                 return;
             }
         }
@@ -430,8 +432,9 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         if (cascadeTarget != null) {
             String blockingAgentName = nearbyAgents.get(cascadeTarget);
             if (blockingAgentName != null) {
-                System.out.println(myAgent.getLocalName() + 
-                    " cascade MOVE-ASIDE " + blockingAgentName + " pour libérer " + cascadeTarget);
+            	if (AFFICHAGE)
+                	System.out.println(myAgent.getLocalName() + 
+                			" cascade MOVE-ASIDE " + blockingAgentName + " pour libérer " + cascadeTarget);
                 // On se met en attente sur la case actuelle, on relaye la demande
                 myAgent.getCommService().requestMoveAside(
                     blockingAgentName,
@@ -441,8 +444,8 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
                 myAgent.setWallTargetNode(cascadeTarget);
             }
         }
-
-        System.out.println(myAgent.getLocalName() + " ne peut pas se décaler immédiatement, cascade envoyée");
+        if (AFFICHAGE)
+        	System.out.println(myAgent.getLocalName() + " ne peut pas se décaler immédiatement, cascade envoyée");
     }
     
     // ========== ENVOI DE MESSAGES ==========

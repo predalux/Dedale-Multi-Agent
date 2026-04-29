@@ -29,7 +29,7 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
     protected String golemPosition = null;                   
     protected boolean stench;
     protected List<String> ListPosLibre = new ArrayList<>();   
-    private String wallTargetNode = null;
+    protected String wallTargetNode = null;
     
     // pour la connaissance et la communication
 	protected ExtendedMapRepresentation myMap;

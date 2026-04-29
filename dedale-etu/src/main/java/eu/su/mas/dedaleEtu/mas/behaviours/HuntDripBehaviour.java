@@ -37,6 +37,9 @@ public class HuntDripBehaviour extends OneShotBehaviour {
     public static final int WUMPUS_LOST     = 0;	  // Explo
     public static final int WUMPUS_DETECTED = 2;	  // Wall
     
+    private static final boolean AFFICHAGE = false;   // Affiche le traitement des messages par les agents (ca peut faire beaucoup)
+
+    
     private int exitValue = 0;
     
 
@@ -134,9 +137,8 @@ public class HuntDripBehaviour extends OneShotBehaviour {
             	        	    blockingAgent, 
             	        	    currentNodeId + "|" + wallTarget   
             	        	);
-            	        System.out.println(myAgent.getLocalName() + 
-            	            " bloqué par " + blockingAgent + ", demande de décalage");
-
+            	        if (AFFICHAGE)
+            	        	System.out.println(myAgent.getLocalName() + " bloqué par " + blockingAgent + ", demande de décalage");
             	        return;
             	    }
 
@@ -158,7 +160,8 @@ public class HuntDripBehaviour extends OneShotBehaviour {
         // 4) Position golem connue
         if (golemPos != null) {
             if (myAgent.getMyMap().getNode(golemPos) == null) {
-                System.out.println(myAgent.getLocalName() + " - Nœud golem inconnu : " + golemPos);
+    	        if (AFFICHAGE)
+    	        	System.out.println(myAgent.getLocalName() + " - Nœud golem inconnu : " + golemPos);
                 // Se diriger vers le stench le plus proche
                 if (!voisinsStench.isEmpty()) {
                     moveTo(voisinsStench.get(0));
@@ -171,7 +174,8 @@ public class HuntDripBehaviour extends OneShotBehaviour {
             boolean golemCaseVisible = lobs.stream()
                 .anyMatch(obs -> obs.getLeft().getLocationId().equals(golemPosSnapshot));
             if (golemCaseVisible && !golemVisible && !stenchDetected) {
-                System.out.println(myAgent.getLocalName() + " - Golem a bougé depuis " + golemPos);
+    	        if (AFFICHAGE)
+    	        	System.out.println(myAgent.getLocalName() + " - Golem a bougé depuis " + golemPos);
                 myAgent.setGolemPosition(null);
                 exitValue = WUMPUS_LOST;
                 return;
@@ -182,7 +186,8 @@ public class HuntDripBehaviour extends OneShotBehaviour {
 
             // s'il est innacessible on va explorer
             if (path == null || path.isEmpty()) {
-                System.out.println(myAgent.getLocalName() + " - Pas de chemin vers golem");
+    	        if (AFFICHAGE)
+    	        	System.out.println(myAgent.getLocalName() + " - Pas de chemin vers golem");
                 exitValue = WUMPUS_LOST;
                 myAgent.randomMove(voisinsLibres);
                 return;
