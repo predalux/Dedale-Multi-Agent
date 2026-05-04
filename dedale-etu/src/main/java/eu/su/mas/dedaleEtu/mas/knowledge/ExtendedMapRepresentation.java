@@ -1,40 +1,28 @@
 package eu.su.mas.dedaleEtu.mas.knowledge;
 
-import java.util.Iterator;
 import java.util.Set;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
-import org.graphstream.algorithm.ConnectedComponents;
 import org.graphstream.algorithm.Dijkstra;
-import org.graphstream.graph.Edge;
-import org.graphstream.graph.EdgeRejectedException;
-import org.graphstream.graph.ElementNotFoundException;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.IdAlreadyInUseException;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
-import org.graphstream.ui.fx_viewer.FxViewPanel;
-import org.graphstream.ui.fx_viewer.FxViewer;
-import org.graphstream.ui.javafx.FxGraphRenderer;
-import org.graphstream.ui.view.Viewer;
-import org.graphstream.ui.view.Viewer.CloseFramePolicy;
 
-import dataStructures.tuple.Couple;
-import eu.su.mas.dedale.env.Location;
-import eu.su.mas.dedale.env.Observation;
+import dataStructures.serializableGraph.SerializableNode;
+import dataStructures.serializableGraph.SerializableSimpleGraph;
+
 
 import java.util.*;
 
 public class ExtendedMapRepresentation extends MapRepresentation {
 	
+	private static final long serialVersionUID = 1L;
 	private final Map<String, Long> lastVisitTime = new HashMap<>();
 
 
@@ -95,11 +83,16 @@ public class ExtendedMapRepresentation extends MapRepresentation {
  	    return node.leavingEdges().map(e -> e.getOpposite(node).getId()).collect(Collectors.toList());
  	}
  	
- 	public boolean isGolemSurrounded(String golemNodeId, List<String> agentPositions) {
- 	    List<String> neighbors = getNeighbors(golemNodeId);
- 	    if (neighbors.isEmpty()) return false;
- 	    // Tous les voisins du golem doivent être occupés par un agent
- 	    return agentPositions.containsAll(neighbors);
+ 	public void markGolemCaught(String nodeId) {
+ 	    Node n = this.g.getNode(nodeId);
+ 	    if (n == null) return;
+ 	    n.setAttribute("ui.class", MapAttribute.golem_caught.toString());
+ 	}
+
+ 	public boolean isGolemCaught(String nodeId) {
+ 	    Node n = this.g.getNode(nodeId);
+ 	    if (n == null) return false;
+ 	    return "golem_caught".equals(n.getAttribute("ui.class"));
  	}
 
  	public List<String> getFreeNeighbors(String golemNodeId, List<String> agentPositions) {
@@ -169,6 +162,49 @@ public class ExtendedMapRepresentation extends MapRepresentation {
  	    path.remove(0);
  	    return path;
  	}
+ 	
+ 	@Override
+ 	public void mergeMap(SerializableSimpleGraph<String, MapAttribute> sgreceived) {
+		//System.out.println("You should decide what you want to save and how");
+		//System.out.println("We currently blindy add the topology");
+
+		for (SerializableNode<String, MapAttribute> n: sgreceived.getAllNodes()){
+			//System.out.println(n);
+			boolean alreadyIn =false;
+			//1 Add the node
+			Node newnode=null;
+			try {
+				newnode=this.g.addNode(n.getNodeId());
+			}	catch(IdAlreadyInUseException e) {
+				alreadyIn=true;
+				//System.out.println("Already in"+n.getNodeId());
+			}
+			if (!alreadyIn) {
+				newnode.setAttribute("ui.label", newnode.getId());
+				newnode.setAttribute("ui.class", n.getNodeContent().toString());
+			}else{
+				newnode=this.g.getNode(n.getNodeId());
+				//3 check its attribute. If it is below the one received, update it.
+				
+				
+			    if ("golem_caught".equals(newnode.getAttribute("ui.class"))) { 
+			    	// passer 
+			    	}
+			    
+			    else if (((String) newnode.getAttribute("ui.class"))==MapAttribute.closed.toString() || n.getNodeContent().toString()==MapAttribute.closed.toString()) {
+					newnode.setAttribute("ui.class",MapAttribute.closed.toString());
+				}
+			}
+		}
+
+		//4 now that all nodes are added, we can add edges
+		for (SerializableNode<String, MapAttribute> n: sgreceived.getAllNodes()){
+			for(String s:sgreceived.getEdges(n.getNodeId())){
+				addEdge(n.getNodeId(),s);
+			}
+		}
+		//System.out.println("Merge done");
+	}
 
     
 }

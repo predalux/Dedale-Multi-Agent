@@ -18,15 +18,16 @@ public class WallDripBehaviour extends OneShotBehaviour {
 
     private static final long serialVersionUID = 1L;
     private AbstractAgent myAgent;
-    private int exitValue = 2;
 
     private long wallStartTime = 0;
 
     private static final long WALL_TIMEOUT_MS = 15000; 		// temps pour que l'agent considère le golem bloquer
-    private static final boolean AFFICHAGE = false;        		 // Affiche le traitement des messages par les agents (ca peut faire beaucoup)
+    private static final boolean AFFICHAGE = false;         // Affiche le traitement des messages par les agents (ca peut faire beaucoup)
 
     public static final int STAY_WALL = 2;    				// rester mur
     public static final int GOLEM_GONE = 1;   				// golem parti, retour chasse
+
+    private int exitValue;
 
     public WallDripBehaviour(AbstractAgent agent) {
         super(agent);
@@ -57,11 +58,13 @@ public class WallDripBehaviour extends OneShotBehaviour {
                 
             } else {
                 // Pas encore arrivé, avancer
-                myAgent.moveTo(new GsLocation(myAgent.getChemin().get(0)));
-                myAgent.getChemin().remove(0);
-                myAgent.doWait(800);
-                return;
-                }
+            	if (myAgent.getChemin()!= null && !myAgent.getChemin().isEmpty()) {
+	                myAgent.moveTo(new GsLocation(myAgent.getChemin().get(0)));
+	                myAgent.getChemin().remove(0);
+	                myAgent.doWait(800);
+	                return;
+	                }
+            	}
             }
             
         // devoir demander aux autres murs a bouger egalement (chain block)
@@ -76,7 +79,7 @@ public class WallDripBehaviour extends OneShotBehaviour {
         // regarde si le golem est toujours visible ou s'il a bougé autour
         for (Couple<Location, List<Couple<Observation, String>>> obs : lobs) {
             for (Couple<Observation, String> detail : obs.getRight()) {
-                if (detail.getLeft() == Observation.AGENTNAME && detail.getRight().equals("Wumpus")) {
+            	if (detail.getLeft() == Observation.AGENTNAME && AbstractAgent.isGolem(detail.getRight())) {
                     golemVisible = true;
                     String newGolemPos = obs.getLeft().getLocationId();
                     if (golemPos != null && !golemPos.equals(newGolemPos)) {
@@ -130,7 +133,7 @@ public class WallDripBehaviour extends OneShotBehaviour {
         boolean golemCurrentlyVisible = lobs.stream()
             .anyMatch(obs -> obs.getLeft().getLocationId().equals(golemPos) &&
                 obs.getRight().stream()
-                    .anyMatch(d -> d.getLeft() == Observation.AGENTNAME && d.getRight().equals("Wumpus")));
+                .anyMatch(d -> d.getLeft() == Observation.AGENTNAME && AbstractAgent.isGolem(d.getRight())));
 
         if (golemCurrentlyVisible) blocked.add(golemPos);
 

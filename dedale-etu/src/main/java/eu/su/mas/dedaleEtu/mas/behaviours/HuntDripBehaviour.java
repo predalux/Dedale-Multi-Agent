@@ -21,7 +21,6 @@ import eu.su.mas.dedale.mas.AbstractDedaleAgent;
 
 import eu.su.mas.dedaleEtu.mas.knowledge.MapRepresentation.MapAttribute;
 import eu.su.mas.dedaleEtu.mas.knowledge.MapRepresentation;
-import eu.su.mas.dedaleEtu.mas.behaviours.ShareMapBehaviour;
 import jade.core.AID;
 import jade.core.behaviours.OneShotBehaviour;
 import jade.lang.acl.ACLMessage;
@@ -40,7 +39,7 @@ public class HuntDripBehaviour extends OneShotBehaviour {
     private static final boolean AFFICHAGE = false;   // Affiche le traitement des messages par les agents (ca peut faire beaucoup)
 
     
-    private int exitValue = 0;
+    private int exitValue;
     
 
     public HuntDripBehaviour(AbstractAgent agent) {
@@ -51,7 +50,6 @@ public class HuntDripBehaviour extends OneShotBehaviour {
     @Override
     public void action() {
         exitValue = CONTINUE_CHASSE;
-        myAgent.doWait(800);
 
         Location myPosition = myAgent.getCurrentPosition();
         if (myPosition == null) return;
@@ -81,7 +79,7 @@ public class HuntDripBehaviour extends OneShotBehaviour {
                     stenchDetected = true;
                     myAgent.setStench(true);
                 }
-                if (detail.getLeft() == Observation.AGENTNAME && detail.getRight().equals("Wumpus")) {
+                if (detail.getLeft() == Observation.AGENTNAME && AbstractAgent.isGolem(detail.getRight())) {
                     hasAgent = true;
                     golemVisible = true;
                     tmpgolemPos = node;
@@ -147,6 +145,7 @@ public class HuntDripBehaviour extends OneShotBehaviour {
 
             	    myAgent.setChemin(path);
             	    if (moveTo(next))
+            	        myAgent.doWait(800);
             	    	myAgent.getChemin().remove(0);
             	    return;
             	}
@@ -169,6 +168,7 @@ public class HuntDripBehaviour extends OneShotBehaviour {
                 // Se diriger vers le stench le plus proche
                 if (!voisinsStench.isEmpty()) {
                     moveTo(voisinsStench.get(0));
+                    myAgent.doWait(800);
                 }
                 return;
             }
@@ -186,10 +186,21 @@ public class HuntDripBehaviour extends OneShotBehaviour {
             }
 
             // Recalculer le chemin vers le golem à chaque tick
-            List<String> path = myAgent.getMyMap().getShortestPath(currentNodeId, golemPos);
+            if (myAgent.getChemin() == null || myAgent.getChemin().isEmpty() 
+            	    || !myAgent.getDestination().equals(golemPos)) {
+            	    myAgent.setDestination(golemPos);
+            	    List<String> path = myAgent.getMyMap().getShortestPath(currentNodeId, golemPos);
+            	    myAgent.setChemin(path);
+            	}
 
+            	if (myAgent.getChemin() != null && !myAgent.getChemin().isEmpty()) {
+            	    if (moveTo(myAgent.getChemin().get(0))) {
+            	        myAgent.getChemin().remove(0);
+            	    }
+            	}
+        	}	
             // s'il est innacessible on va explorer
-            if (path == null || path.isEmpty()) {
+            if (myAgent.getChemin() == null || myAgent.getChemin().isEmpty()) {
     	        if (AFFICHAGE)
     	        	System.out.println(myAgent.getLocalName() + " - Pas de chemin vers golem");
                 exitValue = WUMPUS_LOST;
@@ -197,11 +208,11 @@ public class HuntDripBehaviour extends OneShotBehaviour {
                 return;
             }
 
-            myAgent.setChemin(path);
-            if (moveTo(myAgent.getChemin().get(0)))
+            if (moveTo(myAgent.getChemin().get(0))) {
     	    	myAgent.getChemin().remove(0);
-            return;
-        }
+            	myAgent.doWait(800);
+                return;
+            }
 
         // 5) Stench sans position connue, se diriger vers la stench
         if (!voisinsStench.isEmpty()) {
@@ -211,6 +222,8 @@ public class HuntDripBehaviour extends OneShotBehaviour {
                 .findFirst()
                 .orElse(voisinsStench.get(0));
             moveTo(target);
+            myAgent.doWait(800);
+
         }
     }
 

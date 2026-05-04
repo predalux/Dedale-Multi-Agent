@@ -21,7 +21,7 @@ public class CommService implements Serializable {
     
     private static final int BROADCAST_COOLDOWN_MS = 4000;      // cd entre broadcast du wumpus
     private static final int PONG_WAIT_MS = 1000;           	// Attente en ayant enovyé un pong
-    private static final long GOLEM_CAUGHT_COOLDOWN_MS = 7000;  // cd entre annonce de la capture
+    private static final long GOLEM_CAUGHT_COOLDOWN_MS = 8000;  // cd entre annonce de la capture
     long lastGolemCaughtBroadcast = 0;
     private static final long FREE_NEIGHBORS_COOLDOWN_MS = 3000;// cd entre position a prendre près du golem
     long lastFreeNeighborsBroadcast = 0;

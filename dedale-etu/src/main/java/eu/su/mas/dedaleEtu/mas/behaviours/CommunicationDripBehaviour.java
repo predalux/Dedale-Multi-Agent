@@ -12,7 +12,6 @@ import org.graphstream.graph.Node;
 
 import dataStructures.serializableGraph.SerializableSimpleGraph;
 import eu.su.mas.dedale.env.Location;
-import eu.su.mas.dedale.env.gs.GsLocation;
 import eu.su.mas.dedaleEtu.mas.agents.dummies.AbstractAgent;
 import eu.su.mas.dedaleEtu.mas.knowledge.MapRepresentation.MapAttribute;
 import jade.core.AID;
@@ -325,11 +324,11 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
                 myAgent.setGolemPosition(golemPos);
                 myAgent.setWallTargetNode(candidate);
                 myAgent.setChemin(path);
-                //if (AFFICHAGE)
+                if (AFFICHAGE)
                 	System.out.println(myAgent.getLocalName() + " - d'après " + sender.getLocalName() 
                     	+ " je vais bloquer : " + candidate + " via " + path);
             } else {
-                //if (AFFICHAGE)
+                if (AFFICHAGE)
                 	System.out.println(myAgent.getLocalName() + " - ignore proposition de " 
                 			+ sender.getLocalName() + " vers " + candidate);
             }
@@ -388,6 +387,9 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
             // stop la chasse
             myAgent.setEtat(0);
             myAgent.setIgnoringStench(true);
+            
+            myAgent.getMyMap().markGolemCaught(caughtPos);
+
             if (AFFICHAGE)
                 System.out.println(myAgent.getLocalName() + " - Golem caught at " + caughtPos + ", retour exploration");
         }

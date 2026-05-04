@@ -7,7 +7,6 @@ import java.util.List;
 import eu.su.mas.dedale.mas.agent.behaviours.platformManagment.*;
 import eu.su.mas.dedaleEtu.mas.behaviours.CommunicationDripBehaviour;
 import eu.su.mas.dedaleEtu.mas.behaviours.ExplorationDripBehaviour;
-import eu.su.mas.dedaleEtu.mas.behaviours.MovementDripBehaviour;
 import eu.su.mas.dedaleEtu.mas.behaviours.WallDripBehaviour;
 import eu.su.mas.dedaleEtu.princ.ConfigurationFile;
 import eu.su.mas.dedaleEtu.mas.behaviours.HuntDripBehaviour;

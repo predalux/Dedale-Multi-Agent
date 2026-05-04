@@ -2,7 +2,7 @@
 { 
   "agentType":"agentExplo",
   "agentName": "Hunt1",
-  "agentClass":"dummies.DrippedAgent",
+  "agentClass":"dummies.explo.FSMExploAgent",
   "agentInitialContainer":"container1",
   "communicationRange": 2,
   "initialLocation": "70",
@@ -16,10 +16,10 @@
 { 
   "agentType":"agentExplo",
   "agentName": "Hunt2",
-  "agentClass":"dummies.DrippedAgent",
+  "agentClass":"dummies.explo.FSMExploAgent",
   "agentInitialContainer":"container1",
   "communicationRange": 2,
-  "initialLocation": "71",
+  "initialLocation": "78",
   "backPackCapacityGold": -1,
   "backPackCapacityDiamond":-1, 
   "detectionRadius": 0,
@@ -30,7 +30,7 @@
 { 
   "agentType":"agentExplo",
   "agentName": "Hunt3",
-  "agentClass":"dummies.DrippedAgent",
+  "agentClass":"dummies.explo.FSMExploAgent",
   "agentInitialContainer":"container1",
   "communicationRange": 2,
   "initialLocation": "76",
@@ -44,7 +44,7 @@
   { 
   "agentType":"agentExplo",
   "agentName": "Hunt4",
-  "agentClass":"dummies.DrippedAgent",
+  "agentClass":"dummies.explo.FSMExploAgent",
   "agentInitialContainer":"container1",
   "communicationRange": 1,
   "initialLocation": "j11",
@@ -58,7 +58,7 @@
   { 
   "agentType":"agentExplo",
   "agentName": "Hunt5",
-  "agentClass":"dummies.DrippedAgent",
+  "agentClass":"dummies.explo.FSMExploAgent",
   "agentInitialContainer":"container1",
   "communicationRange": 1,
   "initialLocation": "h40",
@@ -72,7 +72,7 @@
   { 
   "agentType":"agentExplo",
   "agentName": "Hunt6",
-  "agentClass":"dummies.DrippedAgent",
+  "agentClass":"dummies.explo.FSMExploAgent",
   "agentInitialContainer":"container1",
   "communicationRange": 3,
   "initialLocation": "M11",
@@ -86,7 +86,7 @@
   { 
   "agentType":"agentExplo",
   "agentName": "Hunt7",
-  "agentClass":"dummies.DrippedAgent",
+  "agentClass":"dummies.explo.FSMExploAgent",
   "agentInitialContainer":"container1",
   "communicationRange": 2,
   "initialLocation": "88",

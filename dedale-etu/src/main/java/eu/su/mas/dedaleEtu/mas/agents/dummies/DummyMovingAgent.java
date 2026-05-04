@@ -8,7 +8,6 @@ import eu.su.mas.dedale.mas.AbstractDedaleAgent;
 import eu.su.mas.dedale.mas.agent.behaviours.platformManagment.*;
 
 import eu.su.mas.dedaleEtu.mas.behaviours.RandomWalkBehaviour;
-import eu.su.mas.dedaleEtu.mas.behaviours.SayHelloBehaviour;
 
 import jade.core.behaviours.Behaviour;
 
@@ -51,7 +50,7 @@ public class DummyMovingAgent extends AbstractDedaleAgent{
 		 * 
 		 ************************************************/
 		lb.add(new RandomWalkBehaviour(this));
-		lb.add(new SayHelloBehaviour(this));
+		//lb.add(new SayHelloBehaviour(this));
 		
 		
 		/***

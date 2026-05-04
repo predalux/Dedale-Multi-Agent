@@ -152,7 +152,7 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
         Map<String, String> golems = new HashMap<>();
 		for (Couple<Location, List<Couple<Observation, String>>> obs : lobs) {
 	    	for (Couple<Observation, String> detail : obs.getRight()) {
-	    		if (detail.getLeft() == Observation.AGENTNAME && (detail.getRight().equals("Wumpus") || detail.getRight().equals("Humancontrolled"))) {
+	    		if (detail.getLeft() == Observation.AGENTNAME && isGolem(detail.getRight())) {
 	    			    String pos = obs.getLeft().getLocationId();
     			    	this.setGolemPosition(pos);
 	    			    golems.put(pos,detail.getRight());
@@ -167,7 +167,7 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
         for (Couple<eu.su.mas.dedale.env.Location, List<Couple<Observation, String>>> obs : lobs) {
             String locationId = obs.getLeft().getLocationId();
             for (Couple<Observation, String> detail : obs.getRight()) {
-                if (detail.getLeft() == Observation.AGENTNAME && !"Wumpus".equals(detail.getRight())) {
+            	if (detail.getLeft() == Observation.AGENTNAME && !isGolem(detail.getRight())) {
                     neighbors.put(locationId, detail.getRight());
                 }
             }
@@ -223,6 +223,10 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
 	public void clearListPosLibre() {                          
 	    this.ListPosLibre.clear();                             
 	} 
+	
+	public static boolean isGolem(String agentName) {
+	    return "Wumpus".equals(agentName) || "Humancontrolled".equals(agentName);
+	}
 	
 	public boolean randomMove(List<String> voisinsLibres) {
     	Collections.shuffle(voisinsLibres);    	

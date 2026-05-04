@@ -2,7 +2,7 @@
 { 
   "agentType":"agentExplo",
   "agentName": "Hunt1",
-  "agentClass":"dummies.DrippedAgent",
+  "agentClass":"dummies.explo.FSMExploAgent",
   "agentInitialContainer":"container2",
   "communicationRange": 2,
   "initialLocation": "h16",
@@ -16,7 +16,7 @@
 { 
   "agentType":"agentExplo",
   "agentName": "Hunt2",
-  "agentClass":"dummies.DrippedAgent",
+  "agentClass":"dummies.explo.FSMExploAgent",
   "agentInitialContainer":"container2",
   "communicationRange": 2,
   "initialLocation": "h22",
@@ -30,7 +30,7 @@
 { 
   "agentType":"agentExplo",
   "agentName": "Hunt3",
-  "agentClass":"dummies.DrippedAgent",
+  "agentClass":"dummies.explo.FSMExploAgent",
   "agentInitialContainer":"container2",
   "communicationRange": 2,
   "initialLocation": "h14",

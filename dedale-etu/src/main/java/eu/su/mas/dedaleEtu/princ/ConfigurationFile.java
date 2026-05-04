@@ -85,8 +85,8 @@ public final class ConfigurationFile {
 	
 	// EXAM 
 	
-	//public static String INSTANCE_TOPOLOGY="resources/topology/map2026-topologyExam1.dgs";
-	public static String INSTANCE_TOPOLOGY="resources/topology/map2026-topologyExam2.dgs";
+	public static String INSTANCE_TOPOLOGY="resources/topology/map2026-topologyExam1.dgs";
+	//public static String INSTANCE_TOPOLOGY="resources/topology/map2026-topologyExam2.dgs";
 	
 	
 	
@@ -179,14 +179,18 @@ public final class ConfigurationFile {
 	//public static String INSTANCE_CONFIGURATION_ENTITIES="resources/agent-2collect.json";
 	//public static String INSTANCE_CONFIGURATION_ENTITIES="resources/agent-2explo-1human.json";
 	
-	//public static String INSTANCE_CONFIGURATION_ENTITIES="resources/2dripped-1wumpus.json";
+	// JSON pour tester
+	
+	public static String INSTANCE_CONFIGURATION_ENTITIES="resources/2dripped-1wumpus.json";
 	//public static String INSTANCE_CONFIGURATION_ENTITIES="resources/5dripped-1wumpus.json";
 
 	
+	// EXAM
 	
-	//public static String INSTANCE_CONFIGURATION_ENTITIES="resources/agent-3hunters-1human.json";
-	public static String INSTANCE_CONFIGURATION_ENTITIES="resources/agent-7hunters-3golems.json";
+	//public static String INSTANCE_CONFIGURATION_ENTITIES="resources/agent-3dripped-1human.json";
+	//public static String INSTANCE_CONFIGURATION_ENTITIES="resources/agent-7dripped-3golems.json";
 	
+
 
 
 }

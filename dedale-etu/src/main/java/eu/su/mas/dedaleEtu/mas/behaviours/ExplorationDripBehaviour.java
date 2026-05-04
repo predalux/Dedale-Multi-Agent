@@ -2,6 +2,7 @@ package eu.su.mas.dedaleEtu.mas.behaviours;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
@@ -20,7 +21,6 @@ import eu.su.mas.dedaleEtu.mas.knowledge.ExtendedMapRepresentation;
 import eu.su.mas.dedaleEtu.mas.knowledge.MapRepresentation;
 import eu.su.mas.dedaleEtu.mas.agents.dummies.AbstractAgent;
 import eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent;
-import eu.su.mas.dedaleEtu.mas.behaviours.ShareMapBehaviour;
 import jade.core.AID;
 import jade.core.behaviours.OneShotBehaviour;
 import jade.core.behaviours.SimpleBehaviour;
@@ -37,7 +37,7 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
     public static final int CONTINUE_EXPLORATION = 0; // explore
     public static final int WUMPUS_DETECTED = 1;	  // chasse
         
-    private int exitValue = CONTINUE_EXPLORATION;
+    private int exitValue;
 
     public ExplorationDripBehaviour(AbstractAgent agent) {
         super(agent);
@@ -60,7 +60,7 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
         Location myPosition = myAgent.getCurrentPosition();
         
         if (myPosition == null) return; // sécurité si agent pas encore déployé
-        if (myPosition.getLocationId() == myAgent.getDestination()) myAgent.setDestination(null);
+        if (myPosition.getLocationId().equals(myAgent.getDestination())) myAgent.setDestination(null);
 
         // 1) Marquer le noeud courant comme fermé
         myAgent.getMyMap().addNode(myPosition.getLocationId(), MapAttribute.closed);
@@ -90,14 +90,14 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
         }
 
         /// 4) Déterminer le prochain noeud à atteindre
-        if (nextNodeId == null || myAgent.getDestination() == null || myAgent.getDestination().equals(myPosition.getLocationId())) {
+        if (myAgent.getDestination() == null || myAgent.getDestination().equals(myPosition.getLocationId())) {
 
             if (!myAgent.isExploFinished()) {
                 // Mode exploration : aller vers le noeud ouvert le plus proche
                 List<String> path = myAgent.getMyMap().getShortestPathToClosestOpenNode(myPosition.getLocationId());
                 if (path != null && !path.isEmpty()) {
-                    myAgent.setChemin(path);
                     myAgent.setDestination(path.get(path.size() - 1));
+                    myAgent.setChemin(path);
                     nextNodeId = path.get(0);}
             }
             
@@ -108,8 +108,8 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
 	                if (stalest != null) {
 	                    List<String> path = myAgent.getMyMap().getShortestPath(myPosition.getLocationId(), stalest);
 	                    if (path != null && !path.isEmpty()) {
-	                        myAgent.setChemin(path);
 	                        myAgent.setDestination(stalest);
+	                        myAgent.setChemin(path);
 	                        nextNodeId = path.get(0);
 	                    }
 	                }
@@ -118,50 +118,88 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
         }
         
         
-     // eviter de se bloquer avec un autre agent
+        // eviter de se bloquer avec un autre agent
         if (nearbyAgents.containsKey(nextNodeId)) { 
             System.out.println(myAgent.getLocalName() + " - Recalcul d'un chemin.");
             
             List<String> reserves = new ArrayList<>(nearbyAgents.keySet());
 
+            // chemin où l'on esquive les agents proches
             List<String> path = myAgent.getMyMap()
                 .getShortestPathWithBlockedNodes(myPosition.getLocationId(), myAgent.getDestination(), reserves);
             
             if (path != null && !path.isEmpty()) {
+                //myAgent.setDestination(path.get(path.size() - 1)); 
                 myAgent.setChemin(path);
-                myAgent.setDestination(path.get(path.size() - 1)); 
                 nextNodeId = path.get(0);
             } else {
                 // Pas de chemin alternatif, choisir une nouvelle destination
-                myAgent.setDestination(null);
-                nextNodeId = myPosition.getLocationId();
+            	List<String> openNodes = myAgent.getMyMap().getOpenNodes();
+                Collections.shuffle(openNodes);
+                
+                for (String candidate : openNodes) {
+                    List<String> altPath = myAgent.getMyMap()
+                        .getShortestPathWithBlockedNodes(myPosition.getLocationId(), candidate, reserves);
+                    if (altPath != null && !altPath.isEmpty()) {
+                        myAgent.setDestination(candidate);
+                        myAgent.setChemin(altPath);
+                        nextNodeId = altPath.get(0);
+                        break;
+                    }
+                }
             }
         }
         
-        // si on trouve un golem ou de la stench
-        if (!nearbyGolems.isEmpty() || (stenchDetected && !myAgent.isIgnoringStench())) {
-            // Broadcaster si golem visible
-            if (!nearbyGolems.isEmpty()) {
-            	myAgent.setIgnoringStench(false);
-                myAgent.getCommService().broadcastWumpusPosition(nearbyGolems.keySet().iterator().next());
-    		    //System.out.println(myAgent.getLocalName() + " a trouvé le GOLEM ");
-            }
-            exitValue = WUMPUS_DETECTED; // transition vers chasse
+        
+        // Broadcaster si golem visible
+        if (!nearbyGolems.isEmpty()) {
+        	myAgent.setIgnoringStench(false);
+            myAgent.getCommService().broadcastWumpusPosition(nearbyGolems.keySet().iterator().next());
+		    //System.out.println(myAgent.getLocalName() + " a trouvé le GOLEM ");
+            exitValue = WUMPUS_DETECTED;
             return;
         }
+        
+        if (stenchDetected && !myAgent.isIgnoringStench()) {
+            boolean stenchFromAgent = lobs.stream()
+                .filter(obs -> obs.getRight().stream()
+                    .anyMatch(d -> d.getLeft() == Observation.STENCH))
+                .allMatch(obs -> nearbyAgents.containsKey(obs.getLeft().getLocationId()));
+
+            if (!stenchFromAgent) {
+                exitValue = WUMPUS_DETECTED;
+                return;
+            }
+            // sinon on ignore, c'est juste un mur
+        }
+    
         
         
         // ignore l'odeur (cas où il sort de la chasse)
         if (myAgent.isIgnoringStench()) {
-            List<String> path = myAgent.getMyMap()
-                .getShortestPathToClosestOpenNode(myPosition.getLocationId());
-            
-            if (path != null && !path.isEmpty()) {
-                myAgent.setChemin(path);
-                myAgent.setDestination(path.get(path.size() - 1));
-                nextNodeId = path.get(0);
+            // Blacklister les noeuds avec stench
+            List<String> stenchNodes = lobs.stream()
+                .filter(obs -> obs.getRight().stream()
+                    .anyMatch(d -> d.getLeft() == Observation.STENCH))
+                .map(obs -> obs.getLeft().getLocationId())
+                .collect(java.util.stream.Collectors.toList());
+
+            // Forcer recalcul si destination dans zone stench
+            if (stenchNodes.contains(myAgent.getDestination())) {
+                myAgent.setDestination(null);
+                myAgent.setChemin(null);
             }
-            
+
+            if (myAgent.getDestination() == null) {
+                List<String> path = myAgent.getMyMap()
+                    .getShortestPathToClosestOpenNode(myPosition.getLocationId());
+                if (path != null && !path.isEmpty()) {
+                    myAgent.setDestination(path.get(path.size() - 1));
+                    myAgent.setChemin(path);
+                    nextNodeId = path.get(0);
+                }
+            }
+
             if (!stenchDetected) {
                 myAgent.setIgnoringStench(false);
             }
@@ -177,19 +215,32 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
                 .forEach(voisins::add);
             myAgent.randomMove(voisins);
             return;
-        } */
+        }*/ 
         		
         		
         myAgent.setLastPosition(myPosition.getLocationId());
 
         // 5) Se déplacer vers le noeud sélectionné
-        if (myAgent.moveTo(new GsLocation(nextNodeId))) {
+        if (!myAgent.moveTo(new GsLocation(nextNodeId))) {
+            // moveTo a échoué : noeud bloqué, on abandonne cette destination
+            myAgent.setDestination(null);
+            myAgent.setChemin(null);
+            
+            // Tenter un move aléatoire parmi les voisins libres
+            List<String> voisins = myAgent.getMyMap().getNeighbors(myPosition.getLocationId());
+            List<String> voisinsLibres = voisins.stream()
+                .filter(n -> !nearbyAgents.containsKey(n))
+                .filter(n -> !nearbyGolems.containsKey(n))
+                .collect(java.util.stream.Collectors.toList());
+            
+            myAgent.randomMove(voisinsLibres);
+        } else {
             List<String> chemin = myAgent.getChemin();
             if (chemin != null && !chemin.isEmpty()) {
                 chemin.remove(0);
                 myAgent.setChemin(chemin);
             }
-        }    
+        }  
     }
     
     
