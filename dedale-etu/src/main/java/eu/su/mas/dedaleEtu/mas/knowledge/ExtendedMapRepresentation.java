@@ -42,7 +42,7 @@ public class ExtendedMapRepresentation extends MapRepresentation {
         super(agentName);
     }
 
-    protected Graph getGraph() {
+    public Graph getGraph() {
 	    return this.g;
 	}
     
@@ -84,7 +84,7 @@ public class ExtendedMapRepresentation extends MapRepresentation {
 	}
 
     
-    // Permet de calculer les voisins du noeud donnÃ©e en argument
+    // Permet de calculer les voisins du noeud donnée en argument
  	// Le noeud donnée en argument n'est pas dans la liste des voisins
  	public synchronized List<String> getNeighbors(String nodeId) {
  	    Node node = this.g.getNode(nodeId);

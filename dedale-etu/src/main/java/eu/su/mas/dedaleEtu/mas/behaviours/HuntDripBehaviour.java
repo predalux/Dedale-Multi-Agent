@@ -51,7 +51,7 @@ public class HuntDripBehaviour extends OneShotBehaviour {
     @Override
     public void action() {
         exitValue = CONTINUE_CHASSE;
-        myAgent.doWait(500);
+        myAgent.doWait(800);
 
         Location myPosition = myAgent.getCurrentPosition();
         if (myPosition == null) return;
@@ -73,6 +73,9 @@ public class HuntDripBehaviour extends OneShotBehaviour {
             boolean hasStench = false;
 
             for (Couple<Observation, String> detail : obs.getRight()) {
+            	/*if (node.equals("h1")) 
+            		System.out.println(detail);*/
+
                 if (detail.getLeft() == Observation.STENCH) {
                     hasStench = true;
                     stenchDetected = true;
@@ -87,12 +90,12 @@ public class HuntDripBehaviour extends OneShotBehaviour {
                 } else if (detail.getLeft() == Observation.AGENTNAME) {
                     hasAgent = true;
                 }
+                if (!hasAgent) {
+                    voisinsLibres.add(node);
+                    if (hasStench) voisinsStench.add(node);
+                }
             }
 
-            if (!hasAgent) {
-                voisinsLibres.add(node);
-                if (hasStench) voisinsStench.add(node);
-            }
         }
         
         myAgent.updateMap(lobs,myPosition);;
@@ -143,7 +146,8 @@ public class HuntDripBehaviour extends OneShotBehaviour {
             	    }
 
             	    myAgent.setChemin(path);
-            	    moveTo(next);
+            	    if (moveTo(next))
+            	    	myAgent.getChemin().remove(0);
             	    return;
             	}
             // Chemin introuvable
@@ -194,11 +198,12 @@ public class HuntDripBehaviour extends OneShotBehaviour {
             }
 
             myAgent.setChemin(path);
-            moveTo(path.get(0));
+            if (moveTo(myAgent.getChemin().get(0)))
+    	    	myAgent.getChemin().remove(0);
             return;
         }
 
-        // 5) Stench sans position connue, se diriger vers le stench
+        // 5) Stench sans position connue, se diriger vers la stench
         if (!voisinsStench.isEmpty()) {
             // Préférer un nœud stench non visité récemment
             String target = voisinsStench.stream()

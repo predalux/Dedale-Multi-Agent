@@ -36,9 +36,7 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
     // codes de retour pour le FSM
     public static final int CONTINUE_EXPLORATION = 0; // explore
     public static final int WUMPUS_DETECTED = 1;	  // chasse
-    
-    //public static final int EXPLORATION_COMPLETE = 2; // directement intégrer dans l'exploration
-    
+        
     private int exitValue = CONTINUE_EXPLORATION;
 
     public ExplorationDripBehaviour(AbstractAgent agent) {
@@ -48,10 +46,10 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
 
     @Override
     public void action() {
-    	exitValue = 0;
+    	exitValue = CONTINUE_EXPLORATION;
     	myAgent.setGolemPosition(null);
         //myAgent.setStench(false);
-        myAgent.doWait(1000);
+        myAgent.doWait(800);
         
         // Initialiser la carte si nécessaire
         if (myAgent.getMyMap() == null) {
@@ -62,6 +60,7 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
         Location myPosition = myAgent.getCurrentPosition();
         
         if (myPosition == null) return; // sécurité si agent pas encore déployé
+        if (myPosition.getLocationId() == myAgent.getDestination()) myAgent.setDestination(null);
 
         // 1) Marquer le noeud courant comme fermé
         myAgent.getMyMap().addNode(myPosition.getLocationId(), MapAttribute.closed);
@@ -99,49 +98,51 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
                 if (path != null && !path.isEmpty()) {
                     myAgent.setChemin(path);
                     myAgent.setDestination(path.get(path.size() - 1));
-                    nextNodeId = path.get(0);
-                } else {
-                    // Plus de nœuds ouverts, exploration finie
-                    myAgent.setExploFinished(true);
-                }
+                    nextNodeId = path.get(0);}
             }
             
             if (myAgent.isExploFinished()) {
                 // Mode patrouille : aller vers le noeud le plus vieux
-                String stalest = myAgent.getMyMap().getStalestNode(myPosition.getLocationId());
-                if (stalest != null) {
-                    List<String> path = myAgent.getMyMap().getShortestPath(myPosition.getLocationId(), stalest);
-                    if (path != null && !path.isEmpty()) {
-                        myAgent.setChemin(path);
-                        myAgent.setDestination(stalest);
-                        nextNodeId = path.get(0);
-                    }
-                }
+            	if ( myAgent.getDestination() == null ) {
+	                String stalest = myAgent.getMyMap().getStalestNode(myPosition.getLocationId());
+	                if (stalest != null) {
+	                    List<String> path = myAgent.getMyMap().getShortestPath(myPosition.getLocationId(), stalest);
+	                    if (path != null && !path.isEmpty()) {
+	                        myAgent.setChemin(path);
+	                        myAgent.setDestination(stalest);
+	                        nextNodeId = path.get(0);
+	                    }
+	                }
+            	}
             }
         }
         
-        // eviter de se bloquer avec un autre agent
+        
+     // eviter de se bloquer avec un autre agent
         if (nearbyAgents.containsKey(nextNodeId)) { 
-        	System.out.println(myAgent.getLocalName() + " - Recalcul d'un chemin.");
-    	    //System.out.println(myAgent.getLocalName() + " next Node : "+ nextNodeId);
-        	
-        	List<String> reserves = new ArrayList<>(nearbyAgents.keySet());
+            System.out.println(myAgent.getLocalName() + " - Recalcul d'un chemin.");
+            
+            List<String> reserves = new ArrayList<>(nearbyAgents.keySet());
 
             List<String> path = myAgent.getMyMap()
                 .getShortestPathWithBlockedNodes(myPosition.getLocationId(), myAgent.getDestination(), reserves);
             
             if (path != null && !path.isEmpty()) {
                 myAgent.setChemin(path);
+                myAgent.setDestination(path.get(path.size() - 1)); 
                 nextNodeId = path.get(0);
             } else {
-                nextNodeId = myPosition.getLocationId(); // attendre
+                // Pas de chemin alternatif, choisir une nouvelle destination
+                myAgent.setDestination(null);
+                nextNodeId = myPosition.getLocationId();
             }
         }
         
         // si on trouve un golem ou de la stench
-        if (!nearbyGolems.isEmpty() || stenchDetected) {
+        if (!nearbyGolems.isEmpty() || (stenchDetected && !myAgent.isIgnoringStench())) {
             // Broadcaster si golem visible
             if (!nearbyGolems.isEmpty()) {
+            	myAgent.setIgnoringStench(false);
                 myAgent.getCommService().broadcastWumpusPosition(nearbyGolems.keySet().iterator().next());
     		    //System.out.println(myAgent.getLocalName() + " a trouvé le GOLEM ");
             }
@@ -149,7 +150,26 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
             return;
         }
         
+        
+        // ignore l'odeur (cas où il sort de la chasse)
+        if (myAgent.isIgnoringStench()) {
+            List<String> path = myAgent.getMyMap()
+                .getShortestPathToClosestOpenNode(myPosition.getLocationId());
+            
+            if (path != null && !path.isEmpty()) {
+                myAgent.setChemin(path);
+                myAgent.setDestination(path.get(path.size() - 1));
+                nextNodeId = path.get(0);
+            }
+            
+            if (!stenchDetected) {
+                myAgent.setIgnoringStench(false);
+            }
+        }
+        
+        
         // si l'agent n'a pas réussi a bouger en exploration (rencontre autre agent), alors random
+        /*
         if (myAgent.getLastPosition() != null && myAgent.getLastPosition().equals(myPosition.getLocationId())) {
             List<String> voisins = new ArrayList<>(nearbyAgents.keySet());
                         myAgent.getMyMap().getNeighbors(myPosition.getLocationId()).stream()
@@ -157,7 +177,7 @@ public class ExplorationDripBehaviour extends OneShotBehaviour {
                 .forEach(voisins::add);
             myAgent.randomMove(voisins);
             return;
-        }
+        } */
         		
         		
         myAgent.setLastPosition(myPosition.getLocationId());

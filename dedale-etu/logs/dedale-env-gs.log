@@ -6100,3 +6100,4225 @@
  	 detection radius: 0
  	 Expertise: [<Strength, 1>, <LockPicking, 1>]
  	 UserParameters: [param2, param3]
+20:22:13.126 [GK] INFO  - Loading configuration for environment MultiTypesV2
+20:22:13.127 [GK] INFO  - Generator type:MANUAL
+20:22:15.127 [Golem] INFO  - Entity Golem deployed in 15
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+20:22:15.130 [Drip1] INFO  - Entity Drip1 deployed in 33
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+20:22:15.132 [Drip2] INFO  - Entity Drip2 deployed in 26
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+20:22:15.135 [Drip3] INFO  - Entity Drip3 deployed in 12
+ Characteristics:  type : 
+ AgentName: Drip3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+20:22:15.136 [Drip5] INFO  - Entity Drip5 deployed in 10
+ Characteristics:  type : 
+ AgentName: Drip5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+20:22:15.137 [Drip4] INFO  - Entity Drip4 deployed in 28
+ Characteristics:  type : 
+ AgentName: Drip4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+12:49:21.066 [GK] INFO  - Loading configuration for environment MultiTypesV2
+12:49:21.069 [GK] INFO  - Generator type:MANUAL
+12:49:23.104 [Golem] INFO  - Entity Golem deployed in 24
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+12:49:23.108 [Drip1] INFO  - Entity Drip1 deployed in 19
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+12:49:23.116 [Drip5] INFO  - Entity Drip5 deployed in 21
+ Characteristics:  type : 
+ AgentName: Drip5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+12:49:23.118 [Drip3] INFO  - Entity Drip3 deployed in 5
+ Characteristics:  type : 
+ AgentName: Drip3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+12:49:23.120 [Drip4] INFO  - Entity Drip4 deployed in 6
+ Characteristics:  type : 
+ AgentName: Drip4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+12:49:23.124 [Drip2] INFO  - Entity Drip2 deployed in 8
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+12:49:53.629 [GK] INFO  - Loading configuration for environment MultiTypesV2
+12:49:53.630 [GK] INFO  - Generator type:MANUAL
+12:49:54.863 [Golem] INFO  - Entity Golem deployed in 20
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+12:49:55.605 [Drip5] INFO  - Entity Drip5 deployed in 15
+ Characteristics:  type : 
+ AgentName: Drip5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+12:49:55.607 [Drip4] INFO  - Entity Drip4 deployed in 11
+ Characteristics:  type : 
+ AgentName: Drip4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+12:49:55.611 [Drip2] INFO  - Entity Drip2 deployed in 21
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+12:49:55.628 [Drip3] INFO  - Entity Drip3 deployed in 6
+ Characteristics:  type : 
+ AgentName: Drip3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+12:49:55.629 [Drip1] INFO  - Entity Drip1 deployed in 22
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+16:48:05.916 [GK] INFO  - Loading configuration for environment MultiTypesV2
+16:48:05.917 [GK] INFO  - Generator type:MANUAL
+16:48:07.578 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+16:50:02.440 [GK] INFO  - Loading configuration for environment MultiTypesV2
+16:50:02.441 [GK] INFO  - Generator type:MANUAL
+16:50:04.021 [Golem] INFO  - Entity Golem deployed in h22
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+16:50:04.445 [Drip3] INFO  - Entity Drip3 deployed in h7
+ Characteristics:  type : 
+ AgentName: Drip3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+16:50:04.449 [Drip2] INFO  - Entity Drip2 deployed in h1
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+16:50:04.449 [Drip5] INFO  - Entity Drip5 deployed in h22
+ Characteristics:  type : 
+ AgentName: Drip5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+16:50:04.450 [Drip4] INFO  - Entity Drip4 deployed in h17
+ Characteristics:  type : 
+ AgentName: Drip4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+16:50:04.450 [Drip1] INFO  - Entity Drip1 deployed in h18
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+16:52:07.101 [GK] INFO  - Loading configuration for environment MultiTypesV2
+16:52:07.103 [GK] INFO  - Generator type:MANUAL
+16:52:09.197 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+16:53:26.266 [GK] INFO  - Loading configuration for environment MultiTypesV2
+16:53:26.266 [GK] INFO  - Generator type:MANUAL
+16:53:28.287 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+16:53:28.294 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+16:53:28.299 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+16:53:28.300 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+16:57:14.014 [GK] INFO  - Loading configuration for environment MultiTypesV2
+16:57:14.014 [GK] INFO  - Generator type:MANUAL
+16:57:15.414 [Golem2] ERROR - Impossible to deploy entity Golem2, the indicated position does not exist: j1
+16:57:15.417 [Golem3] ERROR - Impossible to deploy entity Golem3, the indicated position does not exist: M3
+16:57:15.419 [Golem] ERROR - Impossible to deploy entity Golem, the indicated position does not exist: 10
+16:57:46.066 [GK] INFO  - Loading configuration for environment MultiTypesV2
+16:57:46.067 [GK] INFO  - Generator type:MANUAL
+16:57:47.800 [Golem2] ERROR - Impossible to deploy entity Golem2, the indicated position does not exist: j1
+16:57:47.802 [Golem] ERROR - Impossible to deploy entity Golem, the indicated position does not exist: 10
+16:57:47.805 [Golem3] ERROR - Impossible to deploy entity Golem3, the indicated position does not exist: M3
+16:58:41.034 [GK] INFO  - Loading configuration for environment MultiTypesV2
+16:58:41.035 [GK] INFO  - Generator type:MANUAL
+16:58:42.967 [Golem] ERROR - Impossible to deploy entity Golem, the indicated position does not exist: 10
+16:58:42.971 [Golem3] ERROR - Impossible to deploy entity Golem3, the indicated position does not exist: M3
+16:58:42.973 [Golem2] ERROR - Impossible to deploy entity Golem2, the indicated position does not exist: j1
+16:58:43.034 [Hunt4] ERROR - Impossible to deploy entity Hunt4, the indicated position does not exist: j11
+16:58:43.042 [Hunt1] ERROR - Impossible to deploy entity Hunt1, the indicated position does not exist: 70
+16:58:43.045 [Hunt2] ERROR - Impossible to deploy entity Hunt2, the indicated position does not exist: 71
+16:58:43.049 [Hunt3] ERROR - Impossible to deploy entity Hunt3, the indicated position does not exist: 76
+16:58:43.051 [Hunt7] ERROR - Impossible to deploy entity Hunt7, the indicated position does not exist: 88
+16:58:43.054 [Hunt5] INFO  - Entity Hunt5 of type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h40
+ Characteristics:  type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+16:58:43.055 [Hunt6] ERROR - Impossible to deploy entity Hunt6, the indicated position does not exist: M11
+17:00:39.205 [GK] ERROR - Loading a configuration : This type of entry does not yet exist - DGS004
+17:00:58.536 [GK] ERROR - Loading a configuration : This type of entry does not yet exist - DGS004
+17:01:20.762 [GK] ERROR - Loading a configuration : This type of entry does not yet exist - DGS004
+17:16:49.116 [GK] ERROR - Loading a configuration : This type of entry does not yet exist - DGS004
+17:19:46.736 [GK] INFO  - Loading configuration for environment MultiTypesV2
+17:19:46.737 [GK] INFO  - Generator type:MANUAL
+17:19:48.144 [Golem] INFO  - Entity Golem deployed in h13
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+17:19:48.720 [Drip1] INFO  - Entity Drip1 deployed in h6
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+17:19:48.730 [Drip2] INFO  - Entity Drip2 deployed in h17
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+17:20:37.689 [GK] INFO  - Loading configuration for environment MultiTypesV2
+17:20:37.689 [GK] INFO  - Generator type:MANUAL
+17:20:39.164 [Golem] INFO  - Entity Golem of type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 10
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in 10
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 10
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+17:20:39.167 [Golem3] INFO  - Entity Golem3 of type : 
+ AgentName: Golem3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M3
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in M3
+ Characteristics:  type : 
+ AgentName: Golem3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M3
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+17:20:39.171 [Golem2] INFO  - Entity Golem2 of type : 
+ AgentName: Golem2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 2
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in j1
+ Characteristics:  type : 
+ AgentName: Golem2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 2
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+17:20:39.710 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 76
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 76
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 76
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+17:20:39.713 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 71
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 71
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 71
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+17:20:39.713 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 70
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in 70
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 70
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+17:20:39.750 [Hunt5] INFO  - Entity Hunt5 of type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h40
+ Characteristics:  type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+17:20:39.751 [Hunt7] INFO  - Entity Hunt7 of type : 
+ AgentName: Hunt7
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 88
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 88
+ Characteristics:  type : 
+ AgentName: Hunt7
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 88
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+17:20:39.751 [Hunt6] INFO  - Entity Hunt6 of type : 
+ AgentName: Hunt6
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in M11
+ Characteristics:  type : 
+ AgentName: Hunt6
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+17:20:39.785 [Hunt4] INFO  - Entity Hunt4 of type : 
+ AgentName: Hunt4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in j11
+ Characteristics:  type : 
+ AgentName: Hunt4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+17:32:25.829 [GK] INFO  - Loading configuration for environment MultiTypesV2
+17:32:25.831 [GK] INFO  - Generator type:MANUAL
+17:32:27.510 [Golem] ERROR - Impossible to deploy entity Golem, the indicated position does not exist: 10
+17:32:27.515 [Golem3] ERROR - Impossible to deploy entity Golem3, the indicated position does not exist: M3
+17:32:27.517 [Golem2] ERROR - Impossible to deploy entity Golem2, the indicated position does not exist: j1
+17:32:27.798 [Hunt5] INFO  - Entity Hunt5 of type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h40
+ Characteristics:  type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+17:32:27.805 [Hunt2] ERROR - Impossible to deploy entity Hunt2, the indicated position does not exist: 71
+17:32:27.805 [Hunt7] ERROR - Impossible to deploy entity Hunt7, the indicated position does not exist: 88
+17:32:27.805 [Hunt6] ERROR - Impossible to deploy entity Hunt6, the indicated position does not exist: M11
+17:32:27.813 [Hunt1] ERROR - Impossible to deploy entity Hunt1, the indicated position does not exist: 70
+17:32:27.814 [Hunt4] ERROR - Impossible to deploy entity Hunt4, the indicated position does not exist: j11
+17:32:27.829 [Hunt3] ERROR - Impossible to deploy entity Hunt3, the indicated position does not exist: 76
+17:32:48.313 [GK] INFO  - Loading configuration for environment MultiTypesV2
+17:32:48.314 [GK] INFO  - Generator type:MANUAL
+17:32:50.171 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+17:33:18.891 [GK] INFO  - Loading configuration for environment MultiTypesV2
+17:33:18.892 [GK] INFO  - Generator type:MANUAL
+17:33:20.684 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+17:35:03.310 [GK] INFO  - Loading configuration for environment MultiTypesV2
+17:35:03.310 [GK] INFO  - Generator type:MANUAL
+17:35:04.784 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+17:35:05.346 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+17:35:05.348 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+17:35:05.395 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+18:10:50.274 [GK] INFO  - Loading configuration for environment MultiTypesV2
+18:10:50.276 [GK] INFO  - Generator type:MANUAL
+18:10:53.389 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+18:10:53.418 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+18:10:53.425 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+18:10:53.437 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:04:15.374 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:04:15.375 [GK] INFO  - Generator type:MANUAL
+21:04:17.520 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:04:17.524 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:04:17.531 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:04:17.546 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:05:44.211 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h20]
+21:05:46.716 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h19]
+21:05:48.718 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h18]
+21:05:50.720 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h5]
+21:05:52.755 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h19]
+21:05:54.757 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h18]
+21:05:56.759 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h19]
+21:05:58.763 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h20]
+21:06:00.306 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h6]
+21:06:02.812 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h19]
+21:06:04.815 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h20]
+21:06:06.818 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h19]
+21:06:08.819 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h18]
+21:06:10.823 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h19]
+21:06:11.826 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h5]
+21:06:13.831 [Hunt1] ERROR - Hunt1 - moveTo : target [null] is not reachable from current position [h6]
+21:06:32.077 [Hunt3] ERROR - Hunt3 - moveTo : target [null] is not reachable from current position [h8]
+21:06:35.082 [Hunt3] ERROR - Hunt3 - moveTo : target [null] is not reachable from current position [h23]
+21:06:37.093 [Hunt3] ERROR - Hunt3 - moveTo : target [null] is not reachable from current position [h22]
+21:06:39.095 [Hunt3] ERROR - Hunt3 - moveTo : target [null] is not reachable from current position [h7]
+21:07:36.762 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:07:36.763 [GK] INFO  - Generator type:MANUAL
+21:07:39.411 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:07:39.419 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:07:39.423 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:07:39.426 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:24:14.953 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:24:14.954 [GK] INFO  - Generator type:MANUAL
+21:24:16.341 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:24:16.991 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:24:16.997 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:24:17.063 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:26:10.658 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:26:10.659 [GK] INFO  - Generator type:MANUAL
+21:26:12.717 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:26:12.772 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:26:12.772 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:26:12.858 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:27:54.715 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:27:54.716 [GK] INFO  - Generator type:MANUAL
+21:27:56.494 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:27:56.832 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:27:56.863 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:27:56.930 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:29:37.264 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:29:37.265 [GK] INFO  - Generator type:MANUAL
+21:29:39.242 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:29:39.365 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:29:39.375 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:29:39.385 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:30:59.553 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:30:59.555 [GK] INFO  - Generator type:MANUAL
+21:31:01.366 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:31:01.779 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:31:01.783 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:31:01.806 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:33:21.834 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:33:21.836 [GK] INFO  - Generator type:MANUAL
+21:33:23.952 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:33:23.959 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:33:23.959 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:33:23.960 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:34:19.061 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:34:19.062 [GK] INFO  - Generator type:MANUAL
+21:34:21.206 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:34:21.209 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:34:21.212 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:34:21.213 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:34:54.267 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:34:54.269 [GK] INFO  - Generator type:MANUAL
+21:34:56.070 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:34:56.369 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:34:56.376 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:34:56.379 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:36:10.628 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:36:10.631 [GK] INFO  - Generator type:MANUAL
+21:36:12.764 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:36:12.766 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:36:12.769 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:36:12.772 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:36:33.336 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:36:33.336 [GK] INFO  - Generator type:MANUAL
+21:36:35.073 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:36:35.436 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:36:35.440 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:36:35.459 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:36:56.914 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:36:56.915 [GK] INFO  - Generator type:MANUAL
+21:36:59.122 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:36:59.148 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:36:59.148 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:36:59.149 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:37:13.493 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:37:13.494 [GK] INFO  - Generator type:MANUAL
+21:37:16.409 [ImHere] INFO  - Entity ImHere of type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in h1
+ Characteristics:  type : 
+ AgentName: ImHere
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.ControlledAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h1
+ 	 Entitytype: HumanControlled
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+21:37:16.426 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in h16
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h16
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:37:16.456 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h14
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h14
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:37:16.457 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h22
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container2
+ 	 Initial location: h22
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:38:21.845 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:38:21.846 [GK] INFO  - Generator type:MANUAL
+21:38:24.160 [Golem] INFO  - Entity Golem deployed in h12
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+21:38:24.170 [Drip5] INFO  - Entity Drip5 deployed in h4
+ Characteristics:  type : 
+ AgentName: Drip5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:38:24.177 [Drip4] INFO  - Entity Drip4 deployed in h18
+ Characteristics:  type : 
+ AgentName: Drip4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:38:24.178 [Drip2] INFO  - Entity Drip2 deployed in h16
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:38:24.179 [Drip3] INFO  - Entity Drip3 deployed in h5
+ Characteristics:  type : 
+ AgentName: Drip3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:38:24.180 [Drip1] INFO  - Entity Drip1 deployed in h19
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:41:19.566 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:41:19.566 [GK] INFO  - Generator type:MANUAL
+21:41:21.705 [Golem] INFO  - Entity Golem deployed in h23
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+21:41:21.711 [Drip1] INFO  - Entity Drip1 deployed in h17
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:41:21.713 [Drip3] INFO  - Entity Drip3 deployed in h25
+ Characteristics:  type : 
+ AgentName: Drip3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:41:21.715 [Drip2] INFO  - Entity Drip2 deployed in h2
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:41:21.715 [Drip5] INFO  - Entity Drip5 deployed in h9
+ Characteristics:  type : 
+ AgentName: Drip5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:41:21.716 [Drip4] INFO  - Entity Drip4 deployed in h4
+ Characteristics:  type : 
+ AgentName: Drip4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:41:48.214 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:41:48.215 [GK] INFO  - Generator type:MANUAL
+21:51:39.965 [GK] INFO  - Loading configuration for environment MultiTypesV2
+21:51:39.966 [GK] INFO  - Generator type:MANUAL
+21:51:42.299 [Golem] INFO  - Entity Golem deployed in h6
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+21:51:42.305 [Drip1] INFO  - Entity Drip1 deployed in h5
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:51:42.307 [Drip5] INFO  - Entity Drip5 deployed in h13
+ Characteristics:  type : 
+ AgentName: Drip5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:51:42.308 [Drip3] INFO  - Entity Drip3 deployed in h4
+ Characteristics:  type : 
+ AgentName: Drip3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+21:51:42.309 [Drip4] INFO  - Entity Drip4 deployed in h16
+ Characteristics:  type : 
+ AgentName: Drip4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+21:51:42.311 [Drip2] INFO  - Entity Drip2 deployed in h19
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+00:56:39.777 [GK] INFO  - Loading configuration for environment MultiTypesV2
+00:56:39.782 [GK] INFO  - Generator type:MANUAL
+00:56:42.141 [Golem] INFO  - Entity Golem deployed in h12
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+00:56:42.151 [Drip3] INFO  - Entity Drip3 deployed in h3
+ Characteristics:  type : 
+ AgentName: Drip3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+00:56:42.154 [Drip5] INFO  - Entity Drip5 deployed in h20
+ Characteristics:  type : 
+ AgentName: Drip5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+00:56:42.157 [Drip1] INFO  - Entity Drip1 deployed in h21
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+00:56:42.162 [Drip2] INFO  - Entity Drip2 deployed in h6
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+00:56:42.166 [Drip4] INFO  - Entity Drip4 deployed in h16
+ Characteristics:  type : 
+ AgentName: Drip4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+00:58:03.690 [GK] INFO  - Loading configuration for environment MultiTypesV2
+00:58:03.699 [GK] INFO  - Generator type:MANUAL
+00:58:05.213 [Golem] INFO  - Entity Golem deployed in h26
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+00:58:05.687 [Drip3] INFO  - Entity Drip3 deployed in h23
+ Characteristics:  type : 
+ AgentName: Drip3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+00:58:05.689 [Drip4] INFO  - Entity Drip4 deployed in h4
+ Characteristics:  type : 
+ AgentName: Drip4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+00:58:05.696 [Drip2] INFO  - Entity Drip2 deployed in h22
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+00:58:05.696 [Drip5] INFO  - Entity Drip5 deployed in h26
+ Characteristics:  type : 
+ AgentName: Drip5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+00:58:05.697 [Drip1] INFO  - Entity Drip1 deployed in h15
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:03:25.139 [GK] INFO  - Loading configuration for environment MultiTypesV2
+01:03:25.141 [GK] INFO  - Generator type:MANUAL
+01:03:26.719 [Golem] INFO  - Entity Golem deployed in h23
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+01:05:08.475 [GK] INFO  - Loading configuration for environment MultiTypesV2
+01:05:08.476 [GK] INFO  - Generator type:MANUAL
+01:05:09.852 [Golem] INFO  - Entity Golem deployed in h9
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+01:05:10.427 [Drip4] INFO  - Entity Drip4 deployed in h16
+ Characteristics:  type : 
+ AgentName: Drip4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:05:10.441 [Drip3] INFO  - Entity Drip3 deployed in h15
+ Characteristics:  type : 
+ AgentName: Drip3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:05:10.442 [Drip5] INFO  - Entity Drip5 deployed in h5
+ Characteristics:  type : 
+ AgentName: Drip5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:05:10.443 [Drip1] INFO  - Entity Drip1 deployed in h4
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:05:10.444 [Drip2] INFO  - Entity Drip2 deployed in h12
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:05:25.641 [GK] INFO  - Loading configuration for environment MultiTypesV2
+01:05:25.642 [GK] INFO  - Generator type:MANUAL
+01:05:27.050 [Golem] INFO  - Entity Golem deployed in h26
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+01:05:27.615 [Drip5] INFO  - Entity Drip5 deployed in h25
+ Characteristics:  type : 
+ AgentName: Drip5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:05:27.619 [Drip4] INFO  - Entity Drip4 deployed in h18
+ Characteristics:  type : 
+ AgentName: Drip4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:05:27.621 [Drip3] INFO  - Entity Drip3 deployed in h13
+ Characteristics:  type : 
+ AgentName: Drip3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:05:27.627 [Drip1] INFO  - Entity Drip1 deployed in h5
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:05:27.630 [Drip2] INFO  - Entity Drip2 deployed in h8
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:10:45.676 [GK] INFO  - Loading configuration for environment MultiTypesV2
+01:10:45.680 [GK] INFO  - Generator type:MANUAL
+01:10:48.249 [Golem] INFO  - Entity Golem deployed in h21
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: Wumpus
+ 	 TreasureType : Gold; diamondCapa: -1; goldCapa: 100
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 2>, <LockPicking, 1>]
+ 	 UserParameters: [paramTest]
+01:10:48.265 [Drip2] INFO  - Entity Drip2 deployed in h25
+ Characteristics:  type : 
+ AgentName: Drip2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:10:48.267 [Drip1] INFO  - Entity Drip1 deployed in h19
+ Characteristics:  type : 
+ AgentName: Drip1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:10:48.270 [Drip3] INFO  - Entity Drip3 deployed in h13
+ Characteristics:  type : 
+ AgentName: Drip3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:10:48.273 [Drip4] INFO  - Entity Drip4 deployed in h18
+ Characteristics:  type : 
+ AgentName: Drip4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:10:48.276 [Drip5] INFO  - Entity Drip5 deployed in h2
+ Characteristics:  type : 
+ AgentName: Drip5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: null
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:13:27.027 [GK] INFO  - Loading configuration for environment MultiTypesV2
+01:13:27.028 [GK] INFO  - Generator type:MANUAL
+01:13:28.380 [Golem] INFO  - Entity Golem of type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 10
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in 10
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 10
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:13:28.397 [Golem3] INFO  - Entity Golem3 of type : 
+ AgentName: Golem3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M3
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in M3
+ Characteristics:  type : 
+ AgentName: Golem3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M3
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:13:28.407 [Golem2] INFO  - Entity Golem2 of type : 
+ AgentName: Golem2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 2
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in j1
+ Characteristics:  type : 
+ AgentName: Golem2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 2
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:13:28.986 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 71
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 71
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 71
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:13:28.987 [Hunt4] INFO  - Entity Hunt4 of type : 
+ AgentName: Hunt4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in j11
+ Characteristics:  type : 
+ AgentName: Hunt4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:13:28.988 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 76
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 76
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 76
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:13:28.989 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 70
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in 70
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 70
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:13:28.997 [Hunt6] INFO  - Entity Hunt6 of type : 
+ AgentName: Hunt6
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in M11
+ Characteristics:  type : 
+ AgentName: Hunt6
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:13:29.005 [Hunt5] INFO  - Entity Hunt5 of type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h40
+ Characteristics:  type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:13:29.015 [Hunt7] INFO  - Entity Hunt7 of type : 
+ AgentName: Hunt7
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 88
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 88
+ Characteristics:  type : 
+ AgentName: Hunt7
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 88
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:17:36.917 [GK] INFO  - Loading configuration for environment MultiTypesV2
+01:17:36.918 [GK] INFO  - Generator type:MANUAL
+01:17:38.540 [Golem2] INFO  - Entity Golem2 of type : 
+ AgentName: Golem2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 2
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in j1
+ Characteristics:  type : 
+ AgentName: Golem2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 2
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:17:38.561 [Golem3] INFO  - Entity Golem3 of type : 
+ AgentName: Golem3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M3
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in M3
+ Characteristics:  type : 
+ AgentName: Golem3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M3
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:17:38.562 [Golem] INFO  - Entity Golem of type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 10
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in 10
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 10
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:17:38.898 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 71
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 71
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 71
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:17:38.901 [Hunt5] INFO  - Entity Hunt5 of type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h40
+ Characteristics:  type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:17:38.907 [Hunt6] INFO  - Entity Hunt6 of type : 
+ AgentName: Hunt6
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in M11
+ Characteristics:  type : 
+ AgentName: Hunt6
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:17:38.908 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 76
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 76
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 76
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:17:38.909 [Hunt4] INFO  - Entity Hunt4 of type : 
+ AgentName: Hunt4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in j11
+ Characteristics:  type : 
+ AgentName: Hunt4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:17:38.913 [Hunt7] INFO  - Entity Hunt7 of type : 
+ AgentName: Hunt7
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 88
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 88
+ Characteristics:  type : 
+ AgentName: Hunt7
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 88
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:17:38.914 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 70
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in 70
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 70
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:23:42.149 [GK] INFO  - Loading configuration for environment MultiTypesV2
+01:23:42.154 [GK] INFO  - Generator type:MANUAL
+01:23:43.623 [Golem2] INFO  - Entity Golem2 of type : 
+ AgentName: Golem2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 2
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in j1
+ Characteristics:  type : 
+ AgentName: Golem2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 2
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:23:43.650 [Golem3] INFO  - Entity Golem3 of type : 
+ AgentName: Golem3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M3
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in M3
+ Characteristics:  type : 
+ AgentName: Golem3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M3
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:23:43.657 [Golem] INFO  - Entity Golem of type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 10
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in 10
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 10
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:23:44.137 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 70
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in 70
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 70
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:23:44.137 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 76
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 76
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 76
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:23:44.138 [Hunt4] INFO  - Entity Hunt4 of type : 
+ AgentName: Hunt4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in j11
+ Characteristics:  type : 
+ AgentName: Hunt4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:23:44.138 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 71
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 71
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 71
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:23:44.139 [Hunt7] INFO  - Entity Hunt7 of type : 
+ AgentName: Hunt7
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 88
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 88
+ Characteristics:  type : 
+ AgentName: Hunt7
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 88
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:23:44.139 [Hunt5] INFO  - Entity Hunt5 of type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h40
+ Characteristics:  type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:23:44.141 [Hunt6] INFO  - Entity Hunt6 of type : 
+ AgentName: Hunt6
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in M11
+ Characteristics:  type : 
+ AgentName: Hunt6
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:27:37.713 [GK] INFO  - Loading configuration for environment MultiTypesV2
+01:27:37.714 [GK] INFO  - Generator type:MANUAL
+01:27:39.357 [Golem] INFO  - Entity Golem of type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 10
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in 10
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 10
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:27:39.368 [Golem3] INFO  - Entity Golem3 of type : 
+ AgentName: Golem3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M3
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in M3
+ Characteristics:  type : 
+ AgentName: Golem3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M3
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:27:39.378 [Golem2] INFO  - Entity Golem2 of type : 
+ AgentName: Golem2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 2
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in j1
+ Characteristics:  type : 
+ AgentName: Golem2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 2
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:27:39.689 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 76
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 76
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 76
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:27:39.692 [Hunt7] INFO  - Entity Hunt7 of type : 
+ AgentName: Hunt7
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 88
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 88
+ Characteristics:  type : 
+ AgentName: Hunt7
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 88
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:27:39.696 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 70
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in 70
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 70
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:27:39.697 [Hunt6] INFO  - Entity Hunt6 of type : 
+ AgentName: Hunt6
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in M11
+ Characteristics:  type : 
+ AgentName: Hunt6
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:27:39.708 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 71
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 71
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 71
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:27:39.709 [Hunt4] INFO  - Entity Hunt4 of type : 
+ AgentName: Hunt4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in j11
+ Characteristics:  type : 
+ AgentName: Hunt4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:27:39.711 [Hunt5] INFO  - Entity Hunt5 of type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h40
+ Characteristics:  type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:34:42.155 [GK] INFO  - Loading configuration for environment MultiTypesV2
+01:34:42.159 [GK] INFO  - Generator type:MANUAL
+01:34:43.998 [Golem2] INFO  - Entity Golem2 of type : 
+ AgentName: Golem2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 2
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in j1
+ Characteristics:  type : 
+ AgentName: Golem2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 2
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:34:44.002 [Golem3] INFO  - Entity Golem3 of type : 
+ AgentName: Golem3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M3
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in M3
+ Characteristics:  type : 
+ AgentName: Golem3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M3
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:34:44.004 [Golem] INFO  - Entity Golem of type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 10
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in 10
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 10
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:34:44.092 [Hunt4] INFO  - Entity Hunt4 of type : 
+ AgentName: Hunt4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in j11
+ Characteristics:  type : 
+ AgentName: Hunt4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:34:44.098 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 76
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 76
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 76
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:34:44.104 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 70
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in 70
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 70
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:34:44.109 [Hunt7] INFO  - Entity Hunt7 of type : 
+ AgentName: Hunt7
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 88
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 88
+ Characteristics:  type : 
+ AgentName: Hunt7
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 88
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:34:44.110 [Hunt6] INFO  - Entity Hunt6 of type : 
+ AgentName: Hunt6
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in M11
+ Characteristics:  type : 
+ AgentName: Hunt6
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:34:44.110 [Hunt5] INFO  - Entity Hunt5 of type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h40
+ Characteristics:  type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:34:44.113 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 71
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 71
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 71
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:44:48.350 [GK] INFO  - Loading configuration for environment MultiTypesV2
+01:44:48.359 [GK] INFO  - Generator type:MANUAL
+01:44:50.520 [Golem] INFO  - Entity Golem of type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 10
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in 10
+ Characteristics:  type : 
+ AgentName: Golem
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 10
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 1
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:44:50.541 [Hunt6] INFO  - Entity Hunt6 of type : 
+ AgentName: Hunt6
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in M11
+ Characteristics:  type : 
+ AgentName: Hunt6
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:44:50.542 [Hunt5] INFO  - Entity Hunt5 of type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in h40
+ Characteristics:  type : 
+ AgentName: Hunt5
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: h40
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:44:50.543 [Hunt7] INFO  - Entity Hunt7 of type : 
+ AgentName: Hunt7
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 88
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 88
+ Characteristics:  type : 
+ AgentName: Hunt7
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 88
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:44:50.545 [Hunt3] INFO  - Entity Hunt3 of type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 76
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 76
+ Characteristics:  type : 
+ AgentName: Hunt3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 76
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:44:50.548 [Hunt1] INFO  - Entity Hunt1 of type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 70
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1], deployed in 70
+ Characteristics:  type : 
+ AgentName: Hunt1
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 70
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param1]
+01:44:50.549 [Hunt4] INFO  - Entity Hunt4 of type : 
+ AgentName: Hunt4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in j11
+ Characteristics:  type : 
+ AgentName: Hunt4
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j11
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 1
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:44:50.551 [Hunt2] INFO  - Entity Hunt2 of type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 71
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3], deployed in 71
+ Characteristics:  type : 
+ AgentName: Hunt2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DrippedAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: 71
+ 	 Entitytype: AgentExplo
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 2
+ 	 detection radius: 0
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param2, param3]
+01:44:50.554 [Golem2] INFO  - Entity Golem2 of type : 
+ AgentName: Golem2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 2
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in j1
+ Characteristics:  type : 
+ AgentName: Golem2
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: j1
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 2
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]
+01:44:50.556 [Golem3] INFO  - Entity Golem3 of type : 
+ AgentName: Golem3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M3
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param], deployed in M3
+ Characteristics:  type : 
+ AgentName: Golem3
+ 	 Instance of eu.su.mas.dedaleEtu.mas.agents.dummies.DummyMovingAgent
+ 	 Initial container: Ithaq_container1
+ 	 Initial location: M3
+ 	 Entitytype: Wumpus
+ 	 TreasureType : None; diamondCapa: -1; goldCapa: -1
+ 	 comReach: 3
+ 	 detection radius: 3
+ 	 Expertise: [<Strength, 1>, <LockPicking, 1>]
+ 	 UserParameters: [param]

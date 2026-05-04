@@ -31,6 +31,8 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
     protected List<String> ListPosLibre = new ArrayList<>();   
     protected String wallTargetNode = null;
     
+    protected boolean ignoringStench = false; // afin de ne pas rester près d'un golem déjà attraper
+    
     // pour la connaissance et la communication
 	protected ExtendedMapRepresentation myMap;
     protected CommService commService;
@@ -138,12 +140,19 @@ public abstract class AbstractAgent extends AbstractDedaleAgent {
 		this.stench = stench;
 	}
 
+	public boolean isIgnoringStench() { 
+		return ignoringStench; 
+	}
+	
+	public void setIgnoringStench(boolean b) { 
+		this.ignoringStench = b; 
+	}
 
 	public Map<String,String> getGolemsNearby (List<Couple<Location, List<Couple<Observation, String>>>> lobs) {
         Map<String, String> golems = new HashMap<>();
 		for (Couple<Location, List<Couple<Observation, String>>> obs : lobs) {
 	    	for (Couple<Observation, String> detail : obs.getRight()) {
-	    		if (detail.getLeft() == Observation.AGENTNAME && detail.getRight().equals("Wumpus")) {
+	    		if (detail.getLeft() == Observation.AGENTNAME && (detail.getRight().equals("Wumpus") || detail.getRight().equals("Humancontrolled"))) {
 	    			    String pos = obs.getLeft().getLocationId();
     			    	this.setGolemPosition(pos);
 	    			    golems.put(pos,detail.getRight());

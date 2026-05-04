@@ -1,6 +1,7 @@
 package eu.su.mas.dedaleEtu.mas.knowledge;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -13,19 +14,23 @@ import jade.core.AID;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.UnreadableException;
 
-public class CommService {
+public class CommService implements Serializable {
 
     private AbstractAgent myAgent;
     private List<String> agentList;
     
     private static final int BROADCAST_COOLDOWN_MS = 4000;      // cd entre broadcast du wumpus
     private static final int PONG_WAIT_MS = 1000;           	// Attente en ayant enovyé un pong
+    private static final long GOLEM_CAUGHT_COOLDOWN_MS = 7000;  // cd entre annonce de la capture
+    long lastGolemCaughtBroadcast = 0;
+    private static final long FREE_NEIGHBORS_COOLDOWN_MS = 3000;// cd entre position a prendre près du golem
+    long lastFreeNeighborsBroadcast = 0;
+    
     private static final boolean AFFICHAGE = false;        		// Affiche le traitement des messages par les agents (ca peut faire beaucoup)
 
 
     long lastBroadcast;
 
-    // ========== CONSTRUCTEUR ==========
 
     public CommService(AbstractAgent myAgent) {
         this.myAgent = myAgent;
@@ -100,9 +105,15 @@ public class CommService {
      * Envoie les noeuds "libres" autour d'un noeud
      */
     public void broadcastFreeNeighbors(String golemPos, List<String> freeNeighbors, List<String> blockedNodes) {
+        long now = System.currentTimeMillis();
+        if (now - lastFreeNeighborsBroadcast <= FREE_NEIGHBORS_COOLDOWN_MS) return;
+        lastFreeNeighborsBroadcast = now;
+
+
         ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
         msg.setProtocol("WALL-NEEDED");
         msg.setSender(myAgent.getAID());
+        
         // Format : "golemPos|free1,free2|blocked1,blocked2"
         String free = String.join(",", freeNeighbors);
         String blocked = String.join(",", blockedNodes);
@@ -125,6 +136,25 @@ public class CommService {
         String free = String.join(",", freeNeighbors);
         String blocked = String.join(",", blockedNodes);
         msg.setContent(golemPos + "|" + free + "|" + blocked);
+        for (String name : agentList) {
+            if (!name.equals(myAgent.getLocalName()))
+                msg.addReceiver(new AID(name, AID.ISLOCALNAME));
+        }
+        myAgent.sendMessage(msg);
+    }
+    
+    public void broadcastWumpusCaught(String golemPos) {
+        long now = System.currentTimeMillis();
+        if (now - lastGolemCaughtBroadcast <= GOLEM_CAUGHT_COOLDOWN_MS) return;
+        lastGolemCaughtBroadcast = now;
+        
+        if (AFFICHAGE)
+            System.out.println(myAgent.getLocalName() + " - Golem considéré bloqué après 15s, diffusion du message");
+        
+        ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
+        msg.setProtocol("WUMPUS-CAUGHT");
+        msg.setSender(myAgent.getAID());
+        msg.setContent(golemPos);
         for (String name : agentList) {
             if (!name.equals(myAgent.getLocalName()))
                 msg.addReceiver(new AID(name, AID.ISLOCALNAME));

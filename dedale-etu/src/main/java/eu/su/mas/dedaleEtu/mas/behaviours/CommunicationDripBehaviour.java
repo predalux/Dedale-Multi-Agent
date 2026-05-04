@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.graphstream.graph.Node;
+
 import dataStructures.serializableGraph.SerializableSimpleGraph;
 import eu.su.mas.dedale.env.Location;
 import eu.su.mas.dedale.env.gs.GsLocation;
@@ -74,7 +76,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         
     @Override
     public void action() {
-    	
+    	    	
     	Location myPosition = (Location) myAgent.getCurrentPosition();
         if (myPosition == null) return;
 
@@ -185,6 +187,10 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
             case "WUMPUS-LOCATION":
                 handleWumpusLocation(msg, sender);
                 break;
+                
+            case "WUMPUS-CAUGHT":
+            	handleWumpusCaught(msg, sender);
+            	break;
                 
             default:
                 System.out.println(myAgent.getLocalName() + " - Unknown INFORM: " + protocol);
@@ -319,11 +325,11 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
                 myAgent.setGolemPosition(golemPos);
                 myAgent.setWallTargetNode(candidate);
                 myAgent.setChemin(path);
-                if (AFFICHAGE)
+                //if (AFFICHAGE)
                 	System.out.println(myAgent.getLocalName() + " - d'après " + sender.getLocalName() 
                     	+ " je vais bloquer : " + candidate + " via " + path);
             } else {
-                if (AFFICHAGE)
+                //if (AFFICHAGE)
                 	System.out.println(myAgent.getLocalName() + " - ignore proposition de " 
                 			+ sender.getLocalName() + " vers " + candidate);
             }
@@ -368,10 +374,30 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         }
     }
     
+    private void handleWumpusCaught(ACLMessage msg, AID sender) {
+        String caughtPos = msg.getContent();
+        String myGolemPos = myAgent.getGolemPosition();
+        
+        // mur pas concerné
+        if (myAgent.getEtat() == 2) return;
+
+        if (myAgent.getEtat() != 2 && caughtPos.equals(myGolemPos)) {
+            myAgent.setGolemPosition(null);
+            myAgent.setWallTargetNode(null);
+            
+            // stop la chasse
+            myAgent.setEtat(0);
+            myAgent.setIgnoringStench(true);
+            if (AFFICHAGE)
+                System.out.println(myAgent.getLocalName() + " - Golem caught at " + caughtPos + ", retour exploration");
+        }
+    }
+    
     /**
      * Demande à un agent de se décaler sur une case libre autour du golem
      */
     private void handleMoveAside(ACLMessage msg) {
+    	
         if (myAgent.getEtat() != 2) return;
 
         String content = msg.getContent();
@@ -383,7 +409,7 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         String golemPos = myAgent.getGolemPosition();
         if (golemPos == null) return;
 
-        java.util.Map<String, String> nearbyAgents = myAgent.getAgentsNearby(myAgent.observe());
+        Map<String, String> nearbyAgents = myAgent.getAgentsNearby(myAgent.observe());
 
         List<String> occupied = new ArrayList<>();
         occupied.add(golemPos);
@@ -391,61 +417,87 @@ public class CommunicationDripBehaviour extends OneShotBehaviour {
         if (requesterPos != null && !occupied.contains(requesterPos))
             occupied.add(requesterPos);
 
-        List<String> neighbors = myAgent.getMyMap().getNeighbors(golemPos);
+        List<String> golemNeighbors = myAgent.getMyMap().getNeighbors(golemPos);
+
+        // fonction pour tester un candidat de mouvement
+        java.util.function.Function<String, List<String>> tryPath = candidate -> {
+            List<String> blocked = new ArrayList<>(occupied);
+            blocked.remove(candidate);
+            return myAgent.getMyMap().getShortestPathWithBlockedNodes(myPos, candidate, blocked);
+        };
 
         // 1) Case exacte demandée
-        if (neighbors.contains(requestedTarget) && !requestedTarget.equals(myPos)) {
-            List<String> blocked = new ArrayList<>(occupied);
-            blocked.remove(requestedTarget);
-            List<String> path = myAgent.getMyMap()
-                .getShortestPathWithBlockedNodes(myPos, requestedTarget, blocked);
+        if (requestedTarget != null && !requestedTarget.equals(myPos) && golemNeighbors.contains(requestedTarget)) {
+            List<String> path = tryPath.apply(requestedTarget);
             if (path != null && !path.isEmpty()) {
                 myAgent.setWallTargetNode(requestedTarget);
                 myAgent.setChemin(path);
                 if (AFFICHAGE)
-                	System.out.println(myAgent.getLocalName() + " se décale vers " + requestedTarget);
+                    System.out.println(myAgent.getLocalName() + " se décale vers case exacte " + requestedTarget);
                 return;
             }
         }
 
-        // 2) Alternative libre autour du golem
-        for (String alt : neighbors) {
-            if (alt.equals(myPos) || occupied.contains(alt)) continue;
-            List<String> blocked = new ArrayList<>(occupied);
-            blocked.remove(alt);
-            List<String> path = myAgent.getMyMap()
-                .getShortestPathWithBlockedNodes(myPos, alt, blocked);
+
+        // 2) N'importe quel voisin ouvert du golem 
+        for (String candidate : golemNeighbors.stream()
+                .filter(n -> !n.equals(myPos))
+                .filter(n -> myAgent.getMyMap().getNode(n) != null)
+                .sorted(Comparator.comparingInt(n -> {
+                    List<String> p = tryPath.apply(n);
+                    return p == null ? Integer.MAX_VALUE : p.size();
+                }))
+                .collect(Collectors.toList())) {
+
+            List<String> path = tryPath.apply(candidate);
             if (path != null && !path.isEmpty()) {
-                myAgent.setWallTargetNode(alt);
+                myAgent.setWallTargetNode(candidate);
                 myAgent.setChemin(path);
                 if (AFFICHAGE)
-                	System.out.println(myAgent.getLocalName() + " se décale vers alternative " + alt);
+                    System.out.println(myAgent.getLocalName() + " se décale vers voisin libre " + candidate);
                 return;
             }
         }
+        
+     // 3) Un voisin ouvert adjacent à la position actuelle du mur
+        List<String> myNeighbors = myAgent.getMyMap().getNeighbors(myPos);
+        for (String candidate : myNeighbors.stream()
+                .filter(n -> !occupied.contains(n))
+                .filter(n -> {
+                    Node node = myAgent.getMyMap().getGraph().getNode(n);
+                    return node != null && node.getAttribute("ui.class") == MapAttribute.open.toString();
+                })
+                .collect(Collectors.toList())) {
 
-        // identifier le mur qui bloque et lui demander de bouger
-        // Chercher la case cible idéale (requestedTarget ou première alternative)
-        String cascadeTarget = neighbors.contains(requestedTarget) ? requestedTarget :
-            neighbors.stream().filter(n -> !n.equals(myPos)).findFirst().orElse(null);
+            myAgent.setWallTargetNode(candidate);
+            myAgent.setChemin(List.of(candidate));
+            if (AFFICHAGE)
+                System.out.println(myAgent.getLocalName() + " se décale vers voisin ouvert adjacent " + candidate);
+            return;
+        }
+
+        // 4) Cascade : identifier le mur qui bloque et lui demander de bouger
+        String cascadeTarget = golemNeighbors.contains(requestedTarget) ? requestedTarget :
+            golemNeighbors.stream().filter(n -> !n.equals(myPos)).findFirst().orElse(null);
 
         if (cascadeTarget != null) {
             String blockingAgentName = nearbyAgents.get(cascadeTarget);
             if (blockingAgentName != null) {
-            	if (AFFICHAGE)
-                	System.out.println(myAgent.getLocalName() + 
-                			" cascade MOVE-ASIDE " + blockingAgentName + " pour libérer " + cascadeTarget);
-                // On se met en attente sur la case actuelle, on relaye la demande
+                if (AFFICHAGE)
+                    System.out.println(myAgent.getLocalName() +
+                        " cascade MOVE-ASIDE " + blockingAgentName + " pour libérer " + cascadeTarget);
                 myAgent.getCommService().requestMoveAside(
                     blockingAgentName,
-                    myPos + "|" + cascadeTarget  
+                    myPos + "|" + cascadeTarget
                 );
-                // On programme notre propre mouvement pour après
                 myAgent.setWallTargetNode(cascadeTarget);
+                return;
             }
         }
+
+        // 5) Impossible
         if (AFFICHAGE)
-        	System.out.println(myAgent.getLocalName() + " ne peut pas se décaler immédiatement, cascade envoyée");
+            System.out.println(myAgent.getLocalName() + " - MOVE-ASIDE impossible, aucune case atteignable autour du golem");
     }
     
     // ========== ENVOI DE MESSAGES ==========

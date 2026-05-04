@@ -78,7 +78,7 @@
   "initialLocation": "free",
   "backPackCapacityGold": 100,
   "backPackCapacityDiamond":-1, 
-  "detectionRadius": 1,
+  "detectionRadius": 3,
   "strengthExpertise": 2,
   "lockPickingExpertise":1,
   "userParameters": ["paramTest"]
